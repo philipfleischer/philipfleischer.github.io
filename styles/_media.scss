@@ -1,0 +1,134 @@
+/* =========================
+   Responsive (cleaned up)
+   ========================= */
+
+/* 1432px and down */
+@media screen and (max-width: 1432px) {
+  /* Home: fjern den faste venstre-marginen som dytter bildet */
+  header#home .header-content .left-header .image {
+    margin-left: 0;
+  }
+
+  /* Du har stor padding-right på teksten i desktop */
+  header#home .right-header {
+    padding-right: 0;
+  }
+}
+
+/* 1070px and down */
+@media screen and (max-width: 1070px) {
+  /* About */
+  .about-container {
+    grid-template-columns: 1fr;
+
+    .right-about {
+      padding-top: 2.5rem;
+    }
+  }
+
+  /* Portfolio + Courses grids */
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Titles: gjør dem litt mindre (kan også løses med clamp i base) */
+  .main-title h2 {
+    font-size: 3.2rem;
+
+    .bg-text {
+      font-size: 4rem;
+    }
+  }
+}
+
+/* 970px and down */
+@media screen and (max-width: 970px) {
+  /* IKKE sett .section padding her — variablene/clamp tar det smooth */
+
+  /* Only home hero layout changes */
+  header#home .header-content {
+    grid-template-columns: 1fr;
+    padding-bottom: 6rem;
+  }
+
+  header#home .left-header .h-shape {
+    display: none;
+  }
+
+  header#home .right-header {
+    grid-row: 1;
+    width: 90%;
+    margin: 0 auto;
+
+    .name {
+      font-size: 2.5rem !important;
+    }
+  }
+
+  header#home .left-header .image {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .theme-btn {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* 700px and down */
+@media screen and (max-width: 700px) {
+  /* IKKE sett .section padding her — variablene/clamp tar det smooth */
+
+  .about-stats .progress-bars {
+    grid-template-columns: 1fr;
+  }
+
+  /* Portfolio + Courses -> single column */
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact: single column */
+  .contact-content-con {
+    grid-template-columns: 1fr;
+  }
+
+  .main-title h2 {
+    font-size: 2.4rem;
+
+    .bg-text {
+      font-size: 3rem;
+    }
+  }
+}
+
+/* 600px and down */
+@media screen and (max-width: 600px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    padding-bottom: 6rem;
+  }
+
+  /* Her er det ok å "låse" padding hvis du vil ha strammere mobil */
+  :root {
+    --section-pad-y: 2rem;
+    --section-pad-x: 2.2rem;
+  }
+
+  .main-title h2 {
+    font-size: 2rem;
+
+    .bg-text {
+      font-size: 2.5rem;
+    }
+  }
+}

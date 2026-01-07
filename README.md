@@ -1,37 +1,40 @@
 # Portfolio – Philip Elias Fleischer
 
-## About Me
-Bachelor in Informatics (Programming & System Architecture).
-Interested in software development, networking, and systems.
+This repository contains the source code for my personal portfolio website.
+
+**Live site:**
+https://philipfleischer.github.io/Portfolio/
 
 ---
 
-## Featured Projects
+## About
 
-### Full-Stack Web Application
-**Tech:** JavaScript, Node.js, Express, PostgreSQL  
-**Description:** Built a full CRUD web application with authentication and REST API.  
-https://github.com/username/fullstack-app
+I am a Computer Science student at the University of Oslo, focusing on systems programming, networking, and backend development.
+This portfolio showcases selected projects, skills, and contact information.
 
 ---
 
-### The Odin Project – JavaScript Path
-**Tech:** HTML, CSS, JavaScript  
-**Description:** Collection of front-end projects focused on fundamentals and clean code.
-- Recipes
-- Landing Page
-- Calculator  
-https://github.com/username/odin-recipes  
-https://github.com/username/odin-calculator
+## Tech Stack
+
+- HTML5
+- SCSS / CSS
+- JavaScript
+- GitHub Pages
 
 ---
 
-### Networking & Systems Labs
-**Tech:** Linux, Networking, Terraform (intro)  
-**Description:** Small labs exploring networking concepts and infrastructure basics.  
-https://github.com/username/networking-lab
+## Structure
+
+- index.html – main entry point
+- styles/ – styling (SCSS/CSS)
+- app.js – client-side logic and navigation
+- assets/ – images and documents (e.g. CV)
 
 ---
 
-## Other Repositories
-Additional learning repositories and experiments can be found on my GitHub profile.
+## Projects
+
+Selected projects are presented on the live portfolio website.
+For the full list of repositories, see my GitHub profile:
+
+https://github.com/philipfleischer

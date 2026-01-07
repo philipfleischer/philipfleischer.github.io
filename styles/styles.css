@@ -38,6 +38,10 @@
   --color-grey-6: #12181b;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-primary);
   font-family: "Poppins", sans-serif;
@@ -206,7 +210,9 @@ header.section {
   pointer-events: none;
 }
 
-/*Header-content*/
+/* =========================
+  HEADER-CONTENT
+   ========================= */
 .header-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -242,10 +248,7 @@ header.section {
   -o-object-fit: cover;
      object-fit: cover;
   transition: all 0.4s ease-in-out;
-  filter: grayscale(100%);
-}
-.header-content .left-header .image img:hover {
-  filter: grayscale(0);
+  filter: none;
 }
 .header-content .right-header {
   display: flex;
@@ -330,7 +333,7 @@ header.section {
 }
   */
 /* =========================
-   ABOUT (layout)
+  ABOUT (layout)
    ========================= */
 .about-container {
   display: grid;
@@ -349,13 +352,12 @@ header.section {
 }
 
 /* =========================
-   ABOUT STATS (container)
+  ABOUT STATS (container)
    ========================= */
 .about-stats {
   padding-bottom: 4rem;
 }
 
-/* Keep your old progress bars CSS if you want, but they are hidden in HTML anyway */
 .about-stats .progress-bars {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -408,7 +410,7 @@ header.section {
 }
 
 /* =========================
-   MY SKILLS (cards + tags + instant tooltip)
+  MY SKILLS (cards + tags + instant tooltip)
    ========================= */
 /* My Skills grid: prevent equal-height rows */
 .about-stats .skills-grid {
@@ -416,9 +418,9 @@ header.section {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
-  align-items: start; /* stop stretching items */
-  align-content: start; /* stop stretching tracks */
-  grid-auto-rows: min-content; /* make each row as tall as needed */
+  align-items: start;
+  align-content: start;
+  grid-auto-rows: min-content;
 }
 
 @media (max-width: 900px) {
@@ -427,19 +429,19 @@ header.section {
   }
 }
 .about-stats .skills-card {
-  align-self: start; /* extra safety */
+  align-self: start;
   height: -moz-fit-content;
-  height: fit-content; /* extra safety */
+  height: fit-content;
 }
 
 .skills-card {
-  position: relative; /* helps stacking stability */
+  position: relative;
   background: var(--color-grey-5);
   border: 1px solid var(--color-grey-5);
   border-radius: 16px;
   padding: 1.25rem;
   box-shadow: var(--box-shadow-1);
-  overflow: visible; /* make sure tooltips are not clipped */
+  overflow: visible;
 }
 
 .skills-card__title {
@@ -527,7 +529,7 @@ header.section {
   z-index: 999;
 }
 
-/* Show tooltip on hover/focus */
+/* Show tooltip on hover */
 .skill-tag:hover::after,
 .skill-tag:focus::after {
   opacity: 1;
@@ -540,7 +542,7 @@ header.section {
   transform: translateX(-50%) translateY(0) rotate(45deg);
 }
 
-/* Your section divider title */
+/* Section divider title */
 .stat-title {
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -634,7 +636,7 @@ header.section {
 }
 
 /* =========================
-   PORTFOLIO (professional cards)
+  PORTFOLIO
    ========================= */
 .portfolio-intro {
   max-width: 980px;
@@ -656,7 +658,7 @@ header.section {
   flex-wrap: wrap;
 }
 
-/* Buttons (portfolio-only, so you can keep your existing .main-btn elsewhere) */
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -700,7 +702,6 @@ header.section {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
-  /* Important: prevents “same height rows” feeling */
   align-items: start;
 }
 
@@ -796,12 +797,144 @@ header.section {
   display: flex;
   gap: 0.6rem;
   flex-wrap: wrap;
-  /* pushes buttons to bottom if the card grows */
   margin-top: auto;
 }
 
+/* ===========================
+  Collapsible "Other projects"
+  ============================ */
+.portfolio-more {
+  max-width: 980px;
+  margin: 0 auto;
+  background: var(--color-grey-5);
+  border: 1px solid var(--color-grey-5);
+  border-radius: 16px;
+  box-shadow: var(--box-shadow-1);
+  overflow: hidden;
+}
+
+.portfolio-more__summary {
+  cursor: pointer;
+  padding: 1rem 1.2rem;
+  font-weight: 800;
+  color: var(--color-white);
+  list-style: none;
+}
+
+.portfolio-more__summary::-webkit-details-marker {
+  display: none;
+}
+
+.portfolio-more__summary::after {
+  content: "▾";
+  float: right;
+  opacity: 0.8;
+  transform: translateY(1px);
+}
+
+.portfolio-more[open] .portfolio-more__summary::after {
+  content: "▴";
+}
+
+.portfolio-more__content {
+  padding: 0 1.2rem 1.2rem;
+}
+
+.portfolio-more__hint {
+  margin: 0.4rem 0 1rem;
+  color: var(--color-grey-2);
+  line-height: 1.6rem;
+}
+
+/* ==================
+  Other projects List
+  =================== */
+.project-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.project-list__item {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr auto;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  background: var(--color-primary);
+  border: 1px solid var(--color-grey-4);
+}
+
+.project-list__name {
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.project-list__meta {
+  color: var(--color-grey-2);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.project-list__link {
+  font-weight: 800;
+  border-bottom: 1px solid transparent;
+}
+
+.project-list__link:hover {
+  border-bottom-color: var(--color-secondary);
+}
+
+@media (max-width: 700px) {
+  .portfolio-section-title {
+    text-align: center;
+  }
+  .project-list__item {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    align-items: start;
+  }
+  .project-list__link {
+    justify-self: start;
+  }
+}
+/* Sections stacked properly */
+.portfolio-sections {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.portfolio-block {
+  margin-top: 1.6rem;
+}
+
+.portfolio-divider {
+  width: 100%;
+  height: 1px;
+  margin: 2rem 0 1.4rem;
+  background: var(--color-grey-4);
+  opacity: 1;
+}
+
+.portfolio-more {
+  display: block;
+  width: 100%;
+  margin: 0 0 1rem;
+}
+
+.portfolio-more {
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 1100px) {
+  .portfolio-divider {
+    margin-top: 2.9rem;
+  }
+}
 /* =========================
-   COURSE WORK (professional cards)
+  COURSE WORK
    ========================= */
 .courses-intro {
   max-width: 980px;
@@ -909,6 +1042,142 @@ header.section {
   margin-top: auto;
 }
 
+/* ===========================
+  COURSEWORK sections + divider
+  ============================ */
+.courses-sections {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.courses-block {
+  margin-top: 1.6rem;
+}
+
+.courses-section-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+  color: var(--color-white);
+}
+
+.courses-divider {
+  width: 100%;
+  height: 1px;
+  margin: 2rem 0 1.4rem;
+  background: var(--color-grey-4);
+  opacity: 1;
+}
+
+/* ===========================
+  Collapsible "Other course work"
+  ============================ */
+.courses-more {
+  display: block;
+  width: 100%;
+  margin: 0 0 1rem;
+  margin-top: 0.6rem;
+  background: var(--color-grey-5);
+  border: 1px solid var(--color-grey-5);
+  border-radius: 16px;
+  box-shadow: var(--box-shadow-1);
+  overflow: hidden;
+}
+
+.courses-more__summary {
+  cursor: pointer;
+  padding: 1rem 1.2rem;
+  font-weight: 900;
+  color: var(--color-white);
+  list-style: none;
+}
+
+.courses-more__summary::-webkit-details-marker {
+  display: none;
+}
+
+.courses-more__summary::after {
+  content: "▾";
+  float: right;
+  opacity: 0.8;
+  transform: translateY(1px);
+}
+
+.courses-more[open] .courses-more__summary::after {
+  content: "▴";
+}
+
+.courses-more__content {
+  padding: 0 1.2rem 1.2rem;
+}
+
+.courses-more__hint {
+  margin: 0.4rem 0 1rem;
+  color: var(--color-grey-2);
+  line-height: 1.6rem;
+}
+
+/* ==================
+  Other course work list
+  =================== */
+.course-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.course-list__item {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr auto;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  background: var(--color-primary);
+  border: 1px solid var(--color-grey-4);
+}
+
+.course-list__name {
+  font-weight: 900;
+  color: var(--color-white);
+}
+
+.course-list__meta {
+  color: var(--color-grey-2);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.course-list__link {
+  font-weight: 900;
+  border-bottom: 1px solid transparent;
+}
+
+.course-list__link:hover {
+  border-bottom-color: var(--color-secondary);
+}
+
+@media (max-width: 700px) {
+  .courses-section-title {
+    text-align: center;
+  }
+  .course-list__item {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    align-items: start;
+  }
+  .course-list__link {
+    justify-self: start;
+  }
+}
+@media (max-width: 1100px) {
+  .courses-divider {
+    margin-top: 2.9rem;
+  }
+}
 /* =========================
    CONTACT (clean + professional)
    ========================= */

@@ -1,9 +1,9 @@
 const sections = document.querySelectorAll('.section');
-const controlsWrapper = document.querySelector('.controls'); // én container
+const controlsWrapper = document.querySelector('.controls');
 const themeBtn = document.querySelector('.theme-btn');
 
 function PageTransitions() {
-  // 1) Controls click (event delegation)
+  // Controls click
   if (controlsWrapper) {
     controlsWrapper.addEventListener('click', (e) => {
       const btn = e.target.closest('.control');
@@ -24,7 +24,7 @@ function PageTransitions() {
     });
   }
 
-  // 2) Toggle theme
+  // Toggle theme
   if (themeBtn) {
     themeBtn.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
@@ -32,13 +32,11 @@ function PageTransitions() {
   }
 }
 
-PageTransitions();
-
-// --- EmailJS ---
+// EmailJS
 if (window.emailjs) {
   emailjs.init('3K18TZ8aXoxyLCCBF');
 } else {
-  console.error('EmailJS SDK not loaded. Did you include the emailjs script tag?');
+  console.error('EmailJS not loaded');
 }
 const contactForm = document.getElementById('contactForm');
 const successMessage = document.getElementById('success-message');
@@ -91,5 +89,25 @@ if (contactForm) {
     }
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const autoScrollDetails = (detailsId) => {
+    const details = document.querySelector(detailsId);
+    if (!details) return;
+
+    const summary = details.querySelector('summary');
+    if (!summary) return;
+
+    summary.addEventListener('click', () => {
+      requestAnimationFrame(() => {
+        details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => window.scrollBy({ top: 80, behavior: 'smooth' }), 200);
+      });
+    });
+  };
+
+  autoScrollDetails('#other-projects');
+  autoScrollDetails('#other-coursework');
+});
 
 PageTransitions();

@@ -603,148 +603,210 @@
             cloud, and full-stack development. Each project includes a short summary and links to
             source code and demos.
           </p>
-
-          <div class="portfolio-actions" hidden>
-            <a
-              class="btn btn--ghost"
-              href="https://github.com/philipfleischer"
-              target="_blank"
-              rel="noopener"
-            >
-              View GitHub Profile
-            </a>
-            <!-- Optional: if you have a CV PDF -->
-            <!-- <a class="btn btn--primary" href="assets/Philip_Elias_CV.pdf" target="_blank" rel="noopener">Download CV</a> -->
-          </div>
         </div>
 
-        <div class="portfolio-grid">
-          <!-- Project 1 -->
-          <article class="project-card">
-            <div class="project-card__media">
-              <img src="img/docker.png" alt="Docker Course project thumbnail" loading="lazy" />
+        <div class="portfolio-sections">
+          <!-- ===== Featured Projects ===== -->
+          <div class="portfolio-block">
+            <h3 class="portfolio-section-title">Featured projects</h3>
+
+            <div class="portfolio-grid">
+              <!-- Project 1 -->
+              <article class="project-card">
+                <div class="project-card__media">
+                  <img src="img/docker.png" alt="Docker Course project thumbnail" loading="lazy" />
+                </div>
+
+                <div class="project-card__body">
+                  <header class="project-card__header">
+                    <h3 class="project-card__title">Docker Course Projects</h3>
+                    <p class="project-card__subtitle">
+                      Containerized environments, images, compose setups, and practical workflows
+                      for local dev.
+                    </p>
+                  </header>
+
+                  <ul class="project-tags" aria-label="Technologies used">
+                    <li class="tag">Docker</li>
+                    <li class="tag">Linux</li>
+                    <li class="tag">DevOps</li>
+                  </ul>
+
+                  <div class="project-links">
+                    <a
+                      class="btn btn--primary"
+                      href="https://github.com/philipfleischer/Docker-Course"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      GitHub Repo
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 2 -->
+              <article class="project-card">
+                <div class="project-card__media">
+                  <img src="img/course1.png" alt="Networking project thumbnail" loading="lazy" />
+                </div>
+
+                <div class="project-card__body">
+                  <header class="project-card__header">
+                    <h3 class="project-card__title">MIP Network Stack (IN3230)</h3>
+                    <p class="project-card__subtitle">
+                      Minimal IP-style stack with routing/forwarding, IPC, and tooling for network
+                      experiments.
+                    </p>
+                  </header>
+
+                  <ul class="project-tags" aria-label="Technologies used">
+                    <li class="tag">C</li>
+                    <li class="tag">Networking</li>
+                    <li class="tag">Linux</li>
+                  </ul>
+
+                  <div class="project-links">
+                    <a class="btn btn--primary" href="#" target="_blank" rel="noopener"
+                      >GitHub Repo</a
+                    >
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 3 -->
+              <article class="project-card">
+                <div class="project-card__media">
+                  <img src="img/docker.png" alt="Full-stack project thumbnail" loading="lazy" />
+                </div>
+
+                <div class="project-card__body">
+                  <header class="project-card__header">
+                    <h3 class="project-card__title">Full-Stack Web App (MERN)</h3>
+                    <p class="project-card__subtitle">
+                      End-to-end app with authentication, API, database, and a responsive frontend.
+                    </p>
+                  </header>
+
+                  <ul class="project-tags" aria-label="Technologies used">
+                    <li class="tag">TypeScript</li>
+                    <li class="tag">React</li>
+                    <li class="tag">Node</li>
+                    <li class="tag">MongoDB</li>
+                  </ul>
+
+                  <div class="project-links">
+                    <a class="btn btn--primary" href="#" target="_blank" rel="noopener"
+                      >GitHub Repo</a
+                    >
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project 4 -->
+              <article class="project-card">
+                <div class="project-card__media">
+                  <img src="img/course1.png" alt="Cloud project thumbnail" loading="lazy" />
+                </div>
+
+                <div class="project-card__body">
+                  <header class="project-card__header">
+                    <h3 class="project-card__title">Cloud + IaC Lab</h3>
+                    <p class="project-card__subtitle">
+                      Infrastructure as Code for repeatable deployments and learning cloud
+                      networking patterns.
+                    </p>
+                  </header>
+
+                  <ul class="project-tags" aria-label="Technologies used">
+                    <li class="tag">Terraform</li>
+                    <li class="tag">AWS</li>
+                    <li class="tag">Networking</li>
+                  </ul>
+
+                  <div class="project-links">
+                    <a class="btn btn--primary" href="#" target="_blank" rel="noopener"
+                      >GitHub Repo</a
+                    >
+                  </div>
+                </div>
+              </article>
             </div>
+          </div>
 
-            <div class="project-card__body">
-              <header class="project-card__header">
-                <h3 class="project-card__title">Docker Course Projects</h3>
-                <p class="project-card__subtitle">
-                  Containerized environments, images, compose setups, and practical workflows for
-                  local dev.
-                </p>
-              </header>
+          <!-- Divider -->
+          <div class="portfolio-divider" role="separator" aria-hidden="true"></div>
 
-              <ul class="project-tags" aria-label="Technologies used">
-                <li class="tag">Docker</li>
-                <li class="tag">Linux</li>
-                <li class="tag">DevOps</li>
+          <!-- ===== Other Projects (collapsible) ===== -->
+          <details class="portfolio-more" id="other-projects">
+            <summary class="portfolio-more__summary">Other projects (show all)</summary>
+
+            <div class="portfolio-more__content">
+              <p class="portfolio-more__hint">
+                Smaller projects, experiments, and learning repositories. For the full list, see
+                GitHub.
+              </p>
+
+              <ul class="project-list" aria-label="Other projects list">
+                <!-- Example entries (replace later) -->
+                <li class="project-list__item">
+                  <span class="project-list__name">Docker Course</span>
+                  <span class="project-list__meta">Lab</span>
+                  <a
+                    class="project-list__link"
+                    href="https://github.com/philipfleischer/Docker-Course"
+                    target="_blank"
+                    rel="noopener"
+                    >Repo</a
+                  >
+                </li>
+                <li class="project-list__item">
+                  <span class="project-list__name">Linux Lab Basics</span>
+                  <span class="project-list__meta">Linux · Bash</span>
+                  <a
+                    class="project-list__link"
+                    href="https://github.com/philipfleischer/Linux_Lab_Notes/tree/main"
+                    target="_blank"
+                    rel="noopener"
+                    >Repo</a
+                  >
+                </li>
+                <li class="project-list__item">
+                  <span class="project-list__name">Odin</span>
+                  <span class="project-list__meta">HTML · CSS</span>
+                  <a
+                    class="project-list__link"
+                    href="https://github.com/philipfleischer/Odin"
+                    target="_blank"
+                    rel="noopener"
+                    >Repo</a
+                  >
+                </li>
+                <li class="project-list__item">
+                  <span class="project-list__name">Odin Recipes</span>
+                  <span class="project-list__meta">HTML</span>
+                  <a
+                    class="project-list__link"
+                    href="https://github.com/philipfleischer/Odin_Recipe"
+                    target="_blank"
+                    rel="noopener"
+                    >Repo</a
+                  >
+                </li>
+                <li class="project-list__item">
+                  <span class="project-list__name">Odin Landing Page</span>
+                  <span class="project-list__meta">HTML · CSS</span>
+                  <a
+                    class="project-list__link"
+                    href="https://github.com/philipfleischer/Odin_Landing_Page"
+                    target="_blank"
+                    rel="noopener"
+                    >Repo</a
+                  >
+                </li>
               </ul>
-
-              <div class="project-links">
-                <a
-                  class="btn btn--primary"
-                  href="https://github.com/philipfleischer/Docker-Course"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  GitHub Repo
-                </a>
-                <!-- Optional demo link -->
-                <!-- <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Live Demo</a> -->
-              </div>
             </div>
-          </article>
-
-          <!-- Project 2 -->
-          <article class="project-card">
-            <div class="project-card__media">
-              <img src="img/course1.png" alt="Networking project thumbnail" loading="lazy" />
-            </div>
-
-            <div class="project-card__body">
-              <header class="project-card__header">
-                <h3 class="project-card__title">MIP Network Stack (IN3230)</h3>
-                <p class="project-card__subtitle">
-                  Minimal IP-style stack with routing/forwarding, IPC, and tooling for network
-                  experiments.
-                </p>
-              </header>
-
-              <ul class="project-tags" aria-label="Technologies used">
-                <li class="tag">C</li>
-                <li class="tag">Networking</li>
-                <li class="tag">Linux</li>
-              </ul>
-
-              <div class="project-links">
-                <!-- Hvis repo er privat, la linken stå men bytt til case study / writeup. -->
-                <a class="btn btn--primary" href="#" target="_blank" rel="noopener">GitHub Repo</a>
-                <!--
-                <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Write-up</a>
-                -->
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 3 -->
-          <article class="project-card">
-            <div class="project-card__media">
-              <img src="img/docker.png" alt="Full-stack project thumbnail" loading="lazy" />
-            </div>
-
-            <div class="project-card__body">
-              <header class="project-card__header">
-                <h3 class="project-card__title">Full-Stack Web App (MERN)</h3>
-                <p class="project-card__subtitle">
-                  End-to-end app with authentication, API, database, and a responsive frontend.
-                </p>
-              </header>
-
-              <ul class="project-tags" aria-label="Technologies used">
-                <li class="tag">TypeScript</li>
-                <li class="tag">React</li>
-                <li class="tag">Node</li>
-                <li class="tag">MongoDB</li>
-              </ul>
-
-              <div class="project-links">
-                <a class="btn btn--primary" href="#" target="_blank" rel="noopener">GitHub Repo</a>
-                <!--
-                <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Live Demo</a>
-                -->
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 4 (optional) -->
-          <article class="project-card">
-            <div class="project-card__media">
-              <img src="img/course1.png" alt="Cloud project thumbnail" loading="lazy" />
-            </div>
-
-            <div class="project-card__body">
-              <header class="project-card__header">
-                <h3 class="project-card__title">Cloud + IaC Lab</h3>
-                <p class="project-card__subtitle">
-                  Infrastructure as Code for repeatable deployments and learning cloud networking
-                  patterns.
-                </p>
-              </header>
-
-              <ul class="project-tags" aria-label="Technologies used">
-                <li class="tag">Terraform</li>
-                <li class="tag">AWS</li>
-                <li class="tag">Networking</li>
-              </ul>
-
-              <div class="project-links">
-                <a class="btn btn--primary" href="#" target="_blank" rel="noopener">GitHub Repo</a>
-                <!--
-                <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Notes</a>
-                -->
-              </div>
-            </div>
-          </article>
+          </details>
         </div>
       </section>
 
@@ -762,131 +824,386 @@
             </p>
           </div>
 
-          <div class="courses-grid">
-            <!-- Course 1 -->
-            <article class="course-card">
-              <div class="course-card__media">
-                <img src="img/course1.png" alt="IN3230 project thumbnail" loading="lazy" />
+          <div class="courses-sections">
+            <!-- ===== Featured Course Work ===== -->
+            <div class="courses-block">
+              <h3 class="courses-section-title">Featured course work</h3>
+
+              <div class="courses-grid">
+                <!-- Course 1 -->
+                <article class="course-card">
+                  <div class="course-card__media">
+                    <img src="img/course1.png" alt="IN3230 project thumbnail" loading="lazy" />
+                  </div>
+
+                  <div class="course-card__body">
+                    <header class="course-card__header">
+                      <h3 class="course-card__title">IN3230 — MIP Network Stack (C)</h3>
+                      <p class="course-card__subtitle">
+                        Built a minimal IP-style stack with a MIP daemon + routing daemon,
+                        IPC,forwarding, and tooling for network experiments. Built on earlier MIP
+                        daemon assignment.
+                      </p>
+                    </header>
+
+                    <ul class="course-tags" aria-label="Topics">
+                      <li class="tag">C</li>
+                      <li class="tag">Networking</li>
+                      <li class="tag">Routing</li>
+                      <li class="tag">Linux</li>
+                    </ul>
+
+                    <div class="course-links">
+                      <a
+                        class="btn btn--primary"
+                        href="https://github.com/philipfleischer/Networks/tree/main/IP_Routing_Project"
+                        target="_blank"
+                        rel="noopener"
+                        >GitHub Repo</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Course 2 -->
+                <article class="course-card">
+                  <div class="course-card__media">
+                    <img src="img/course1.png" alt="IN2140 project thumbnail" loading="lazy" />
+                  </div>
+
+                  <div class="course-card__body">
+                    <header class="course-card__header">
+                      <h3 class="course-card__title">IN2140 — OS & Networking (C)</h3>
+                      <p class="course-card__subtitle">
+                        Coursework focused on low-level programming, protocols, and systems concepts
+                        (e.g. I/O, processes, concurrency, and debugging).
+                      </p>
+                    </header>
+
+                    <ul class="course-tags" aria-label="Topics">
+                      <li class="tag">C</li>
+                      <li class="tag">Systems</li>
+                      <li class="tag">CMake</li>
+                    </ul>
+
+                    <div class="course-links">
+                      <a
+                        class="btn btn--primary"
+                        href="https://github.com/philipfleischer/OS-DataCommunication/tree/main/HomeExam"
+                        target="_blank"
+                        rel="noopener"
+                        >GitHub Repo</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Course 3 -->
+                <article class="course-card">
+                  <div class="course-card__media">
+                    <img src="img/course1.png" alt="IN3130 project thumbnail" loading="lazy" />
+                  </div>
+
+                  <div class="course-card__body">
+                    <header class="course-card__header">
+                      <h3 class="course-card__title">
+                        IN3130 — Complexity and Algorithms (Python)
+                      </h3>
+                      <p class="course-card__subtitle">
+                        Implemented and analyzed algorithms and data structures with focus on
+                        correctness, complexity, and clean implementations.
+                      </p>
+                    </header>
+
+                    <ul class="course-tags" aria-label="Topics">
+                      <li class="tag">Algorithms</li>
+                      <li class="tag">Complexity</li>
+                      <li class="tag">Python</li>
+                    </ul>
+
+                    <div class="course-links">
+                      <a
+                        class="btn btn--primary"
+                        href="https://github.com/philipfleischer/Algorithms-Design-and-efficiency"
+                        target="_blank"
+                        rel="noopener"
+                        >GitHub Repo</a
+                      >
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Course 4 -->
+                <article class="course-card">
+                  <div class="course-card__media">
+                    <img src="img/course1.png" alt="IN2000 project thumbnail" loading="lazy" />
+                  </div>
+
+                  <div class="course-card__body">
+                    <header class="course-card__header">
+                      <h3 class="course-card__title">IN2000 — Android Weather App (Kotlin)</h3>
+                      <p class="course-card__subtitle">
+                        Team project building a modern Android app with API integration, MVVM
+                        architecture, and interactive map-based features.
+                      </p>
+                    </header>
+
+                    <ul class="course-tags" aria-label="Topics">
+                      <li class="tag">Kotlin</li>
+                      <li class="tag">Jetpack Compose</li>
+                      <li class="tag">APIs</li>
+                      <li class="tag">MapLibre</li>
+                    </ul>
+
+                    <div class="course-links">
+                      <a
+                        class="btn btn--primary"
+                        href="https://github.com/philipfleischer/Weather-Map-Application"
+                        target="_blank"
+                        rel="noopener"
+                        >GitHub Repo</a
+                      >
+                    </div>
+                  </div>
+                </article>
+                <!-- Course 5 -->
+                <article class="course-card">
+                  <div class="course-card__media">
+                    <img src="img/course1.png" alt="IN1910 project thumbnail" loading="lazy" />
+                  </div>
+
+                  <div class="course-card__body">
+                    <header class="course-card__header">
+                      <h3 class="course-card__title">
+                        IN1910 — Scientific Programming Projects (Python)
+                      </h3>
+                      <p class="course-card__subtitle">
+                        Consists of 4 programming projects: Version control with Git/GitHub, OOP,
+                        Simulations, Numerics, Design. Detailed explanations in the GitHub
+                        Repository.
+                      </p>
+                    </header>
+
+                    <ul class="course-tags" aria-label="Topics">
+                      <li class="tag">Python</li>
+                      <li class="tag">OOP</li>
+                      <li class="tag">Pytest</li>
+                      <li class="tag">Mypy</li>
+                    </ul>
+
+                    <div class="course-links">
+                      <a
+                        class="btn btn--primary"
+                        href="https://github.com/philipfleischer/Object-oriented-Programming"
+                        target="_blank"
+                        rel="noopener"
+                        >GitHub Repo</a
+                      >
+                    </div>
+                  </div>
+                </article>
+                <!-- Course 6 -->
+                <article class="course-card">
+                  <div class="course-card__media">
+                    <img src="img/course1.png" alt="IN1910 project thumbnail" loading="lazy" />
+                  </div>
+
+                  <div class="course-card__body">
+                    <header class="course-card__header">
+                      <h3 class="course-card__title">
+                        IN2010 — Algorithms & Data-Structures (Python)
+                      </h3>
+                      <p class="course-card__subtitle">
+                        This course covers fundamental algorithms and data structures with a strong
+                        focus on correctness, efficiency, and real-world performance. The repository
+                        contains five graded submissions and personal notes.
+                      </p>
+                    </header>
+
+                    <ul class="course-tags" aria-label="Topics">
+                      <li class="tag">Python</li>
+                      <li class="tag">Algorithms</li>
+                      <li class="tag">Data Structures</li>
+                      <li class="tag">Graphs</li>
+                      <li class="tag">Trees</li>
+                      <li class="tag">Performance</li>
+                    </ul>
+
+                    <div class="course-links">
+                      <a
+                        class="btn btn--primary"
+                        href="https://github.com/philipfleischer/Algorithms-and-Data-Structures/tree/main"
+                        target="_blank"
+                        rel="noopener"
+                        >GitHub Repo</a
+                      >
+                    </div>
+                  </div>
+                </article>
               </div>
+            </div>
 
-              <div class="course-card__body">
-                <header class="course-card__header">
-                  <h3 class="course-card__title">IN3230 — MIP Network Stack (C)</h3>
-                  <p class="course-card__subtitle">
-                    Built a minimal IP-style stack with a MIP daemon + routing daemon, IPC,
-                    forwarding, and tooling for network experiments.
-                  </p>
-                </header>
+            <!-- Divider -->
+            <div class="courses-divider" role="separator" aria-hidden="true"></div>
 
-                <ul class="course-tags" aria-label="Topics">
-                  <li class="tag">C</li>
-                  <li class="tag">Networking</li>
-                  <li class="tag">Routing</li>
-                  <li class="tag">Linux</li>
+            <!-- ===== Other Course Work (collapsible) ===== -->
+            <details class="courses-more" id="other-coursework">
+              <summary class="courses-more__summary">Other course work (show all)</summary>
+
+              <div class="courses-more__content">
+                <p class="courses-more__hint">
+                  Additional assignments and smaller course projects.
+                </p>
+
+                <ul class="course-list" aria-label="Other course work list">
+                  <!-- Example entries (replace later) -->
+                  <li class="course-list__item">
+                    <span class="course-list__name">IN3230 — Minimal IP stack</span>
+                    <span class="course-list__meta">C · Systems</span>
+                    <a
+                      class="course-list__link"
+                      href="https://github.com/philipfleischer/Networks/tree/main/IP_Project"
+                      target="_blank"
+                      rel="noopener"
+                      >Repo</a
+                    >
+                  </li>
+
+                  <li class="course-list__item">
+                    <span class="course-list__name">IN3230 — Networks</span>
+                    <span class="course-list__meta">C · Systems</span>
+                    <a
+                      class="course-list__link"
+                      href="https://github.com/philipfleischer/Networks"
+                      target="_blank"
+                      rel="noopener"
+                      >Repo</a
+                    >
+                  </li>
+                  <!-- Project1 IN2010 -->
+                  <li class="course-list__item">
+                    <span class="course-list__name">IN2010 — AlgDat Project 1</span>
+                    <span class="course-list__meta">Python/Java · Algorithms</span>
+                    <a
+                      class="course-list__link"
+                      href="https://github.com/philipfleischer/Algorithms-and-Data-Structures/tree/main/oblig1"
+                      target="_blank"
+                      rel="noopener"
+                      >Repo</a
+                    >
+                  </li>
+                  <!-- Project2 IN2010 -->
+                  <li class="course-list__item">
+                    <span class="course-list__name">IN2010 — AlgDat Project 2</span>
+                    <span class="course-list__meta">Python/Java · Algorithms</span>
+                    <a
+                      class="course-list__link"
+                      href="https://github.com/philipfleischer/Algorithms-and-Data-Structures/tree/main/oblig2"
+                      target="_blank"
+                      rel="noopener"
+                      >Repo</a
+                    >
+                  </li>
+                  <!-- Project3 IN2010 -->
+                  <li class="course-list__item">
+                    <span class="course-list__name">IN2010 — AlgDat Project 3</span>
+                    <span class="course-list__meta">Python/Java · Algorithms</span>
+                    <a
+                      class="course-list__link"
+                      href="https://github.com/philipfleischer/Algorithms-and-Data-Structures/tree/main/oblig3"
+                      target="_blank"
+                      rel="noopener"
+                      >Repo</a
+                    >
+                  </li>
+                  <!-- Project4 IN2010 -->
+                  <li class="course-list__item">
+                    <span class="course-list__name">IN2010 — AlgDat Project 4</span>
+                    <span class="course-list__meta">Python/Java · Algorithms</span>
+                    <a
+                      class="course-list__link"
+                      href="https://github.com/philipfleischer/Algorithms-and-Data-Structures/tree/main/oblig4"
+                      target="_blank"
+                      rel="noopener"
+                      >Repo</a
+                    >
+                  </li>
+                  <!-- Project5 IN2010 -->
+                  <li class="course-list__item">
+                    <span class="course-list__name">IN2010 — AlgDat Project 5</span>
+                    <span class="course-list__meta">Python/Java · Algorithms</span>
+                    <a
+                      class="course-list__link"
+                      href="https://github.com/philipfleischer/Algorithms-and-Data-Structures/tree/main/oblig5"
+                      target="_blank"
+                      rel="noopener"
+                      >Repo</a
+                    >
+                  </li>
+                  <!-- Project0 IN1910 -->
+                  <li class="course-list__item">
+                    <span class="course-list__name">IN1910 — OOP Project 0</span>
+                    <span class="course-list__meta">Python · Project</span>
+                    <a
+                      class="course-list__link"
+                      href="https://github.com/philipfleischer/Object-oriented-Programming/tree/main/Projects/project0"
+                      target="_blank"
+                      rel="noopener"
+                      >Repo</a
+                    >
+                  </li>
+                  </li>
+                  <!-- Project1 IN1910 -->
+                  <li class="course-list__item">
+                    <span class="course-list__name">IN1910 — OOP Project 1</span>
+                    <span class="course-list__meta">Python · Project</span>
+                    <a
+                      class="course-list__link"
+                      href="https://github.com/philipfleischer/Object-oriented-Programming/tree/main/Projects/project1"
+                      target="_blank"
+                      rel="noopener"
+                      >Repo</a
+                    >
+                  </li>
+                  <!-- Project2 IN1910 -->
+                  <li class="course-list__item">
+                    <span class="course-list__name">IN1910 — OOP Project 2</span>
+                    <span class="course-list__meta">Python · Project</span>
+                    <a
+                      class="course-list__link"
+                      href="https://github.com/philipfleischer/Object-oriented-Programming/tree/main/Projects/project2"
+                      target="_blank"
+                      rel="noopener"
+                      >Repo</a
+                    >
+                  </li>
+                  <!-- Project3 IN1910 -->
+                  <li class="course-list__item">
+                    <span class="course-list__name">IN1910 — OOP Project 3</span>
+                    <span class="course-list__meta">Python · Project</span>
+                    <a
+                      class="course-list__link"
+                      href="https://github.com/philipfleischer/Object-oriented-Programming/tree/main/Projects/project3"
+                      target="_blank"
+                      rel="noopener"
+                      >Repo</a
+                    >
+                  </li>
+                  <!-- IN2120 Notes -->
+                  <li class="course-list__item">
+                    <span class="course-list__name">IN2120 — Security Introduction</span>
+                    <span class="course-list__meta">Security · Notes</span>
+                    <a
+                      class="course-list__link"
+                      href="https://github.com/philipfleischer/Security_Introduction"
+                      target="_blank"
+                      rel="noopener"
+                      >Repo</a
+                    >
+                  </li>
                 </ul>
-
-                <div class="course-links">
-                  <!-- If repo is public -->
-                  <a class="btn btn--primary" href="#" target="_blank" rel="noopener"
-                    >GitHub Repo</a
-                  >
-                  <!-- Optional -->
-                  <!-- <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">Write-up</a> -->
-                </div>
               </div>
-            </article>
-
-            <!-- Course 2 -->
-            <article class="course-card">
-              <div class="course-card__media">
-                <img src="img/course1.png" alt="IN2140 project thumbnail" loading="lazy" />
-              </div>
-
-              <div class="course-card__body">
-                <header class="course-card__header">
-                  <h3 class="course-card__title">IN2140 — OS & Networking (C)</h3>
-                  <p class="course-card__subtitle">
-                    Coursework focused on low-level programming, protocols, and systems concepts
-                    (e.g. I/O, processes, concurrency, and debugging).
-                  </p>
-                </header>
-
-                <ul class="course-tags" aria-label="Topics">
-                  <li class="tag">C</li>
-                  <li class="tag">Systems</li>
-                  <li class="tag">Debugging</li>
-                </ul>
-
-                <div class="course-links">
-                  <a class="btn btn--primary" href="#" target="_blank" rel="noopener"
-                    >GitHub Repo</a
-                  >
-                </div>
-              </div>
-            </article>
-
-            <!-- Course 3 -->
-            <article class="course-card">
-              <div class="course-card__media">
-                <img src="img/course1.png" alt="IN3130 project thumbnail" loading="lazy" />
-              </div>
-
-              <div class="course-card__body">
-                <header class="course-card__header">
-                  <h3 class="course-card__title">IN3130 — Algorithms (Python/C++)</h3>
-                  <p class="course-card__subtitle">
-                    Implemented and analyzed algorithms and data structures with focus on
-                    correctness, complexity, and clean implementations.
-                  </p>
-                </header>
-
-                <ul class="course-tags" aria-label="Topics">
-                  <li class="tag">Algorithms</li>
-                  <li class="tag">Complexity</li>
-                  <li class="tag">Python</li>
-                  <li class="tag">C++</li>
-                </ul>
-
-                <div class="course-links">
-                  <a class="btn btn--primary" href="#" target="_blank" rel="noopener"
-                    >GitHub Repo</a
-                  >
-                </div>
-              </div>
-            </article>
-
-            <!-- Course 4 -->
-            <article class="course-card">
-              <div class="course-card__media">
-                <img src="img/course1.png" alt="IN2000 project thumbnail" loading="lazy" />
-              </div>
-
-              <div class="course-card__body">
-                <header class="course-card__header">
-                  <h3 class="course-card__title">IN2000 — Android Weather App (Kotlin)</h3>
-                  <p class="course-card__subtitle">
-                    Team project building a modern Android app with API integration, MVVM
-                    architecture, and interactive map-based features.
-                  </p>
-                </header>
-
-                <ul class="course-tags" aria-label="Topics">
-                  <li class="tag">Kotlin</li>
-                  <li class="tag">Jetpack Compose</li>
-                  <li class="tag">APIs</li>
-                  <li class="tag">MapLibre</li>
-                </ul>
-
-                <div class="course-links">
-                  <!-- If public -->
-                  <a class="btn btn--primary" href="#" target="_blank" rel="noopener"
-                    >GitHub Repo</a
-                  >
-                </div>
-              </div>
-            </article>
-
-            <!-- Legg til flere kort etter samme mønster -->
+            </details>
           </div>
         </div>
       </section>

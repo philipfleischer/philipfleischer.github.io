@@ -25,7 +25,7 @@
         <div class="left-header">
           <div class="h-shape"></div>
           <div class="image">
-            <img src="img/Prof_pic_drawn1.jpg" alt="Man in suit" width="400" height="600" />
+            <img src="img/Profile_pic.png" alt="Man in suit" width="400" height="600" />
           </div>
         </div>
         <div class="right-header">
@@ -79,13 +79,11 @@
             </p>
 
             <div class="btn-con">
-              <!-- Replace href with your real CV file path, e.g. "assets/Philip_Elias_Fleischer_CV.pdf" -->
               <a href="assets/Philip_Elias_CV.pdf" class="main-btn" target="_blank" rel="noopener">
                 <span class="btn-text">Download CV</span>
                 <span class="btn-icon"><i class="fas fa-download"></i></span>
               </a>
 
-              <!-- Optional: add quick links (remove if you don't want) -->
               <a
                 href="https://github.com/philipfleischer"
                 class="main-btn"
@@ -99,7 +97,7 @@
             </div>
           </div>
 
-          <!-- Keep hidden until you want to show it -->
+          <!-- Keep hidden until more experienced -->
           <div class="right-about" hidden>
             <div class="about-item">
               <div class="abt-text">
@@ -614,7 +612,7 @@
               <!-- Project 1 -->
               <article class="project-card">
                 <div class="project-card__media">
-                  <img src="img/Notes.png" alt="MERN Notes app" loading="lazy" />
+                  <img src="img/Notes_preview.png" alt="MERN Notes app" loading="lazy" />
                 </div>
 
                 <div class="project-card__body">
@@ -636,6 +634,7 @@
                     <li class="tag">Render</li>
                     <li class="tag">Tailwind</li>
                     <li class="tag">DaisyUI</li>
+                    <li class="tag">TypeScript</li>
                   </ul>
 
                   <div class="project-links">
@@ -654,6 +653,55 @@
                       rel="noopener"
                     >
                       Web-Site
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Project TODO -->
+              <article class="project-card">
+                <div class="project-card__media">
+                  <img src="img/Todo-Preview.png" alt="SvelteKit Todo app" loading="lazy" />
+                </div>
+
+                <div class="project-card__body">
+                  <header class="project-card__header">
+                    <h3 class="project-card__title">Full-stack Todo App</h3>
+                    <p class="project-card__subtitle">
+                      Full-stack Todo application built with SvelteKit and PostgreSQL, featuring a modern UI,
+                      persistent data storage, and production-ready deployment on Vercel.
+                    </p>
+                  </header>
+
+                  <ul class="project-tags" aria-label="Technologies used">
+                    <li class="tag">SvelteKit</li>
+                    <li class="tag">Vite</li>
+                    <li class="tag">HTML</li>
+                    <li class="tag">CSS</li>
+                    <li class="tag">PostgreSQL</li>
+                    <li class="tag">Prisma ORM</li>
+                    <li class="tag">Neon</li>
+                    <li class="tag">Vercel</li>
+                    <li class="tag">Full-stack</li>
+                    <li class="tag">TypeScript</li>
+                  </ul>
+
+                  <div class="project-links">
+                    <a
+                      class="btn btn--primary"
+                      href="https://github.com/philipfleischer/TODO"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      GitHub Repo
+                    </a>
+                    <a
+                      class="btn btn--primary"
+                      href="https://todo-of7e.vercel.app/"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Live Demo
                     </a>
                   </div>
                 </div>
@@ -688,63 +736,52 @@
                 </div>
               </article>
 
-              <!-- Project 3 -->
+              <!-- Project Data Engineering -->
               <article class="project-card">
                 <div class="project-card__media">
-                  <img src="img/docker.png" alt="Full-stack project thumbnail" loading="lazy" />
+                  <img
+                    src="img/Dat_ENG.jpg"
+                    alt="Data Engineering pipeline project"
+                    loading="lazy"
+                  />
                 </div>
 
                 <div class="project-card__body">
                   <header class="project-card__header">
-                    <h3 class="project-card__title">Full-Stack Web App (MERN)</h3>
+                    <h3 class="project-card__title">Data Engineering Pipeline Project</h3>
                     <p class="project-card__subtitle">
-                      End-to-end app with authentication, API, database, and a responsive frontend.
+                      Comprehensive data engineering project focused on building scalable ELT pipelines using batch and streaming architectures. Includes orchestration with Airflow, batch processing with Spark, and real-time streaming with Kafka, all containerized using Docker.
                     </p>
                   </header>
 
                   <ul class="project-tags" aria-label="Technologies used">
-                    <li class="tag">TypeScript</li>
-                    <li class="tag">React</li>
-                    <li class="tag">Node</li>
-                    <li class="tag">MongoDB</li>
+                    <li class="tag">Data Engineering</li>
+                    <li class="tag">ELT</li>
+                    <li class="tag">Apache Airflow</li>
+                    <li class="tag">Apache Spark</li>
+                    <li class="tag">Apache Kafka</li>
+                    <li class="tag">PostgreSQL</li>
+                    <li class="tag">Docker</li>
+                    <li class="tag">Python</li>
+                    <li class="tag">Shell</li>
+                    <li class="tag">JavaScript</li>
+                    <li class="tag">HTML</li>
+                    <li class="tag">CSS</li>
                   </ul>
 
                   <div class="project-links">
-                    <a class="btn btn--primary" href="#" target="_blank" rel="noopener"
-                      >GitHub Repo</a
+                    <a
+                      class="btn btn--primary"
+                      href="https://github.com/philipfleischer/Data-Engineering"
+                      target="_blank"
+                      rel="noopener"
                     >
+                      GitHub Repo
+                    </a>
                   </div>
                 </div>
               </article>
 
-              <!-- Project 4 -->
-              <article class="project-card">
-                <div class="project-card__media">
-                  <img src="img/course1.png" alt="Cloud project thumbnail" loading="lazy" />
-                </div>
-
-                <div class="project-card__body">
-                  <header class="project-card__header">
-                    <h3 class="project-card__title">Cloud + IaC Lab</h3>
-                    <p class="project-card__subtitle">
-                      Infrastructure as Code for repeatable deployments and learning cloud
-                      networking patterns.
-                    </p>
-                  </header>
-
-                  <ul class="project-tags" aria-label="Technologies used">
-                    <li class="tag">Terraform</li>
-                    <li class="tag">AWS</li>
-                    <li class="tag">Networking</li>
-                  </ul>
-
-                  <div class="project-links">
-                    <a class="btn btn--primary" href="#" target="_blank" rel="noopener"
-                      >GitHub Repo</a
-                    >
-                  </div>
-                </div>
-              </article>
 
               <!-- Project 5 -->
               <article class="project-card">

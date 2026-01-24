@@ -39,6 +39,13 @@ For the full list of repositories, see my GitHub profile:
 
 https://github.com/philipfleischer
 
+---
+
+## Deployment
+
+Deployed my portfolio on netlify:
+https://app.netlify.com/teams/philipfleischer/projects
+
 ## Acknowledgements
 
 The design and foundational ideas for this portfolio were influenced by the concepts shared in this video:

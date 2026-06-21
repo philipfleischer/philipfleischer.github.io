@@ -1,0 +1,221 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Philip Fleischer — Portfolio',
+  description = 'CS student at UiO focused on systems, networking, cloud, and backend development.',
+} = Astro.props;
+
+const pathname = Astro.url.pathname;
+const isActive = (href: string) => {
+  if (href === '/') return pathname === '/';
+  return pathname.startsWith(href);
+};
+
+const nav = [
+  { href: '/',          icon: 'fa-house-chimney',  label: 'Home' },
+  { href: '/about',     icon: 'fa-regular fa-user', label: 'About' },
+  { href: '/portfolio', icon: 'fa-briefcase',        label: 'Portfolio' },
+  { href: '/courses',   icon: 'fa-regular fa-newspaper', label: 'Courses' },
+  { href: '/contact',   icon: 'fa-regular fa-address-card', label: 'Contact' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f8fafc" />
+    <!-- Apply stored theme before CSS renders to prevent flash -->
+    <script is:inline>
+      (function () {
+        const t = localStorage.getItem('pf-theme');
+        if (t === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          const m = document.querySelector('meta[name="theme-color"]');
+          if (m) m.setAttribute('content', '#0d1117');
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Theme toggle button -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">
+      <i class="fa-solid fa-moon" aria-hidden="true"></i>
+    </button>
+
+    <slot />
+
+    <!-- Bottom navigation -->
+    <nav class="bottom-nav" aria-label="Main navigation">
+      {nav.map(({ href, icon, label }) => (
+        <a
+          href={href}
+          class:list={['nav-item', { 'nav-item--active': isActive(href) }]}
+          aria-label={label}
+          aria-current={isActive(href) ? 'page' : undefined}
+          data-label={label}
+        >
+          <i class={`fa-solid ${icon}`} aria-hidden="true"></i>
+        </a>
+      ))}
+    </nav>
+  </body>
+</html>
+
+<script>
+  const toggle = document.getElementById('theme-toggle') as HTMLButtonElement | null;
+  const root = document.documentElement;
+
+  function applyTheme(theme: string) {
+    if (theme === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    } else {
+      root.removeAttribute('data-theme');
+    }
+    const icon = toggle?.querySelector('i');
+    if (icon) icon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    if (toggle) toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', theme === 'dark' ? '#0d1117' : '#f8fafc');
+  }
+
+  toggle?.addEventListener('click', () => {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    localStorage.setItem('pf-theme', next);
+    applyTheme(next);
+  });
+
+  // Sync icon with current theme on load
+  applyTheme(localStorage.getItem('pf-theme') || 'light');
+</script>
+
+<style lang="scss" is:global>
+  @use 'src/styles/global.scss';
+</style>
+
+<style lang="scss">
+  @use 'src/styles/variables' as *;
+
+  .theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 20px;
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    border-radius: $r-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $bg-2;
+    border: 1px solid $border;
+    color: $text-muted;
+    cursor: pointer;
+    transition: background $t-fast $ease, border-color $t-fast $ease,
+                color $t-fast $ease, transform $t-fast $ease;
+
+    i { font-size: 0.95rem; pointer-events: none; }
+
+    &:hover {
+      background: $bg-3;
+      border-color: $accent;
+      color: $accent;
+      transform: rotate(20deg);
+    }
+  }
+
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: $nav-h;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $sp-3;
+
+    background: var(--nav-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid $border-subtle;
+  }
+
+  .nav-item {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    border-radius: $r-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: $bg-3;
+    border: 1px solid $border-subtle;
+    color: $text-dim;
+    text-decoration: none;
+    transition: background $t-fast $ease, border-color $t-fast $ease,
+                color $t-fast $ease, transform $t-fast $ease;
+
+    i { font-size: 1.1rem; pointer-events: none; }
+
+    // Tooltip
+    &::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: $bg-3;
+      color: $text-muted;
+      border: 1px solid $border;
+      border-radius: $r;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity $t-fast $ease, transform $t-fast $ease;
+    }
+
+    &:hover {
+      background: $bg-2;
+      border-color: $border;
+      color: $text-muted;
+      transform: translateY(-2px);
+      text-decoration: none;
+      &::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    &--active {
+      background: $accent-subtle;
+      border-color: $accent;
+      color: $accent;
+
+      i { color: $accent; }
+    }
+  }
+</style>

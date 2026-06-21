@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import FilterBar from '../components/FilterBar.astro';
+import { getCollection } from 'astro:content';
+
+const allCourses = await getCollection('courses');
+const sorted = allCourses.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
+const allTopics = [...new Set(allCourses.flatMap(c => c.data.topics))].sort();
+---
+
+<Layout title="Courses — Philip Fleischer">
+  <main class="page-wrapper">
+
+    <header class="page-hero" style="padding-left:0;padding-right:0;">
+      <span class="section-eyebrow">Education</span>
+      <h1 class="section-title">Course Work</h1>
+      <p class="section-subtitle">
+        University course projects and assignments from UiO. Each card links to the
+        repository and a full write-up of what was covered, built, and learned.
+        Filter by topic to find relevant work.
+      </p>
+    </header>
+
+    <FilterBar topics={allTopics} id="course-filter" />
+
+    <div class="card-grid" id="course-grid">
+      {sorted.map(c => (
+        <Card
+          title={c.data.title}
+          subtitle={c.data.subtitle}
+          image={c.data.image}
+          tags={c.data.tags}
+          topics={c.data.topics}
+          links={c.data.links}
+          slug={c.slug}
+          detailPath={`/courses/${c.slug}`}
+        />
+      ))}
+    </div>
+
+    <!-- Other coursework list -->
+    <div class="divider" style="margin-top:2rem;"></div>
+
+    <details class="more-section">
+      <summary class="more-summary">Other assignments & sub-projects</summary>
+      <ul class="repo-list">
+        <li class="repo-item">
+          <span class="repo-name">IN3230 — Minimal IP stack</span>
+          <span class="repo-meta">C · Systems</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Networks/tree/main/IP_Project" target="_blank" rel="noopener">Repo →</a>
+        </li>
+        <li class="repo-item">
+          <span class="repo-name">IN2010 — AlgDat Project 1</span>
+          <span class="repo-meta">Python · Algorithms</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Algorithms-and-Data-Structures/tree/main/oblig1" target="_blank" rel="noopener">Repo →</a>
+        </li>
+        <li class="repo-item">
+          <span class="repo-name">IN2010 — AlgDat Project 2</span>
+          <span class="repo-meta">Python · Algorithms</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Algorithms-and-Data-Structures/tree/main/oblig2" target="_blank" rel="noopener">Repo →</a>
+        </li>
+        <li class="repo-item">
+          <span class="repo-name">IN2010 — AlgDat Project 3</span>
+          <span class="repo-meta">Python · Algorithms</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Algorithms-and-Data-Structures/tree/main/oblig3" target="_blank" rel="noopener">Repo →</a>
+        </li>
+        <li class="repo-item">
+          <span class="repo-name">IN2010 — AlgDat Project 4</span>
+          <span class="repo-meta">Python · Algorithms</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Algorithms-and-Data-Structures/tree/main/oblig4" target="_blank" rel="noopener">Repo →</a>
+        </li>
+        <li class="repo-item">
+          <span class="repo-name">IN2010 — AlgDat Project 5 (IMDB graph)</span>
+          <span class="repo-meta">Python · Algorithms</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Algorithms-and-Data-Structures/tree/main/oblig5" target="_blank" rel="noopener">Repo →</a>
+        </li>
+        <li class="repo-item">
+          <span class="repo-name">IN1910 — OOP Project 0</span>
+          <span class="repo-meta">Python · Project</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Object-oriented-Programming/tree/main/Projects/project0" target="_blank" rel="noopener">Repo →</a>
+        </li>
+        <li class="repo-item">
+          <span class="repo-name">IN1910 — OOP Project 1</span>
+          <span class="repo-meta">Python · Project</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Object-oriented-Programming/tree/main/Projects/project1" target="_blank" rel="noopener">Repo →</a>
+        </li>
+        <li class="repo-item">
+          <span class="repo-name">IN1910 — OOP Project 2</span>
+          <span class="repo-meta">Python · Project</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Object-oriented-Programming/tree/main/Projects/project2" target="_blank" rel="noopener">Repo →</a>
+        </li>
+        <li class="repo-item">
+          <span class="repo-name">IN1910 — OOP Project 3</span>
+          <span class="repo-meta">Python · Project</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Object-oriented-Programming/tree/main/Projects/project3" target="_blank" rel="noopener">Repo →</a>
+        </li>
+      </ul>
+    </details>
+
+  </main>
+</Layout>
+
+<script>
+  import { initFilter } from '../scripts/filter';
+  initFilter('course-filter', '#course-grid');
+</script>
+
+<style lang="scss">
+  @use 'src/styles/variables' as *;
+
+  .more-section {
+    background: $bg-2;
+    border: 1px solid $border-subtle;
+    border-radius: $r-lg;
+    margin-bottom: $sp-8;
+  }
+
+  .more-summary {
+    cursor: pointer;
+    padding: $sp-4 $sp-5;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: $text-muted;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &::-webkit-details-marker { display: none; }
+    &::after { content: '▾'; opacity: 0.6; }
+  }
+
+  details[open] .more-summary::after { content: '▴'; }
+
+  .repo-list {
+    padding: $sp-2 $sp-5 $sp-5;
+    display: grid;
+    gap: $sp-2;
+  }
+
+  .repo-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: $sp-4;
+    align-items: center;
+    padding: $sp-3 $sp-4;
+    border-radius: $r;
+    background: $bg-3;
+    border: 1px solid $border-subtle;
+
+    @media (max-width: 540px) { grid-template-columns: 1fr; gap: $sp-1; }
+  }
+
+  .repo-name { font-weight: 700; font-size: 0.9rem; color: $text; }
+  .repo-meta { font-size: 0.8rem; color: $text-dim; font-family: $font-mono; }
+  .repo-link { font-size: 0.85rem; font-weight: 700; color: $accent; text-decoration: none; &:hover { text-decoration: underline; } }
+</style>

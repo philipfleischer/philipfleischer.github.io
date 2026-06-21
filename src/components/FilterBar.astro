@@ -1,0 +1,62 @@
+---
+export interface Props {
+  topics: string[];
+  id?: string;
+}
+const { topics, id = 'filter' } = Astro.props;
+---
+
+<div class="filter-bar" id={id} role="group" aria-label="Filter by topic">
+  <button class="filter-pill filter-pill--active" data-filter="all">All</button>
+  {topics.map(topic => (
+    <button class="filter-pill" data-filter={topic}>{topic}</button>
+  ))}
+</div>
+
+<p class="filter-empty" id={`${id}-empty`} hidden>
+  No items match the selected filters.
+</p>
+
+<style lang="scss">
+  @use 'src/styles/variables' as *;
+
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $sp-2;
+    margin-bottom: $sp-6;
+  }
+
+  .filter-pill {
+    padding: 0.4rem 0.9rem;
+    border-radius: $r-full;
+    border: 1px solid $border;
+    background: $bg-2;
+    color: $text-muted;
+    font-family: $font;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background $t-fast $ease, border-color $t-fast $ease,
+                color $t-fast $ease, transform $t-fast $ease;
+
+    &:hover {
+      border-color: $accent;
+      color: $accent;
+      transform: translateY(-1px);
+    }
+
+    &--active {
+      background: $accent-subtle;
+      border-color: $accent;
+      color: $accent;
+    }
+  }
+
+  .filter-empty {
+    text-align: center;
+    padding: $sp-12;
+    color: $text-dim;
+    font-size: 0.95rem;
+  }
+</style>

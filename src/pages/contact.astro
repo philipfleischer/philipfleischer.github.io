@@ -1,0 +1,313 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact — Philip Fleischer">
+  <main class="page-wrapper">
+
+    <header class="page-hero" style="padding-left:0;padding-right:0;">
+      <span class="section-eyebrow">Reach out</span>
+      <h1 class="section-title">Contact</h1>
+      <p class="section-subtitle">
+        The easiest way to reach me is by <strong>text message</strong>. I also check
+        email every morning and usually reply within 24–48 hours.
+      </p>
+    </header>
+
+    <div class="contact-layout">
+
+      <!-- Left: info -->
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+            <div class="ci-body">
+              <span class="ci-label">Phone</span>
+              <div class="ci-value">
+                <a href="tel:+4790286040">+47 902 86 040</a>
+                <span class="ci-sep">·</span>
+                <a href="sms:+4790286040">Send SMS</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+            <div class="ci-body">
+              <span class="ci-label">Email</span>
+              <div class="ci-value">
+                <a href="mailto:fleischer1@live.no">fleischer1@live.no</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+            <div class="ci-body">
+              <span class="ci-label">Location</span>
+              <div class="ci-value">Oslo, Norway</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></div>
+            <div class="ci-body">
+              <span class="ci-label">Languages</span>
+              <div class="ci-value">Norwegian, English</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <a
+            href="https://github.com/philipfleischer"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github" aria-hidden="true"></i>
+            <span>GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/philip-fleischer-ab9439229/"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="contact-form-wrap">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" required placeholder="Your name" autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" required placeholder="your@email.com" autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input id="subject" type="text" required placeholder="What's this about?" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" rows="7" required placeholder="Your message…"></textarea>
+          </div>
+          <button type="submit" class="btn-primary submit-btn" id="submitBtn">
+            <i class="fa-solid fa-paper-plane fa-sm" aria-hidden="true"></i>
+            <span class="btn-text">Send message</span>
+          </button>
+        </form>
+        <div id="form-success" class="form-success" style="display:none">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          Message sent — I'll get back to you soon!
+        </div>
+      </div>
+
+    </div>
+  </main>
+</Layout>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" is:inline></script>
+<script is:inline>
+  if (window.emailjs) emailjs.init('3K18TZ8aXoxyLCCBF');
+</script>
+
+<script>
+  const form = document.getElementById('contactForm') as HTMLFormElement | null;
+  const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement | null;
+  const btnText = submitBtn?.querySelector('.btn-text');
+  const success = document.getElementById('form-success') as HTMLElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!submitBtn || !btnText) return;
+
+    submitBtn.disabled = true;
+    btnText.textContent = 'Sending…';
+
+    const data = {
+      to_name: 'Philip Elias Fleischer',
+      from_name: (document.getElementById('name') as HTMLInputElement)?.value?.trim(),
+      from_email: (document.getElementById('email') as HTMLInputElement)?.value?.trim(),
+      subject: (document.getElementById('subject') as HTMLInputElement)?.value?.trim(),
+      message: (document.getElementById('message') as HTMLTextAreaElement)?.value?.trim(),
+      reply_to: (document.getElementById('email') as HTMLInputElement)?.value?.trim(),
+    };
+
+    try {
+      await (window as any).emailjs.send('service_x7hkxhk', 'template_4k960p8', data);
+      form.style.display = 'none';
+      if (success) success.style.display = 'flex';
+    } catch {
+      alert('Failed to send — please email me directly at fleischer1@live.no');
+      submitBtn.disabled = false;
+      btnText.textContent = 'Send message';
+    }
+  });
+</script>
+
+<style lang="scss">
+  @use 'src/styles/variables' as *;
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: $sp-8;
+    align-items: start;
+
+    @media (max-width: 860px) { grid-template-columns: 1fr; }
+  }
+
+  // ── Info ─────────────────────────────────────────────────────────
+  .contact-card {
+    background: $bg-2;
+    border: 1px solid $border-subtle;
+    border-radius: $r-lg;
+    padding: $sp-5;
+    display: flex;
+    flex-direction: column;
+    gap: $sp-4;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: $sp-4;
+  }
+
+  .ci-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: $r-full;
+    background: $accent-subtle;
+    border: 1px solid $accent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    i { color: $accent; font-size: 0.9rem; }
+  }
+
+  .ci-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $text-dim;
+    margin-bottom: $sp-1;
+  }
+
+  .ci-value {
+    font-size: 0.95rem;
+    color: $text;
+    a {
+      color: $accent;
+      text-decoration: none;
+      &:hover { text-decoration: underline; }
+    }
+  }
+
+  .ci-sep { margin: 0 0.4rem; color: $text-dim; }
+
+  .contact-social {
+    display: flex;
+    gap: $sp-3;
+    margin-top: $sp-2;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: $sp-2;
+    padding: $sp-3 $sp-4;
+    border-radius: $r;
+    background: $bg-2;
+    border: 1px solid $border-subtle;
+    color: $text-muted;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: border-color $t-fast $ease, color $t-fast $ease, transform $t-fast $ease;
+
+    i { font-size: 1.1rem; }
+
+    &:hover {
+      border-color: $accent;
+      color: $accent;
+      transform: translateY(-2px);
+    }
+  }
+
+  // ── Form ─────────────────────────────────────────────────────────
+  .contact-form-wrap {
+    background: $bg-2;
+    border: 1px solid $border-subtle;
+    border-radius: $r-lg;
+    padding: $sp-6;
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: $sp-4; }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: $sp-2;
+
+    label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: $text-muted;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: $bg-3;
+      border: 1px solid $border;
+      border-radius: $r;
+      color: $text;
+      font-family: $font;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color $t-fast $ease, box-shadow $t-fast $ease;
+
+      &::placeholder { color: $text-dim; }
+      &:focus {
+        border-color: $accent;
+        box-shadow: 0 0 0 3px $accent-subtle;
+      }
+    }
+
+    textarea { resize: vertical; min-height: 160px; }
+  }
+
+  .submit-btn { margin-top: $sp-2; }
+
+  .form-success {
+    display: flex;
+    align-items: center;
+    gap: $sp-3;
+    padding: $sp-6;
+    border-radius: $r;
+    background: $success-bg;
+    border: 1px solid $success-border;
+    color: $green;
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    i { font-size: 1.3rem; }
+  }
+</style>

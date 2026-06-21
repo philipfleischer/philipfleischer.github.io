@@ -1,0 +1,181 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import FilterBar from '../components/FilterBar.astro';
+import { getCollection } from 'astro:content';
+
+const allProjects = await getCollection('projects');
+const featured = allProjects.filter(p => p.data.featured).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
+);
+const other = allProjects.filter(p => !p.data.featured);
+
+// Collect all unique topics
+const allTopics = [...new Set(allProjects.flatMap(p => p.data.topics))].sort();
+---
+
+<Layout title="Portfolio — Philip Fleischer">
+  <main class="page-wrapper">
+
+    <header class="page-hero" style="padding-left:0;padding-right:0;">
+      <span class="section-eyebrow">Work</span>
+      <h1 class="section-title">Projects</h1>
+      <p class="section-subtitle">
+        Personal projects and learning repositories covering systems, networking, cloud,
+        full-stack, and AI. Filter by topic to find what's relevant to you.
+      </p>
+    </header>
+
+    <FilterBar topics={allTopics} id="project-filter" />
+
+    <section aria-label="Featured projects">
+      <h2 class="block-title">Featured</h2>
+      <div class="card-grid" id="project-grid">
+        {featured.map(p => (
+          <Card
+            title={p.data.title}
+            subtitle={p.data.subtitle}
+            image={p.data.image}
+            tags={p.data.tags}
+            topics={p.data.topics}
+            links={p.data.links}
+            slug={p.slug}
+            detailPath={`/projects/${p.slug}`}
+          />
+        ))}
+        {other.map(p => (
+          <Card
+            title={p.data.title}
+            subtitle={p.data.subtitle}
+            image={p.data.image}
+            tags={p.data.tags}
+            topics={p.data.topics}
+            links={p.data.links}
+            slug={p.slug}
+            detailPath={`/projects/${p.slug}`}
+          />
+        ))}
+      </div>
+    </section>
+
+    <!-- Collapsible smaller repos -->
+    <div class="divider" style="margin-top:3rem;"></div>
+
+    <details class="more-section">
+      <summary class="more-summary">Other repositories</summary>
+      <ul class="repo-list">
+        <li class="repo-item">
+          <span class="repo-name">Linux Lab Basics</span>
+          <span class="repo-meta">Linux · Bash</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Linux_Lab_Notes/tree/main" target="_blank" rel="noopener">Repo →</a>
+        </li>
+        <li class="repo-item">
+          <span class="repo-name">Odin Project</span>
+          <span class="repo-meta">HTML · CSS</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Odin" target="_blank" rel="noopener">Repo →</a>
+        </li>
+        <li class="repo-item">
+          <span class="repo-name">Odin Recipes</span>
+          <span class="repo-meta">HTML</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Odin_Recipe" target="_blank" rel="noopener">Repo →</a>
+        </li>
+        <li class="repo-item">
+          <span class="repo-name">Odin Landing Page</span>
+          <span class="repo-meta">HTML · CSS</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Odin_Landing_Page" target="_blank" rel="noopener">Repo →</a>
+        </li>
+        <li class="repo-item">
+          <span class="repo-name">Security Introduction Notes</span>
+          <span class="repo-meta">Security · Notes</span>
+          <a class="repo-link" href="https://github.com/philipfleischer/Security_Introduction" target="_blank" rel="noopener">Repo →</a>
+        </li>
+      </ul>
+    </details>
+
+  </main>
+</Layout>
+
+<script>
+  import { initFilter } from '../scripts/filter';
+  initFilter('project-filter', '#project-grid');
+</script>
+
+<style lang="scss">
+  @use 'src/styles/variables' as *;
+
+  .block-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $text-dim;
+    margin-bottom: $sp-5;
+  }
+
+  // ── Collapsible repos ────────────────────────────────────────────
+  .more-section {
+    background: $bg-2;
+    border: 1px solid $border-subtle;
+    border-radius: $r-lg;
+    margin-bottom: $sp-8;
+  }
+
+  .more-summary {
+    cursor: pointer;
+    padding: $sp-4 $sp-5;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: $text-muted;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &::-webkit-details-marker { display: none; }
+    &::after { content: '▾'; opacity: 0.6; }
+  }
+
+  details[open] .more-summary::after { content: '▴'; }
+
+  .repo-list {
+    padding: $sp-2 $sp-5 $sp-5;
+    display: grid;
+    gap: $sp-2;
+  }
+
+  .repo-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: $sp-4;
+    align-items: center;
+    padding: $sp-3 $sp-4;
+    border-radius: $r;
+    background: $bg-3;
+    border: 1px solid $border-subtle;
+
+    @media (max-width: 540px) {
+      grid-template-columns: 1fr;
+      gap: $sp-1;
+    }
+  }
+
+  .repo-name {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: $text;
+  }
+
+  .repo-meta {
+    font-size: 0.8rem;
+    color: $text-dim;
+    font-family: $font-mono;
+  }
+
+  .repo-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: $accent;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+</style>

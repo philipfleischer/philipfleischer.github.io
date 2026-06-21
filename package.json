@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^5.1.1",
+    "sass": "^1.77.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.6.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild",
+      "sharp"
+    ]
+  }
+}

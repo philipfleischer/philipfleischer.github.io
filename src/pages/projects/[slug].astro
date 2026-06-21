@@ -1,0 +1,201 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(p => ({ params: { slug: p.slug }, props: { project: p } }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+const { title, subtitle, image, tags, topics, links } = project.data;
+---
+
+<Layout title={`${title} — Philip Fleischer`} description={subtitle}>
+  <main class="detail-page">
+
+    <!-- Back -->
+    <a href="/portfolio" class="back-link">
+      <i class="fa-solid fa-arrow-left fa-sm" aria-hidden="true"></i>
+      Back to Portfolio
+    </a>
+
+    <!-- Hero image -->
+    <div class="detail-hero-img">
+      <img src={image} alt={title} width="1100" height="380" />
+    </div>
+
+    <div class="detail-layout">
+
+      <!-- Main content -->
+      <article class="detail-main">
+        <h1 class="detail-title">{title}</h1>
+        <p class="detail-subtitle">{subtitle}</p>
+
+        <ul class="detail-tags">
+          {tags.map(t => <li class="tag">{t}</li>)}
+        </ul>
+
+        <div class="divider"></div>
+
+        <div class="prose">
+          <Content />
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="detail-sidebar">
+        <div class="sidebar-card">
+          <h2 class="sidebar-heading">Links</h2>
+          <div class="sidebar-links">
+            {links.map(l => (
+              <a href={l.url} class="btn-ghost" target="_blank" rel="noopener noreferrer">
+                {l.label.includes('GitHub') ? (
+                  <i class="fab fa-github fa-sm" aria-hidden="true"></i>
+                ) : (
+                  <i class="fa-solid fa-arrow-up-right-from-square fa-xs" aria-hidden="true"></i>
+                )}
+                {l.label}
+              </a>
+            ))}
+          </div>
+
+          <h2 class="sidebar-heading" style="margin-top:1.5rem;">Topics</h2>
+          <div class="sidebar-topics">
+            {topics.map(t => (
+              <a href={`/portfolio?filter=${encodeURIComponent(t)}`} class="topic-pill">{t}</a>
+            ))}
+          </div>
+        </div>
+
+        <a href="/portfolio" class="btn-ghost" style="margin-top:1rem;width:100%;justify-content:center;">
+          <i class="fa-solid fa-grid-2 fa-sm" aria-hidden="true"></i>
+          All Projects
+        </a>
+      </aside>
+    </div>
+
+  </main>
+</Layout>
+
+<style lang="scss">
+  @use 'src/styles/variables' as *;
+
+  .detail-page {
+    max-width: $content-max;
+    margin: 0 auto;
+    padding: $sp-8 $page-px $sp-12;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: $sp-2;
+    color: $text-muted;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: $sp-6;
+    transition: color $t-fast $ease;
+    &:hover { color: $accent; text-decoration: none; }
+  }
+
+  .detail-hero-img {
+    width: 100%;
+    height: 300px;
+    border-radius: $r-lg;
+    overflow: hidden;
+    border: 1px solid $border-subtle;
+    margin-bottom: $sp-8;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: $sp-8;
+    align-items: start;
+
+    @media (max-width: 860px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .detail-title {
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 800;
+    color: $text;
+    margin-bottom: $sp-3;
+    line-height: 1.2;
+  }
+
+  .detail-subtitle {
+    font-size: 1rem;
+    color: $text-muted;
+    line-height: 1.7;
+    margin-bottom: $sp-5;
+  }
+
+  .detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $sp-2;
+  }
+
+  // ── Sidebar ──────────────────────────────────────────────────────
+  .detail-sidebar {
+    position: sticky;
+    top: $sp-6;
+  }
+
+  .sidebar-card {
+    background: $bg-2;
+    border: 1px solid $border-subtle;
+    border-radius: $r-lg;
+    padding: $sp-5;
+  }
+
+  .sidebar-heading {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $text-dim;
+    margin-bottom: $sp-3;
+  }
+
+  .sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: $sp-2;
+
+    a { justify-content: center; }
+  }
+
+  .sidebar-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $sp-2;
+  }
+
+  .topic-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.7rem;
+    border-radius: $r-full;
+    border: 1px solid $border;
+    background: $bg-3;
+    color: $text-muted;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color $t-fast $ease, color $t-fast $ease;
+    &:hover { border-color: $accent; color: $accent; text-decoration: none; }
+  }
+</style>

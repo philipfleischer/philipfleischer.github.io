@@ -1,0 +1,420 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const skills = [
+  {
+    category: 'Core Languages',
+    icon: 'fa-code',
+    items: [
+      { name: 'C', tip: 'Low-level systems programming and networking' },
+      { name: 'C++', tip: 'Object-oriented and systems programming' },
+      { name: 'Python', tip: 'Scripting, tooling, ML, and scientific computing' },
+      { name: 'Java', tip: 'Object-oriented programming' },
+      { name: 'Kotlin', tip: 'Android and backend development' },
+    ],
+  },
+  {
+    category: 'Web & Frontend',
+    icon: 'fa-globe',
+    items: [
+      { name: 'HTML', tip: 'Semantic markup and accessibility' },
+      { name: 'CSS / SCSS', tip: 'Responsive layouts and modern styling' },
+      { name: 'JavaScript', tip: 'Modern ES2022+ for frontend and backend' },
+      { name: 'TypeScript', tip: 'Typed JavaScript for scalable applications' },
+      { name: 'React', tip: 'Component-based UI development' },
+    ],
+  },
+  {
+    category: 'Backend & Full-Stack',
+    icon: 'fa-server',
+    items: [
+      { name: 'Node.js', tip: 'Server-side JavaScript runtime' },
+      { name: 'Express', tip: 'Web framework for Node.js APIs' },
+      { name: 'REST APIs', tip: 'RESTful API design and integration' },
+      { name: 'MongoDB', tip: 'NoSQL document database' },
+      { name: 'PostgreSQL', tip: 'Relational database and SQL' },
+      { name: 'MySQL', tip: 'Relational database' },
+    ],
+  },
+  {
+    category: 'Mobile (Android)',
+    icon: 'fa-mobile-screen',
+    items: [
+      { name: 'Android', tip: 'Android app development' },
+      { name: 'Jetpack Compose', tip: 'Declarative UI toolkit for Android' },
+      { name: 'Ktor', tip: 'HTTP client for Kotlin' },
+      { name: 'MapLibre', tip: 'Map rendering for Android' },
+    ],
+  },
+  {
+    category: 'Cloud & DevOps',
+    icon: 'fa-cloud',
+    items: [
+      { name: 'Docker', tip: 'Containerization and reproducible environments' },
+      { name: 'Terraform', tip: 'Infrastructure as Code' },
+      { name: 'AWS', tip: 'Cloud compute, storage, networking' },
+      { name: 'Azure', tip: 'Microsoft cloud platform' },
+      { name: 'Google Cloud', tip: 'GCP services and infrastructure' },
+      { name: 'GitHub Actions', tip: 'CI/CD automation pipelines' },
+    ],
+  },
+  {
+    category: 'Systems, Networking & Security',
+    icon: 'fa-shield-halved',
+    items: [
+      { name: 'Linux', tip: 'Linux systems, shell, and internals' },
+      { name: 'Bash', tip: 'Shell scripting and automation' },
+      { name: 'Networking', tip: 'TCP/IP fundamentals, routing, and protocols' },
+      { name: 'Wireshark', tip: 'Packet inspection and protocol analysis' },
+      { name: 'EVE-NG', tip: 'Virtualised network labs and topologies' },
+      { name: 'Kali Linux', tip: 'Security testing environment' },
+    ],
+  },
+  {
+    category: 'Quality & Tooling',
+    icon: 'fa-wrench',
+    items: [
+      { name: 'Git', tip: 'Version control and collaborative workflows' },
+      { name: 'pytest', tip: 'Unit/integration testing for Python' },
+      { name: 'mypy', tip: 'Static type checking for Python' },
+      { name: 'Airflow', tip: 'Workflow orchestration' },
+      { name: 'Spark', tip: 'Distributed batch processing' },
+    ],
+  },
+];
+
+const education = [
+  {
+    icon: 'fa-graduation-cap',
+    period: '2021 – 2026',
+    title: 'University of Oslo',
+    sub: 'BSc Computer Science (Informatics: Programming & System Architecture)',
+    desc: 'Expected graduation Spring 2026. Focus on systems programming, networking, and software engineering.',
+  },
+  {
+    icon: 'fa-compass',
+    period: '2024 – 2026',
+    title: 'Academic specialisation',
+    sub: 'Systems, Networks & Backend',
+    desc: 'Advanced coursework in Operating Systems, Databases, Networking, Algorithms, and Information Security.',
+  },
+  {
+    icon: 'fa-book',
+    period: 'Selected courses',
+    title: 'UiO coursework highlights',
+    sub: 'See Courses section for full detail',
+    desc: 'IN3000 OS, IN3020 Databases, IN3230 Networks, IN3130 Algorithms, IN2120 Information Security, IN2010 Data Structures.',
+  },
+  {
+    icon: 'fa-school',
+    period: '2018 – 2021',
+    title: 'Foss High School',
+    sub: 'General Studies',
+    desc: 'General studies. Participated in academic summer programmes (nanotechnology at UiO).',
+  },
+];
+
+const work = [
+  {
+    icon: 'fa-leaf',
+    period: 'Jun 2025 – Sep 2025',
+    title: 'Housing Cooperative / Sameie',
+    sub: 'Seasonal Maintenance Worker',
+    desc: 'Part-time seasonal maintenance — lawn mowing, painting window frames, and general upkeep (~2 hrs/week).',
+  },
+  {
+    icon: 'fa-wine-glass',
+    period: 'Jun 2021 – Sep 2022',
+    title: 'Nektar Vinbar',
+    sub: 'Kitchen & Cleaning Support',
+    desc: 'Dishwashing during weekend service and responsible for cleaning the venue on Sundays.',
+  },
+  {
+    icon: 'fa-mug-hot',
+    period: 'Mar 2018 – Sep 2018',
+    title: 'Blafre Café',
+    sub: 'Café Employee / Barista',
+    desc: 'Prepared food and coffee, handled cash register, inventory, and daily operations.',
+  },
+  {
+    icon: 'fa-table-tennis-paddle-ball',
+    period: 'Jan 2014 – Jan 2015',
+    title: 'Grefsen Tennisklubb',
+    sub: 'Tennis Instructor',
+    desc: 'Coached children twice weekly and planned training sessions focused on progress and enjoyment.',
+  },
+];
+---
+
+<Layout title="About — Philip Fleischer">
+  <main class="page-wrapper">
+
+    <header class="page-hero" style="padding-left:0;padding-right:0;">
+      <span class="section-eyebrow">Background</span>
+      <h1 class="section-title">About me</h1>
+      <p class="section-subtitle">
+        I'm a Computer Science student at UiO with a strong interest in networking, security,
+        cloud infrastructure, AI, and systems programming. I enjoy understanding how software
+        works below the surface — from protocols and operating systems to secure, reliable
+        system design.
+      </p>
+      <p class="section-subtitle" style="margin-top:-1.5rem">
+        I'm looking for junior roles, internships, and projects where I can contribute, learn
+        quickly, and grow into a strong engineer within networking, security, cloud, AI, or
+        systems-oriented software development.
+      </p>
+      <div class="about-cta">
+        <a href="https://github.com/philipfleischer" class="btn-primary" target="_blank" rel="noopener">
+          <i class="fab fa-github fa-sm"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/philip-fleischer-ab9439229/" class="btn-ghost" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin-in fa-sm"></i> LinkedIn
+        </a>
+      </div>
+    </header>
+
+    <!-- Skills -->
+    <section aria-labelledby="skills-heading">
+      <h2 class="section-title" id="skills-heading">
+        <i class="fa-solid fa-layer-group" aria-hidden="true"></i> Skills
+      </h2>
+      <div class="skills-grid">
+        {skills.map(group => (
+          <div class="skill-card">
+            <h3 class="skill-card__title">
+              <i class={`fa-solid ${group.icon}`} aria-hidden="true"></i>
+              {group.category}
+            </h3>
+            <ul class="skill-tags" role="list">
+              {group.items.map(item => (
+                <li
+                  class="skill-tag"
+                  role="listitem"
+                  tabindex="0"
+                  data-tip={item.tip}
+                >
+                  {item.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Timeline -->
+    <section aria-labelledby="timeline-heading">
+      <h2 class="section-title" id="timeline-heading">
+        <i class="fa-solid fa-timeline" aria-hidden="true"></i> Timeline
+      </h2>
+
+      <h3 class="timeline-group">Education</h3>
+      <div class="timeline">
+        {education.map(item => (
+          <div class="tl-item">
+            <div class="tl-icon">
+              <i class={`fa-solid ${item.icon}`} aria-hidden="true"></i>
+            </div>
+            <div class="tl-body">
+              <span class="tl-period">{item.period}</span>
+              <h4 class="tl-title">{item.title} <span class="tl-sub">— {item.sub}</span></h4>
+              <p class="tl-desc">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="timeline-group">Work Experience</h3>
+      <div class="timeline">
+        {work.map(item => (
+          <div class="tl-item">
+            <div class="tl-icon">
+              <i class={`fa-solid ${item.icon}`} aria-hidden="true"></i>
+            </div>
+            <div class="tl-body">
+              <span class="tl-period">{item.period}</span>
+              <h4 class="tl-title">{item.title} <span class="tl-sub">— {item.sub}</span></h4>
+              <p class="tl-desc">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+<style lang="scss">
+  @use 'src/styles/variables' as *;
+
+  .about-cta {
+    display: flex;
+    gap: $sp-3;
+    flex-wrap: wrap;
+    margin-top: $sp-6;
+  }
+
+  // ── Skills ───────────────────────────────────────────────────────
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $sp-4;
+    margin-bottom: $sp-8;
+
+    @media (max-width: 720px) { grid-template-columns: 1fr; }
+  }
+
+  .skill-card {
+    background: $bg-2;
+    border: 1px solid $border-subtle;
+    border-radius: $r-lg;
+    padding: $sp-5;
+    align-self: start;
+  }
+
+  .skill-card__title {
+    display: flex;
+    align-items: center;
+    gap: $sp-3;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $text-muted;
+    margin-bottom: $sp-4;
+
+    i { color: $accent; width: 16px; }
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $sp-2;
+  }
+
+  .skill-tag {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    border-radius: $r-full;
+    background: $bg-3;
+    border: 1px solid $border-subtle;
+    color: $text-muted;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: default;
+    user-select: none;
+    transition: border-color $t-fast $ease, color $t-fast $ease, transform $t-fast $ease;
+
+    &:hover, &:focus {
+      border-color: $accent;
+      color: $text;
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    // Tooltip
+    &[data-tip]::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: $bg-3;
+      color: $text-muted;
+      border: 1px solid $border;
+      border-radius: $r;
+      padding: 0.4rem 0.65rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      line-height: 1.3;
+      white-space: normal;
+      width: max-content;
+      max-width: 240px;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 999;
+      transition: opacity $t-fast $ease, transform $t-fast $ease;
+    }
+
+    &:hover::after, &:focus::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  // ── Timeline ─────────────────────────────────────────────────────
+  .timeline-group {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $accent;
+    margin: $sp-8 0 $sp-5;
+  }
+
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $sp-5;
+    margin-bottom: $sp-8;
+
+    @media (max-width: 720px) { grid-template-columns: 1fr; }
+  }
+
+  .tl-item {
+    display: flex;
+    gap: $sp-4;
+  }
+
+  .tl-icon {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: $r-full;
+    background: $accent-subtle;
+    border: 1px solid $accent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i { font-size: 0.9rem; color: $accent; }
+  }
+
+  .tl-body { flex: 1; }
+
+  .tl-period {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $text-dim;
+    background: $bg-3;
+    border-radius: $r-full;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: $sp-2;
+  }
+
+  .tl-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: $text;
+    margin-bottom: $sp-2;
+  }
+
+  .tl-sub {
+    font-weight: 500;
+    color: $text-muted;
+    font-size: 0.88rem;
+  }
+
+  .tl-desc {
+    font-size: 0.88rem;
+    color: $text-dim;
+    line-height: 1.6;
+  }
+</style>

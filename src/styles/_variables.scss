@@ -1,0 +1,64 @@
+// ─── Colour palette — all mapped to CSS custom properties ─────────
+// Theme values live in global.scss (:root = light, [data-theme="dark"] = dark)
+$bg:             var(--bg);
+$bg-2:           var(--bg-2);
+$bg-3:           var(--bg-3);
+$border:         var(--border);
+$border-subtle:  var(--border-subtle);
+
+$accent:         var(--accent);
+$accent-hover:   var(--accent-hover);
+$accent-border:  var(--accent-border);
+$accent-dark:    var(--accent-dark);
+$accent-subtle:  var(--accent-subtle);
+$accent-glow:    var(--accent-glow);
+
+$green:          var(--green);
+$success-bg:     var(--success-bg);
+$success-border: var(--success-border);
+$yellow:         var(--yellow);
+$red:            var(--red);
+
+$text:           var(--text);
+$text-muted:     var(--text-muted);
+$text-dim:       var(--text-dim);
+
+$shadow:         var(--shadow);
+$shadow-sm:      var(--shadow-sm);
+$shadow-lg:      var(--shadow-lg);
+
+// ─── Typography ───────────────────────────────────────────────────
+$font:          'Poppins', system-ui, -apple-system, sans-serif;
+$font-mono:     'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace;
+
+// ─── Spacing (8px grid) ───────────────────────────────────────────
+$sp-1:  0.25rem;
+$sp-2:  0.5rem;
+$sp-3:  0.75rem;
+$sp-4:  1rem;
+$sp-5:  1.25rem;
+$sp-6:  1.5rem;
+$sp-8:  2rem;
+$sp-10: 2.5rem;
+$sp-12: 3rem;
+$sp-16: 4rem;
+$sp-20: 5rem;
+$sp-24: 6rem;
+
+// ─── Layout ───────────────────────────────────────────────────────
+$nav-h:         72px;
+$content-max:   1100px;
+$page-px:       clamp(1rem, 5vw, 3rem);
+
+// ─── Border radius ────────────────────────────────────────────────
+$r-sm:   6px;
+$r:      10px;
+$r-lg:   14px;
+$r-xl:   20px;
+$r-full: 9999px;
+
+// ─── Transitions ──────────────────────────────────────────────────
+$ease:      cubic-bezier(0.16, 1, 0.3, 1);
+$t-fast:    0.12s;
+$t-normal:  0.2s;
+$t-slow:    0.35s;

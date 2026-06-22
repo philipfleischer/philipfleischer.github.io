@@ -91,26 +91,34 @@ const work = [];
 
 <Layout title="About — Philip Fleischer">
   <main class="page-wrapper">
-
     <header class="page-hero" style="padding-left:0;padding-right:0;">
       <span class="section-eyebrow">Background</span>
       <h1 class="section-title">About me</h1>
       <p class="section-subtitle">
-        I'm a CS student at UiO finishing my bachelor's in 2026. My main interests are
-        networking, security, and systems programming — I like working close to the metal
-        and understanding how things actually work. I also spend a fair amount of time on
-        AI-related stuff outside of university.
+        I'm a CS student at UiO finishing my bachelor's in 2026. My main interests are networking,
+        security, and systems programming — I like working close to the metal and understanding how
+        things actually work. I also spend a fair amount of time on AI-related stuff outside of
+        university.
       </p>
       <p class="section-subtitle" style="margin-top:-1.5rem">
-        I'm looking for internships or junior roles where I can work on real problems and
-        learn from people with more experience. Especially within networking, security,
-        or systems development.
+        I'm looking for internships or junior roles where I can work on real problems and learn from
+        people with more experience. Especially within networking, security, or systems development.
       </p>
       <div class="about-cta">
-        <a href="https://github.com/philipfleischer" class="btn-primary" target="_blank" rel="noopener">
+        <a
+          href="https://github.com/philipfleischer"
+          class="btn-primary"
+          target="_blank"
+          rel="noopener"
+        >
           <i class="fab fa-github fa-sm"></i> GitHub
         </a>
-        <a href="https://www.linkedin.com/in/philip-fleischer-ab9439229/" class="btn-ghost" target="_blank" rel="noopener">
+        <a
+          href="https://www.linkedin.com/in/philip-fleischer-ab9439229/"
+          class="btn-ghost"
+          target="_blank"
+          rel="noopener"
+        >
           <i class="fab fa-linkedin-in fa-sm"></i> LinkedIn
         </a>
       </div>
@@ -122,26 +130,23 @@ const work = [];
         <i class="fa-solid fa-layer-group" aria-hidden="true"></i> Skills
       </h2>
       <div class="skills-grid">
-        {skills.map(group => (
-          <div class="skill-card">
-            <h3 class="skill-card__title">
-              <i class={`fa-solid ${group.icon}`} aria-hidden="true"></i>
-              {group.category}
-            </h3>
-            <ul class="skill-tags" role="list">
-              {group.items.map(item => (
-                <li
-                  class="skill-tag"
-                  role="listitem"
-                  tabindex="0"
-                  data-tip={item.tip}
-                >
-                  {item.name}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {
+          skills.map((group) => (
+            <div class="skill-card">
+              <h3 class="skill-card__title">
+                <i class={`fa-solid ${group.icon}`} aria-hidden="true" />
+                {group.category}
+              </h3>
+              <ul class="skill-tags" role="list">
+                {group.items.map((item) => (
+                  <li class="skill-tag" role="listitem" tabindex="0" data-tip={item.tip}>
+                    {item.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
       </div>
     </section>
 
@@ -155,37 +160,44 @@ const work = [];
 
       <h3 class="timeline-group">Education</h3>
       <div class="timeline">
-        {education.map(item => (
-          <div class="tl-item">
-            <div class="tl-icon">
-              <i class={`fa-solid ${item.icon}`} aria-hidden="true"></i>
+        {
+          education.map((item) => (
+            <div class="tl-item">
+              <div class="tl-icon">
+                <i class={`fa-solid ${item.icon}`} aria-hidden="true" />
+              </div>
+              <div class="tl-body">
+                <span class="tl-period">{item.period}</span>
+                <h4 class="tl-title">
+                  {item.title} <span class="tl-sub">— {item.sub}</span>
+                </h4>
+                <p class="tl-desc">{item.desc}</p>
+              </div>
             </div>
-            <div class="tl-body">
-              <span class="tl-period">{item.period}</span>
-              <h4 class="tl-title">{item.title} <span class="tl-sub">— {item.sub}</span></h4>
-              <p class="tl-desc">{item.desc}</p>
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
 
       <h3 class="timeline-group">Work Experience</h3>
       <div class="timeline">
-        {work.map(item => (
-          <div class="tl-item">
-            <div class="tl-icon">
-              <i class={`fa-solid ${item.icon}`} aria-hidden="true"></i>
+        {
+          work.map((item) => (
+            <div class="tl-item">
+              <div class="tl-icon">
+                <i class={`fa-solid ${item.icon}`} aria-hidden="true" />
+              </div>
+              <div class="tl-body">
+                <span class="tl-period">{item.period}</span>
+                <h4 class="tl-title">
+                  {item.title} <span class="tl-sub">— {item.sub}</span>
+                </h4>
+                <p class="tl-desc">{item.desc}</p>
+              </div>
             </div>
-            <div class="tl-body">
-              <span class="tl-period">{item.period}</span>
-              <h4 class="tl-title">{item.title} <span class="tl-sub">— {item.sub}</span></h4>
-              <p class="tl-desc">{item.desc}</p>
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </section>
-
   </main>
 </Layout>
 
@@ -206,7 +218,9 @@ const work = [];
     gap: $sp-4;
     margin-bottom: $sp-8;
 
-    @media (max-width: 720px) { grid-template-columns: 1fr; }
+    @media (max-width: 720px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .skill-card {
@@ -228,7 +242,10 @@ const work = [];
     color: $text-muted;
     margin-bottom: $sp-4;
 
-    i { color: $accent; width: 16px; }
+    i {
+      color: $accent;
+      width: 16px;
+    }
   }
 
   .skill-tags {
@@ -250,9 +267,13 @@ const work = [];
     font-weight: 600;
     cursor: default;
     user-select: none;
-    transition: border-color $t-fast $ease, color $t-fast $ease, transform $t-fast $ease;
+    transition:
+      border-color $t-fast $ease,
+      color $t-fast $ease,
+      transform $t-fast $ease;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: $accent;
       color: $text;
       transform: translateY(-1px);
@@ -280,10 +301,13 @@ const work = [];
       opacity: 0;
       pointer-events: none;
       z-index: 999;
-      transition: opacity $t-fast $ease, transform $t-fast $ease;
+      transition:
+        opacity $t-fast $ease,
+        transform $t-fast $ease;
     }
 
-    &:hover::after, &:focus::after {
+    &:hover::after,
+    &:focus::after {
       opacity: 1;
       transform: translateX(-50%) translateY(0);
     }
@@ -305,7 +329,9 @@ const work = [];
     gap: $sp-5;
     margin-bottom: $sp-8;
 
-    @media (max-width: 720px) { grid-template-columns: 1fr; }
+    @media (max-width: 720px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .tl-item {
@@ -324,10 +350,15 @@ const work = [];
     align-items: center;
     justify-content: center;
 
-    i { font-size: 0.9rem; color: $accent; }
+    i {
+      font-size: 0.9rem;
+      color: $accent;
+    }
   }
 
-  .tl-body { flex: 1; }
+  .tl-body {
+    flex: 1;
+  }
 
   .tl-period {
     display: inline-block;

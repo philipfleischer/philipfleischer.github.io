@@ -1,6 +1,6 @@
 ---
 title: "Python Programming — Fundamentals & OOP"
-courseCode: "IN1600"
+courseCode: "IN1000"
 subtitle: "Python learning repository covering programming fundamentals, file handling, exceptions, functions, modules, object-oriented programming, and small practical projects."
 image: "/img/Python_Prog.png"
 tags: ["Python", "Programming Fundamentals", "OOP", "File I/O", "Exceptions", "Functions", "Modules"]

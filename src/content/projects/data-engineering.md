@@ -1,6 +1,6 @@
 ---
 title: "Data Engineering Pipeline"
-subtitle: "End-to-end ELT pipeline project covering batch processing with Apache Spark, real-time streaming with Kafka, orchestration with Airflow, and PostgreSQL — all containerized with Docker Compose."
+subtitle: "End-to-end ELT pipeline project covering batch processing with Apache Spark, real-time streaming with Kafka, orchestration with Airflow, and PostgreSQL: all containerized with Docker Compose."
 image: "/img/Dat_ENG.jpg"
 tags: ["Data Engineering", "ELT", "Apache Airflow", "Apache Spark", "Apache Kafka", "PostgreSQL", "Docker", "Python", "SQL"]
 topics: ["Data Engineering", "Cloud / DevOps"]
@@ -52,4 +52,4 @@ All components run in **Docker Compose**, which means the entire platform can be
 - Kafka running in Docker with Zookeeper
 
 ## Key takeaway
-Setting up Airflow alone requires understanding Docker networking, database initialization order (`depends_on` with health checks), and Airflow's internal component model. The complexity of infrastructure is often underestimated — this project makes it visible.
+Setting up Airflow alone requires understanding Docker networking, database initialization order (`depends_on` with health checks), and Airflow's internal component model. The complexity of infrastructure is often underestimated, and this project makes it visible.

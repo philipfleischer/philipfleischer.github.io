@@ -1,7 +1,7 @@
 ---
-title: "IN1910 — Scientific Programming"
+title: "IN1910: Scientific Programming"
 courseCode: "IN1910"
-subtitle: "Four programming projects covering version control, OOP, simulations (double pendulum, random walks), numerics, and software design — with testing using pytest and mypy type checking."
+subtitle: "Four programming projects covering version control, OOP, simulations (double pendulum, random walks), numerics, and software design, with testing using pytest and mypy type checking."
 image: "/img/RW3D.png"
 tags: ["Python", "OOP", "Pytest", "Mypy", "Simulations", "NumPy", "SciPy", "Numerics"]
 topics: ["Algorithms / Data"]
@@ -11,22 +11,22 @@ links:
     url: "https://github.com/philipfleischer/Object-oriented-Programming"
 ---
 
-**IN1910 – Programming with Scientific Applications** at UiO. Four graded projects building Python skills specifically for scientific computing and engineering applications.
+**IN1910 - Programming with Scientific Applications** at UiO. Four graded projects building Python skills specifically for scientific computing and engineering applications.
 
-## Project 0 — Version control and tooling
+## Project 0: Version control and tooling
 - Git workflow: branching, merging, conflict resolution
 - Python environment management with `venv` and `pip`
 - Writing `README.md` documentation and structuring a Python project
 - Introduction to `pytest` for test-driven development
 
-## Project 1 — Object-oriented programming
+## Project 1: Object-oriented programming
 - Designing class hierarchies for physical systems
 - Operator overloading: `__add__`, `__mul__`, `__repr__`, `__eq__`
 - Abstract base classes with `abc.ABC`
 - Modelling mathematical objects (vectors, polynomials, complex numbers) as classes
 - **mypy** for static type checking: type annotations, `Optional`, `Union`, `List`
 
-## Project 2 — Simulations
+## Project 2: Simulations
 The most computationally intensive project. Simulated physical systems numerically:
 
 ### Double pendulum
@@ -43,14 +43,14 @@ The most computationally intensive project. Simulated physical systems numerical
 - Lotka-Volterra predator-prey equations solved with scipy's ODE solver
 - Phase portraits and stability analysis
 
-## Project 3 — Numerics
+## Project 3: Numerics
 - **Newton's method** for root-finding, convergence analysis
-- **Numerical integration** — Trapezoidal rule, Simpson's rule, Gaussian quadrature; error analysis
-- **ODE solvers** — Forward Euler, Runge-Kutta methods, adaptive step size
-- **Linear systems** — Gaussian elimination, LU decomposition using NumPy
+- **Numerical integration**: Trapezoidal rule, Simpson's rule, Gaussian quadrature; error analysis
+- **ODE solvers**: Forward Euler, Runge-Kutta methods, adaptive step size
+- **Linear systems**: Gaussian elimination, LU decomposition using NumPy
 - **Finite difference methods** for PDEs (heat equation 1D)
 
-## Project 4 — Software design and refactoring
+## Project 4: Software design and refactoring
 - Refactoring earlier code for maintainability: separating concerns, reducing coupling
 - Design patterns: strategy pattern for interchangeable solvers
 - Performance profiling with `cProfile` and `timeit`

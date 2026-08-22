@@ -1,5 +1,5 @@
 ---
-title: "IN3130 — Algorithms & Complexity"
+title: "IN3130: Algorithms & Complexity"
 courseCode: "IN3130"
 subtitle: "Advanced algorithms course covering A*, NP-completeness, dynamic programming, network flow, and algorithm design with rigorous complexity analysis."
 image: "/img/Complexity.png"
@@ -11,21 +11,21 @@ links:
     url: "https://github.com/philipfleischer/Algorithms-Design-and-efficiency"
 ---
 
-**IN3130 – Algorithms: Design and Efficiency** at UiO. The theoretical core of computer science — understanding *why* algorithms work, not just *how* to use them.
+**IN3130 - Algorithms: Design and Efficiency** at UiO. The theoretical core of computer science: understanding *why* algorithms work, not just *how* to use them.
 
 ## Course topics
 
 ### Complexity theory
-- **Big-O, Big-Θ, Big-Ω** notation — formal definitions, not intuition
+- **Big-O, Big-Θ, Big-Ω** notation: formal definitions, not intuition
 - Master theorem for recurrences
-- **P vs NP** — what it means for a problem to be in P, NP, NP-hard, and NP-complete
+- **P vs NP**: what it means for a problem to be in P, NP, NP-hard, and NP-complete
 - Polynomial-time reductions: proving NP-hardness by reducing from known problems (SAT, 3-SAT, Vertex Cover, Clique)
 
 ### Graph algorithms
-- **A\* search** — heuristic-guided pathfinding, admissibility and consistency of heuristics, comparison to Dijkstra
-- **Bellman-Ford** — shortest paths with negative weights, detecting negative cycles
-- **Floyd-Warshall** — all-pairs shortest paths in O(V³)
-- **Topological sorting** — Kahn's algorithm and DFS-based approach, applications to dependency resolution
+- **A\* search**: heuristic-guided pathfinding, admissibility and consistency of heuristics, comparison to Dijkstra
+- **Bellman-Ford**: shortest paths with negative weights, detecting negative cycles
+- **Floyd-Warshall**: all-pairs shortest paths in O(V³)
+- **Topological sorting**: Kahn's algorithm and DFS-based approach, applications to dependency resolution
 
 ### Dynamic programming
 - Optimal substructure and overlapping subproblems
@@ -34,9 +34,9 @@ links:
 - Designing DP solutions from scratch (identifying state, transition, base case)
 
 ### Network flow
-- **Max-flow / min-cut theorem** — Ford-Fulkerson algorithm, augmenting paths
+- **Max-flow / min-cut theorem**: Ford-Fulkerson algorithm, augmenting paths
 - **Bipartite matching** via max-flow reduction
-- **Minimum cost flow** — circulation with lower bounds
+- **Minimum cost flow**: circulation with lower bounds
 
 ### Greedy algorithms
 - Proving greedy correctness with exchange arguments

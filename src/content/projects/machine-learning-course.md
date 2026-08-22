@@ -15,17 +15,17 @@ Hands-on machine learning projects built while working through a structured ML c
 ## Topics covered
 
 ### Supervised learning
-- **Linear regression** — closed-form solution vs gradient descent, cost function minimization
-- **Logistic regression** — sigmoid function, binary cross-entropy loss, decision boundary
-- **Classification** — multi-class with softmax, one-vs-rest
+- **Linear regression**: closed-form solution vs gradient descent, cost function minimization
+- **Logistic regression**: sigmoid function, binary cross-entropy loss, decision boundary
+- **Classification**: multi-class with softmax, one-vs-rest
 
 ### Tree-based methods
 - Decision trees: information gain, Gini impurity, overfitting and pruning
 - Random forests: bagging, feature importance, hyperparameter tuning
 
 ### Unsupervised learning
-- **K-Means clustering** — elbow method for k selection, convergence, cluster quality metrics
-- **PCA (Principal Component Analysis)** — eigendecomposition, explained variance ratio, dimensionality reduction for visualization and feature compression
+- **K-Means clustering**: elbow method for k selection, convergence, cluster quality metrics
+- **PCA (Principal Component Analysis)**: eigendecomposition, explained variance ratio, dimensionality reduction for visualization and feature compression
 
 ### Neural networks (TensorFlow/Keras)
 - Sequential API: Dense layers, activation functions (ReLU, sigmoid, softmax)
@@ -39,4 +39,4 @@ Hands-on machine learning projects built while working through a structured ML c
 - Evaluation: accuracy, precision, recall, F1, ROC-AUC, confusion matrix
 
 ## Key insight
-Machine learning is applied linear algebra and statistics. Understanding the math (gradient descent as finding the slope of the loss surface, PCA as variance maximisation) makes it possible to debug models that aren't converging — rather than just trying random hyperparameters.
+Machine learning is applied linear algebra and statistics. Understanding the math (gradient descent as finding the slope of the loss surface, PCA as variance maximisation) makes it possible to debug models that aren't converging, rather than just trying random hyperparameters.

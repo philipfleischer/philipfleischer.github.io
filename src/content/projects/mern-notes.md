@@ -1,6 +1,6 @@
 ---
 title: "MERN Notes App"
-subtitle: "Full-stack MERN notes application with clean REST API design, rate limiting, security hardening, and a modern responsive UI — deployed on Render."
+subtitle: "Full-stack MERN notes application with clean REST API design, rate limiting, security hardening, and a modern responsive UI: deployed on Render."
 image: "/img/Notes_preview.png"
 tags: ["MERN", "React", "Node.js", "Express", "MongoDB", "REST API", "Rate Limiting", "Render", "Tailwind", "TypeScript"]
 topics: ["Full-Stack / Web"]
@@ -12,7 +12,7 @@ links:
     url: "https://notes-full-stack-w3s5.onrender.com/"
 ---
 
-A production-ready full-stack notes application built to demonstrate real-world backend engineering and REST API best practices — not just "make it work," but make it work *correctly*.
+A production-ready full-stack notes application built to demonstrate real-world backend engineering and REST API best practices, not just "make it work," but make it work *correctly*.
 
 ## What makes this different from a tutorial project
 
@@ -22,9 +22,9 @@ The focus was on getting the HTTP semantics right: correct status codes, predict
 
 ### Backend (Node.js + Express)
 - **RESTful API** with resource-oriented design (`/api/notes`, `/api/notes/:id`)
-- **Full CRUD** — GET, POST, PUT, DELETE with proper HTTP verb semantics
-- **HTTP status codes** — 200, 201, 400, 404, 429, 500 used correctly (not just `200` for everything)
-- **Rate limiting** via `express-rate-limit` — IP-based throttle, HTTP 429 on abuse
+- **Full CRUD**: GET, POST, PUT, DELETE with proper HTTP verb semantics
+- **HTTP status codes**: 200, 201, 400, 404, 429, 500 used correctly (not just `200` for everything)
+- **Rate limiting** via `express-rate-limit`: IP-based throttle, HTTP 429 on abuse
 - Input validation and structured error responses
 - MongoDB + Mongoose: flexible schema, Mongoose validation
 
@@ -48,7 +48,7 @@ The focus was on getting the HTTP semantics right: correct status codes, predict
 
 - Deployed on **Render** (backend) and **Render** (frontend static)
 - MongoDB Atlas for database hosting
-- Environment-based configuration — no secrets in code
+- Environment-based configuration: no secrets in code
 
 ## What this demonstrates
-Understanding that a working API and a *good* API are different things. Rate limiting, proper HTTP semantics, structured error responses, and environment-based config are not optional in production — this project treats them as required.
+Understanding that a working API and a *good* API are different things. Rate limiting, proper HTTP semantics, structured error responses, and environment-based config are not optional in production, and this project treats them as required.

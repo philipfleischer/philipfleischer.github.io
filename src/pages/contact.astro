@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Contact — Philip Fleischer">
+<Layout title="Contact - Philip Fleischer">
   <main class="page-wrapper">
 
     <header class="page-hero" style="padding-left:0;padding-right:0;">
@@ -10,7 +10,7 @@ import Layout from '../layouts/Layout.astro';
       <h1 class="section-title">Contact</h1>
       <p class="section-subtitle">
         The easiest way to reach me is by <strong>text message</strong>. I also check
-        email every morning and usually reply within 24–48 hours.
+        email every morning and usually reply within 24-48 hours.
       </p>
     </header>
 
@@ -108,7 +108,7 @@ import Layout from '../layouts/Layout.astro';
         </form>
         <div id="form-success" class="form-success" style="display:none">
           <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-          Message sent — I'll get back to you soon!
+          Message sent. I'll get back to you soon!
         </div>
       </div>
 
@@ -148,7 +148,7 @@ import Layout from '../layouts/Layout.astro';
       form.style.display = 'none';
       if (success) success.style.display = 'flex';
     } catch {
-      alert('Failed to send — please email me directly at fleischer1@live.no');
+      alert('Failed to send, please email me directly at fleischer1@live.no');
       submitBtn.disabled = false;
       btnText.textContent = 'Send message';
     }

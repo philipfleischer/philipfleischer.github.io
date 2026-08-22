@@ -1,5 +1,5 @@
 ---
-title: "Python Programming — Fundamentals & OOP"
+title: "Python Programming: Fundamentals & OOP"
 courseCode: "IN1000"
 subtitle: "Python learning repository covering programming fundamentals, file handling, exceptions, functions, modules, object-oriented programming, and small practical projects."
 image: "/img/Python_Prog.png"
@@ -11,7 +11,7 @@ links:
     url: "https://github.com/philipfleischer/Python-Programming"
 ---
 
-**Python Programming** at UiO. First formal introduction to programming — learning to think computationally and express that thinking in code.
+**Python Programming** at UiO. First formal introduction to programming: learning to think computationally and express that thinking in code.
 
 ## Topics covered
 
@@ -22,16 +22,16 @@ links:
 - Type conversion and input/output (`input()`, `print()`)
 
 ### Control flow
-- `if`/`elif`/`else` — conditional execution
+- `if`/`elif`/`else`: conditional execution
 - `for` loops with `range()`, iterating over lists and strings
 - `while` loops and loop control: `break`, `continue`, `pass`
 - Nested loops and loop patterns
 
 ### Data structures
-- **Lists** — indexing, slicing, mutability, `append`, `insert`, `pop`, `sort`
-- **Tuples** — immutable sequences, unpacking, use as dictionary keys
-- **Dictionaries** — key-value store, `.get()`, `.items()`, `.keys()`, nested dicts
-- **Sets** — uniqueness, union/intersection/difference operations
+- **Lists**: indexing, slicing, mutability, `append`, `insert`, `pop`, `sort`
+- **Tuples**: immutable sequences, unpacking, use as dictionary keys
+- **Dictionaries**: key-value store, `.get()`, `.items()`, `.keys()`, nested dicts
+- **Sets**: uniqueness, union/intersection/difference operations
 
 ### Functions
 - `def` syntax, parameters vs arguments, return values
@@ -60,7 +60,7 @@ links:
 - `class` definitions, `__init__`, instance attributes vs class attributes
 - Methods: instance methods, class methods (`@classmethod`), static methods (`@staticmethod`)
 - Inheritance and method overriding
-- `__str__`, `__repr__`, `__len__`, `__eq__` — dunder methods
+- `__str__`, `__repr__`, `__len__`, `__eq__`: dunder methods
 
 ### Small projects
 - Calculator with error handling

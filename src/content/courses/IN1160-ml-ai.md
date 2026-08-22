@@ -1,5 +1,5 @@
 ---
-title: "IN1160 — Introduction to ML & AI"
+title: "IN1160: Introduction to ML & AI"
 courseCode: "IN1160"
 subtitle: "Coursework covering vector space models, text classification, regression, neural networks, decision trees, reinforcement learning, generative AI, evaluation metrics, and AI ethics."
 image: "/img/ML:AI_pic.png"
@@ -11,20 +11,20 @@ links:
     url: "https://github.com/philipfleischer/ML-AI"
 ---
 
-**IN1160 – Introduction to Machine Learning and Artificial Intelligence** at UiO. A practical and theoretical introduction to the core ideas behind modern AI.
+**IN1160 - Introduction to Machine Learning and Artificial Intelligence** at UiO. A practical and theoretical introduction to the core ideas behind modern AI.
 
 ## Course topics
 
 ### Representation and vector spaces
-- **Vector Space Models** — representing text as vectors, TF-IDF weighting, cosine similarity
+- **Vector Space Models**: representing text as vectors, TF-IDF weighting, cosine similarity
 - Document classification using vector representations
 - Dimensionality and sparsity in NLP
 
 ### Classical machine learning
-- **Regression** — linear and logistic, gradient descent, regularisation (L1/L2)
-- **Classification** — k-NN, naive Bayes, SVM
-- **Decision trees and random forests** — information gain, Gini impurity, ensemble methods
-- **Evaluation metrics** — accuracy, precision, recall, F1, confusion matrices, cross-validation
+- **Regression**: linear and logistic, gradient descent, regularisation (L1/L2)
+- **Classification**: k-NN, naive Bayes, SVM
+- **Decision trees and random forests**: information gain, Gini impurity, ensemble methods
+- **Evaluation metrics**: accuracy, precision, recall, F1, confusion matrices, cross-validation
 
 ### Neural networks
 - Feedforward networks: layers, weights, activation functions
@@ -53,4 +53,4 @@ links:
 - Case studies: facial recognition bias, hiring algorithms, medical AI
 
 ## Takeaway
-AI is not magic — it's applied statistics and optimization. Understanding the math (gradient descent as loss surface navigation, attention as weighted query-key similarity) makes it possible to reason about why a model fails, not just accept that it does.
+AI is not magic. It's applied statistics and optimization. Understanding the math (gradient descent as loss surface navigation, attention as weighted query-key similarity) makes it possible to reason about why a model fails, not just accept that it does.

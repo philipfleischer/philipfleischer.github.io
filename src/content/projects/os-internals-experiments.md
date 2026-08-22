@@ -22,7 +22,7 @@ A personal sandbox for exploring OS internals below the abstraction layers that 
 
 ### Process and memory management in C
 - Implementing a minimal **round-robin scheduler** with context switching via `setjmp`/`longjmp`
-- Manual memory allocator experiments — `malloc`/`free` with a free-list, coalescing adjacent blocks, and alignment
+- Manual memory allocator experiments: `malloc`/`free` with a free-list, coalescing adjacent blocks, and alignment
 - Playing with `mmap`, `mprotect`, and `/proc/self/maps` to understand virtual address space layout
 
 ### Debugging at the metal
@@ -31,9 +31,9 @@ A personal sandbox for exploring OS internals below the abstraction layers that 
 - Using `objdump`, `readelf`, and `nm` to understand ELF binaries
 
 ### Linux kernel interfaces
-- `ptrace` experiments — attaching to a process, reading/writing memory, intercepting syscalls
+- `ptrace` experiments: attaching to a process, reading/writing memory, intercepting syscalls
 - Writing character device drivers as loadable kernel modules (LKM) to understand the kernel module lifecycle
-- `/proc` filesystem — reading `/proc/PID/status`, `/proc/meminfo`, and parsing `/proc/self/maps`
+- `/proc` filesystem: reading `/proc/PID/status`, `/proc/meminfo`, and parsing `/proc/self/maps`
 
 ## Key insight
 The line between "application programmer" and "systems programmer" is mostly familiarity. Once you understand that a process is just a virtual address space + a set of registers, and that the kernel is just code that runs with higher privilege, a lot of previously mysterious behavior becomes obvious.

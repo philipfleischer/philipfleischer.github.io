@@ -10,24 +10,24 @@ links:
     url: "https://github.com/philipfleischer/Minimal-Network-Programming"
 ---
 
-A practical deep-dive into network programming from the socket layer upward. The goal was to understand network protocols by implementing them — not just by consuming library abstractions.
+A practical deep-dive into network programming from the socket layer upward. The goal was to understand network protocols by implementing them, not just by consuming library abstractions.
 
 ## Projects in this collection
 
 ### Raw socket programming
-- **TCP/UDP chatrooms** — multi-client chat server using `select()` for non-blocking I/O, handling client disconnects gracefully
-- **Port scanner** — concurrent port scanner using `threading` and raw sockets, with service fingerprinting
-- **Custom HTTP server** — implements HTTP/1.1 request parsing, response generation, and static file serving from scratch (no Flask/Django)
+- **TCP/UDP chatrooms**: multi-client chat server using `select()` for non-blocking I/O, handling client disconnects gracefully
+- **Port scanner**: concurrent port scanner using `threading` and raw sockets, with service fingerprinting
+- **Custom HTTP server**: implements HTTP/1.1 request parsing, response generation, and static file serving from scratch (no Flask/Django)
 
 ### Application-layer protocol clients
-- **SMTP client** — sends emails via SMTP AUTH LOGIN, handles MIME multipart for attachments
-- **IMAP client** — searches, fetches, and parses email with RFC 3501 compliance
-- **FTP/SFTP client** — file upload/download using `ftplib` and `paramiko`
+- **SMTP client**: sends emails via SMTP AUTH LOGIN, handles MIME multipart for attachments
+- **IMAP client**: searches, fetches, and parses email with RFC 3501 compliance
+- **FTP/SFTP client**: file upload/download using `ftplib` and `paramiko`
 
 ### Security-focused experiments
-- **TLS encrypted messaging** — mutual TLS with self-signed certificates using Python's `ssl` module
-- **Secure login system** — bcrypt-hashed passwords stored in SQLite, session tokens, brute-force rate limiting
-- **REST API with auth** — Flask API with JWT authentication, input validation, and rate limiting
+- **TLS encrypted messaging**: mutual TLS with self-signed certificates using Python's `ssl` module
+- **Secure login system**: bcrypt-hashed passwords stored in SQLite, session tokens, brute-force rate limiting
+- **REST API with auth**: Flask API with JWT authentication, input validation, and rate limiting
 
 ## Why this project matters
-Most networking courses teach theory. This project is about getting hands dirty with `recvfrom()`, parsing raw byte buffers, and understanding exactly what happens at each layer. The TLS section in particular required understanding certificate chains, handshake sequences, and cipher negotiation — not just calling `ssl.wrap_socket()`.
+Most networking courses teach theory. This project is about getting hands dirty with `recvfrom()`, parsing raw byte buffers, and understanding exactly what happens at each layer. The TLS section in particular required understanding certificate chains, handshake sequences, and cipher negotiation, not just calling `ssl.wrap_socket()`.

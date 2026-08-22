@@ -20,8 +20,8 @@ const skills = [
       { name: 'HTML / CSS', tip: 'Semantic markup and responsive layouts' },
       { name: 'SCSS', tip: 'Modular styling with design tokens' },
       { name: 'JavaScript', tip: 'Vanilla JS and DOM scripting' },
-      { name: 'TypeScript', tip: 'Typed JS — picked up building this site' },
-      { name: 'React', tip: 'Component-based UI — basic experience' },
+      { name: 'TypeScript', tip: 'Typed JS, picked up building this site' },
+      { name: 'React', tip: 'Component-based UI, basic experience' },
     ],
   },
   {
@@ -30,7 +30,7 @@ const skills = [
     items: [
       { name: 'Node.js', tip: 'Server-side JavaScript runtime' },
       { name: 'Express', tip: 'REST API development with Node' },
-      { name: 'MongoDB', tip: 'NoSQL — used in MERN stack projects' },
+      { name: 'MongoDB', tip: 'NoSQL, used in MERN stack projects' },
       { name: 'PostgreSQL', tip: 'Relational database and SQL' },
     ],
   },
@@ -48,10 +48,10 @@ const skills = [
     category: 'Cloud & DevOps',
     icon: 'fa-cloud',
     items: [
-      { name: 'Docker', tip: 'Containerisation — basic hands-on experience' },
-      { name: 'Terraform', tip: 'Infrastructure as Code — basic, used with Azure' },
-      { name: 'Azure', tip: 'Microsoft cloud — basic, used in Terraform lab' },
-      { name: 'GitHub Actions', tip: 'CI/CD — set up for this portfolio' },
+      { name: 'Docker', tip: 'Containerisation, basic hands-on experience' },
+      { name: 'Terraform', tip: 'Infrastructure as Code, basic, used with Azure' },
+      { name: 'Azure', tip: 'Microsoft cloud, basic, used in Terraform lab' },
+      { name: 'GitHub Actions', tip: 'CI/CD, set up for this portfolio' },
     ],
   },
   {
@@ -68,7 +68,7 @@ const skills = [
     category: 'Quality & Tooling',
     icon: 'fa-wrench',
     items: [
-      { name: 'Git', tip: 'Version control — daily use' },
+      { name: 'Git', tip: 'Version control, daily use' },
       { name: 'pytest', tip: 'Unit testing for Python projects' },
       { name: 'mypy', tip: 'Static type checking for Python' },
     ],
@@ -78,7 +78,7 @@ const skills = [
     icon: 'fa-robot',
     items: [
       { name: 'OpenAI API', tip: 'Built projects integrating GPT models' },
-      { name: 'Anthropic API', tip: 'Claude API — ongoing personal projects' },
+      { name: 'Anthropic API', tip: 'Claude API, ongoing personal projects' },
       { name: 'Prompt Engineering', tip: '2+ years daily use of AI tools in development' },
     ],
   },
@@ -87,10 +87,10 @@ const skills = [
 const education = [
   {
     icon: 'fa-graduation-cap',
-    period: ‘2026 – Present’,
-    title: ‘University of Oslo’,
-    sub: ‘MSc Informatics — Programming and System Architecture’,
-    desc: ‘Currently pursuing a master\’s degree in informatics, specialising in programming and system architecture with a focus on networks, communication, cybersecurity, and AI.’,
+    period: '2026 - Present',
+    title: 'University of Oslo',
+    sub: 'MSc Informatics, Programming and System Architecture',
+    desc: "Currently pursuing a master's degree in informatics, specialising in programming and system architecture with a focus on networks, communication, cybersecurity, and AI.",
   },
   {
     icon: 'fa-code-branch',
@@ -101,7 +101,7 @@ const education = [
   },
   {
     icon: 'fa-school',
-    period: '2018 – 2021',
+    period: '2018 - 2021',
     title: 'Foss High School',
     sub: 'General Studies',
     desc: 'General academic studies. Participated in academic summer programmes, including nanotechnology at the University of Oslo.',
@@ -111,28 +111,28 @@ const education = [
 const work = [
   {
     icon: 'fa-leaf',
-    period: 'Jun 2025 – Present',
+    period: 'Jun 2025 - Present',
     title: 'Housing Cooperative / Sameie',
     sub: 'Seasonal Maintenance Worker',
-    desc: 'Part-time seasonal maintenance — lawn mowing, painting window frames, and general upkeep.',
+    desc: 'Part-time seasonal maintenance: lawn mowing, painting window frames, and general upkeep.',
   },
   {
     icon: 'fa-wine-glass',
-    period: 'Jun 2021 – Sep 2022',
+    period: 'Jun 2021 - Sep 2022',
     title: 'Nektar Vinbar',
     sub: 'Kitchen & Cleaning Support',
     desc: 'Dishwashing during weekend service and responsible for cleaning the venue on Sundays.',
   },
   {
     icon: 'fa-mug-hot',
-    period: 'Mar 2018 – Sep 2018',
+    period: 'Mar 2018 - Sep 2018',
     title: 'Blafre Café',
     sub: 'Café Employee / Barista',
     desc: 'Prepared food and coffee, handled cash register, inventory, and daily operations.',
   },
   {
     icon: 'fa-table-tennis-paddle-ball',
-    period: 'Jan 2014 – Jan 2015',
+    period: 'Jan 2014 - Jan 2015',
     title: 'Grefsen Tennisklubb',
     sub: 'Tennis Instructor',
     desc: 'Coached children twice weekly and planned training sessions focused on progress and enjoyment.',
@@ -140,13 +140,13 @@ const work = [
 ];
 ---
 
-<Layout title="About — Philip Fleischer">
+<Layout title="About - Philip Fleischer">
   <main class="page-wrapper">
     <header class="page-hero" style="padding-left:0;padding-right:0;">
       <span class="section-eyebrow">Background</span>
       <h1 class="section-title">About me</h1>
       <p class="section-subtitle">
-        I'm a master's student at UiO, studying Informatics: Programming and System Architecture. My main interests are networks, communication, cybersecurity, and AI — I like working close to the metal and understanding how things actually work under the hood.
+        I'm a master's student at UiO, studying Informatics: Programming and System Architecture. My main interests are networks, communication, cybersecurity, and AI, and I like working close to the metal and understanding how things actually work under the hood.
       </p>
       <p class="section-subtitle" style="margin-top:-1.5rem">
         I'm looking for internships or roles where I can work on real problems and learn from people with more experience. Especially within networking, security, or systems development.
@@ -216,7 +216,7 @@ const work = [
               <div class="tl-body">
                 <span class="tl-period">{item.period}</span>
                 <h4 class="tl-title">
-                  {item.title} <span class="tl-sub">— {item.sub}</span>
+                  {item.title} <span class="tl-sub">- {item.sub}</span>
                 </h4>
                 <p class="tl-desc">{item.desc}</p>
               </div>
@@ -236,7 +236,7 @@ const work = [
               <div class="tl-body">
                 <span class="tl-period">{item.period}</span>
                 <h4 class="tl-title">
-                  {item.title} <span class="tl-sub">— {item.sub}</span>
+                  {item.title} <span class="tl-sub">- {item.sub}</span>
                 </h4>
                 <p class="tl-desc">{item.desc}</p>
               </div>

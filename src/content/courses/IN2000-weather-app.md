@@ -1,5 +1,5 @@
 ---
-title: "IN2000 — Android Weather App"
+title: "IN2000: Android Weather App"
 courseCode: "IN2000"
 subtitle: "Team Android app with weather tiles on an interactive map, MapLibre rendering, a backend tile server, and real-time meteorological API integration. Nominated among the 10 best projects in the course."
 image: "/img/WeatherAPP.png"
@@ -11,7 +11,7 @@ links:
     url: "https://github.com/philipfleischer/Weather-Map-Application"
 ---
 
-**IN2000 – Software Engineering with Project Work** at UiO. Built in a team of 6. This weather map application was **nominated among the 10 best projects** in the course cohort.
+**IN2000 - Software Engineering with Project Work** at UiO. Built in a team of 6. This weather map application was **nominated among the 10 best projects** in the course cohort.
 
 ## What the app does
 

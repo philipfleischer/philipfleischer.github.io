@@ -12,11 +12,11 @@ links:
     url: "https://todo-of7e.vercel.app/"
 ---
 
-A modern full-stack Todo application — designed as a realistic deployment example using current tooling rather than a simple UI demo. The stack combines SvelteKit's server-side routing, Prisma's type-safe database access layer, and Neon's serverless PostgreSQL.
+A modern full-stack Todo application: designed as a realistic deployment example using current tooling rather than a simple UI demo. The stack combines SvelteKit's server-side routing, Prisma's type-safe database access layer, and Neon's serverless PostgreSQL.
 
 ## What makes this interesting
 
-SvelteKit collocates your UI and your API in the same project — `+page.server.ts` files run on the server and can directly query the database, no separate backend required. This is the same pattern used in large-scale production apps at companies that use SvelteKit.
+SvelteKit collocates your UI and your API in the same project: `+page.server.ts` files run on the server and can directly query the database, no separate backend required. This is the same pattern used in large-scale production apps at companies that use SvelteKit.
 
 ## Tech Stack
 
@@ -29,8 +29,8 @@ SvelteKit collocates your UI and your API in the same project — `+page.server.
 | Deployment | Vercel (serverless functions) |
 
 ## Features
-- **Full CRUD** for todos — create, read, update, delete with persistence
-- **Optimistic UI updates** — UI responds instantly without waiting for the DB round trip
+- **Full CRUD** for todos: create, read, update, delete with persistence
+- **Optimistic UI updates**: UI responds instantly without waiting for the DB round trip
 - Server-side database access via Prisma (no exposed credentials client-side)
 - Production-ready Vercel deployment with automatic migrations on deploy
 
@@ -43,7 +43,7 @@ prisma generate && prisma migrate deploy && npm run build
 This single command generates the Prisma client, runs any pending migrations against Neon, and builds the Svelte app. Vercel runs this on every deployment.
 
 ## Why Prisma over raw SQL
-Prisma generates TypeScript types from your schema automatically — so if you rename a column in `schema.prisma`, TypeScript catches every call site that breaks. For a solo developer maintaining a project over time, this removes an entire class of silent runtime errors.
+Prisma generates TypeScript types from your schema automatically: so if you rename a column in `schema.prisma`, TypeScript catches every call site that breaks. For a solo developer maintaining a project over time, this removes an entire class of silent runtime errors.
 
 ## Architecture
 ```

@@ -17,14 +17,14 @@ A structured lab for learning Infrastructure as Code (IaC) using Terraform again
 ### Terraform fundamentals
 - Provider configuration for `azurerm`, authentication via service principal and environment variables
 - Understanding Terraform's three-stage workflow: `plan` → `apply` → `destroy`
-- **State management** — local state vs. remote state in Azure Blob Storage, state locking, and why shared state is critical for team environments
+- **State management**: local state vs. remote state in Azure Blob Storage, state locking, and why shared state is critical for team environments
 - `terraform.tfstate` inspection and the risks of manual state edits
 
 ### Resource provisioning
-- **Virtual Networks and Subnets** — VNet address spaces, NSG rules, peering
-- **Virtual Machines** — Linux VMs with cloud-init scripts, SSH key authentication, public IP assignment
-- **Storage accounts** — blob containers, access tiers, lifecycle management policies
-- **Azure Container Registry** — building and pushing Docker images for deployment
+- **Virtual Networks and Subnets**: VNet address spaces, NSG rules, peering
+- **Virtual Machines**: Linux VMs with cloud-init scripts, SSH key authentication, public IP assignment
+- **Storage accounts**: blob containers, access tiers, lifecycle management policies
+- **Azure Container Registry**: building and pushing Docker images for deployment
 
 ### Variable-driven configuration
 - `variables.tf` with type constraints, default values, and validation rules

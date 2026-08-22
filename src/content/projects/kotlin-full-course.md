@@ -1,6 +1,6 @@
 ---
 title: "Kotlin Full Course"
-subtitle: "Kotlin learning repository covering syntax, types, control flow, null safety, classes, OOP, coroutines, and Android preparation — structured as a comprehensive reference."
+subtitle: "Kotlin learning repository covering syntax, types, control flow, null safety, classes, OOP, coroutines, and Android preparation: structured as a comprehensive reference."
 image: "/img/Kotlin_Tut.png"
 tags: ["Kotlin", "OOP", "Null Safety", "Coroutines", "Functions", "Collections", "Android Prep"]
 topics: ["Android", "Full-Stack / Web"]
@@ -10,7 +10,7 @@ links:
     url: "https://github.com/philipfleischer/Kotlin-Full-Course"
 ---
 
-Structured Kotlin learning material — built as a personal reference and preparation for Android development (IN2000). Covers the language from the ground up rather than skipping to Android APIs.
+Structured Kotlin learning material: built as a personal reference and preparation for Android development (IN2000). Covers the language from the ground up rather than skipping to Android APIs.
 
 ## Topics covered
 
@@ -22,20 +22,20 @@ Structured Kotlin learning material — built as a personal reference and prepar
 
 ### Control flow
 - `if/else` as expressions (Kotlin `if` returns a value)
-- `when` as a powerful `switch` replacement — matching on types, ranges, and conditions
+- `when` as a powerful `switch` replacement: matching on types, ranges, and conditions
 - `for` loops with ranges (`1..10`, `until`, `downTo`, `step`)
 - `while` and `do-while`
 
 ### Functions
 - Named functions, default parameters, named arguments
-- Extension functions — adding methods to existing types without inheritance
+- Extension functions: adding methods to existing types without inheritance
 - Higher-order functions and lambdas
 - Inline functions and `crossinline` / `noinline` modifiers
 
 ### Null safety
 - The nullable type system (`String?` vs `String`)
 - Safe calls (`?.`), Elvis operator (`?:`), non-null assertions (`!!`)
-- `let`, `run`, `apply`, `also`, `with` — scope functions and when to use each
+- `let`, `run`, `apply`, `also`, `with`: scope functions and when to use each
 
 ### Object-Oriented Programming
 - `class`, `data class`, `sealed class`, `object` (singleton), `companion object`
@@ -49,8 +49,8 @@ Structured Kotlin learning material — built as a personal reference and prepar
 - Structured concurrency and cancellation
 
 ### Collections
-- `List`, `Set`, `Map` — mutable vs immutable variants
+- `List`, `Set`, `Map`: mutable vs immutable variants
 - Functional collection operations: `map`, `filter`, `reduce`, `fold`, `groupBy`, `sortedBy`
 
 ## Why a dedicated Kotlin course
-Coming from Java, Kotlin's null safety alone removes a large category of bugs. The coroutines section in particular is essential for Android — understanding structured concurrency made the Android app work (`IN2000`) much easier to reason about.
+Coming from Java, Kotlin's null safety alone removes a large category of bugs. The coroutines section in particular is essential for Android: understanding structured concurrency made the Android app work (`IN2000`) much easier to reason about.

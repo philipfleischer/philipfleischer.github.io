@@ -17,13 +17,13 @@ A hands-on collection of Android applications built while deepening Kotlin and A
 The repository is structured as a monorepo of small, focused apps rather than one large project. Each app is self-contained with its own `build.gradle`, so you can open any of them independently in Android Studio.
 
 ### Architecture patterns explored
-- **MVVM with ViewModel + LiveData / StateFlow** — separation of concerns, reactive UI updates without tight coupling to the Activity lifecycle
-- **Jetpack Compose** — declarative UI, recomposition, state hoisting, side effects, and custom themes
-- **Room + DAO** — local persistence with SQLite under the hood, migrations, and type converters
-- **Hilt dependency injection** — constructor injection, `@HiltViewModel`, scoped components
+- **MVVM with ViewModel + LiveData / StateFlow**: separation of concerns, reactive UI updates without tight coupling to the Activity lifecycle
+- **Jetpack Compose**: declarative UI, recomposition, state hoisting, side effects, and custom themes
+- **Room + DAO**: local persistence with SQLite under the hood, migrations, and type converters
+- **Hilt dependency injection**: constructor injection, `@HiltViewModel`, scoped components
 
 ### Networking
-- **Ktor HTTP client** — async REST calls, JSON deserialization with `kotlinx.serialization`, error handling and retry logic
+- **Ktor HTTP client**: async REST calls, JSON deserialization with `kotlinx.serialization`, error handling and retry logic
 - API integration patterns including `suspend` functions, coroutine scopes in ViewModel, and `Flow`-based data streams
 
 ### Testing

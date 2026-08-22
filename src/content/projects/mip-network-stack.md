@@ -1,6 +1,6 @@
 ---
 title: "MIP Network Stack (IN3230)"
-subtitle: "Custom minimal IP-style network stack built in C — MIP daemon, routing daemon with distance-vector algorithm, poison reverse, IPC, and packet forwarding tested in Mininet."
+subtitle: "Custom minimal IP-style network stack built in C: MIP daemon, routing daemon with distance-vector algorithm, poison reverse, IPC, and packet forwarding tested in Mininet."
 image: "/img/Routing.png"
 tags: ["C", "Networking", "Linux", "Routing", "Sockets", "Systems Programming"]
 topics: ["Networking", "Systems"]
@@ -10,9 +10,9 @@ links:
     url: "https://github.com/philipfleischer/Networks/tree/main/IP_Routing_Project"
 ---
 
-Two-semester systems project from IN3230 — Network Programming at UiO. The goal: implement a working IP-like protocol stack from scratch in C, running in a simulated network environment.
+Two-semester systems project from IN3230: Network Programming at UiO. The goal: implement a working IP-like protocol stack from scratch in C, running in a simulated network environment.
 
-## Project 1 — MIP Daemon (Minimal Internet Protocol)
+## Project 1: MIP Daemon (Minimal Internet Protocol)
 
 The first assignment built the foundation: a **MIP daemon** that runs on each node in the network and handles packet forwarding at the link layer.
 
@@ -21,9 +21,9 @@ The first assignment built the foundation: a **MIP daemon** that runs on each no
 - Raw socket programming using `AF_PACKET` sockets to read/write Ethernet frames directly
 - **IPC** between the MIP daemon and application processes using Unix domain sockets
 - Packet format: custom header with source/destination MIP addresses, TTL, and payload type
-- Tested in **Mininet** — a software-defined network emulator that creates virtual hosts and links
+- Tested in **Mininet**: a software-defined network emulator that creates virtual hosts and links
 
-## Project 2 — Routing Daemon
+## Project 2: Routing Daemon
 
 The second assignment added dynamic routing on top of the MIP stack.
 

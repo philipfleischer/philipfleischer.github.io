@@ -10,7 +10,7 @@ links:
     url: "https://github.com/philipfleischer/Flash-Card"
 ---
 
-A full-stack learning assistant that turns PDFs into interactive study material — **AI chat**, **summaries**, **concept explanations**, **auto-generated flashcards**, and **quizzes with results analytics** — all in one application.
+A full-stack learning assistant that turns PDFs into interactive study material, all in one application: **AI chat**, **summaries**, **concept explanations**, **auto-generated flashcards**, and **quizzes with results analytics**.
 
 Built to demonstrate end-to-end product development: authentication, file handling, REST API design, database modeling, AI integration, and a production-quality frontend.
 
@@ -21,7 +21,7 @@ Built to demonstrate end-to-end product development: authentication, file handli
 - Embedded in-app PDF viewer for reading while studying
 
 ### AI Study Tools (Google Gemini API)
-- Context-aware chat about document content — ask questions, get explanations
+- Context-aware chat about document content: ask questions, get explanations
 - One-click document summaries
 - Topic/concept explainer that extracts and clarifies ideas from the uploaded document
 
@@ -38,7 +38,7 @@ Built to demonstrate end-to-end product development: authentication, file handli
 
 ### Auth & Profile
 - JWT-based authentication (register/login with protected routes)
-- All data scoped to user ID on the backend — no cross-user access
+- All data scoped to user ID on the backend: no cross-user access
 
 ## Tech Stack
 

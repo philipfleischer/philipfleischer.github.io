@@ -9,7 +9,7 @@ https://philipfleischer.github.io/Portfolio/
 
 ## About
 
-I am a Computer Science student at the University of Oslo, focusing on systems programming, networking, and backend development.
+I am a master's student in informatics at the University of Oslo, focusing on cloud, fog and edge architecture and security.
 This portfolio showcases selected projects, skills, and contact information.
 
 ---

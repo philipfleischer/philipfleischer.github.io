@@ -5,9 +5,11 @@ import FilterBar from '../components/FilterBar.astro';
 import { getCollection } from 'astro:content';
 
 const allProjects = await getCollection('projects');
-const featured = allProjects.filter(p => p.data.featured).sort((a, b) =>
-  a.data.title.localeCompare(b.data.title)
-);
+// Projects with an explicit `order` come first, the rest alphabetically
+const byOrder = (a, b) =>
+  (a.data.order ?? Infinity) - (b.data.order ?? Infinity) ||
+  a.data.title.localeCompare(b.data.title);
+const featured = allProjects.filter(p => p.data.featured).sort(byOrder);
 const other = allProjects.filter(p => !p.data.featured);
 
 // Collect all unique topics
@@ -41,6 +43,7 @@ const allTopics = [...new Set(allProjects.flatMap(p => p.data.topics))].sort();
             links={p.data.links}
             slug={p.slug}
             detailPath={`/projects/${p.slug}`}
+            badge={p.data.badge}
           />
         ))}
         {other.map(p => (
@@ -53,6 +56,7 @@ const allTopics = [...new Set(allProjects.flatMap(p => p.data.topics))].sort();
             links={p.data.links}
             slug={p.slug}
             detailPath={`/projects/${p.slug}`}
+            badge={p.data.badge}
           />
         ))}
       </div>

@@ -5,7 +5,11 @@ import FilterBar from '../components/FilterBar.astro';
 import { getCollection } from 'astro:content';
 
 const allCourses = await getCollection('courses');
-const sorted = allCourses.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
+// Newest year first, then explicit `order` within a year
+const sorted = allCourses.sort((a, b) =>
+  (b.data.year ?? 0) - (a.data.year ?? 0) ||
+  (a.data.order ?? Infinity) - (b.data.order ?? Infinity)
+);
 const allTopics = [...new Set(allCourses.flatMap(c => c.data.topics))].sort();
 ---
 
@@ -34,6 +38,7 @@ const allTopics = [...new Set(allCourses.flatMap(c => c.data.topics))].sort();
           links={c.data.links}
           slug={c.slug}
           detailPath={`/courses/${c.slug}`}
+          badge={c.data.badge}
         />
       ))}
     </div>

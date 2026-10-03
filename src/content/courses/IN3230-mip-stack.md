@@ -1,7 +1,7 @@
 ---
 title: "IN3230: MIP Network Stack"
 courseCode: "IN3230"
-subtitle: "Built a minimal IP-style network stack in C: a MIP daemon, routing daemon with distance-vector algorithm and poison reverse, IPC, forwarding table, and Mininet testing."
+subtitle: "Designed and implemented a minimal IP-style network stack: a MIP daemon, a routing daemon with distance-vector routing and poison reverse, IPC between layers, and testing in Mininet."
 image: "/img/Routing.png"
 tags: ["C", "Networking", "Routing", "Linux", "Sockets", "Distance-Vector", "Mininet"]
 topics: ["Networking", "Systems"]
@@ -13,7 +13,7 @@ links:
     url: "https://github.com/philipfleischer/Networks"
 ---
 
-**IN3230 - Network Programming** at the University of Oslo. Two major projects building a complete minimal network stack from raw sockets in C.
+**IN3230: Network Programming** at the University of Oslo. Two major projects designing and building a complete minimal network stack, implemented in C on top of raw sockets. Beyond the projects, the course covered topics such as MPLS and how properties like reliability and efficiency are achieved in mobile and wired networks.
 
 ## Project 1: MIP Daemon
 
@@ -53,4 +53,4 @@ With the routing daemon running, packets traverse multiple MIP routers. Each rou
 - End-to-end packet delivery measured with custom ping tool built on top of MIP
 
 ## What this project taught me
-Building a protocol stack from scratch makes everything abstract in networking courses click. Understanding byte-order conversions (`htons`/`ntohs`), parsing raw Ethernet frames, and debugging with Wireshark inside Mininet gave me a much deeper grasp of how TCP/IP actually works than lecture notes alone.
+Designing a protocol stack layer by layer made the theory concrete: why address resolution is its own protocol, why routing and forwarding are separated, and how a small rule like poison reverse changes the behaviour of the whole network. The design decisions and the course material interested me more than the C implementation, and that is a big part of why I have moved towards system architecture and security.

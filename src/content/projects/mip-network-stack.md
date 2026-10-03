@@ -1,6 +1,6 @@
 ---
 title: "MIP Network Stack (IN3230)"
-subtitle: "Custom minimal IP-style network stack built in C: MIP daemon, routing daemon with distance-vector algorithm, poison reverse, IPC, and packet forwarding tested in Mininet."
+subtitle: "Designed and implemented a layered network stack with its own link-layer protocol, address resolution and distance-vector routing, tested in Mininet. The focus was on how each layer is structured and why."
 image: "/img/Routing.png"
 tags: ["C", "Networking", "Linux", "Routing", "Sockets", "Systems Programming"]
 topics: ["Networking", "Systems"]
@@ -10,7 +10,7 @@ links:
     url: "https://github.com/philipfleischer/Networks/tree/main/IP_Routing_Project"
 ---
 
-Two-semester systems project from IN3230: Network Programming at UiO. The goal: implement a working IP-like protocol stack from scratch in C, running in a simulated network environment.
+Systems project from IN3230: Network Programming at UiO. The goal was to design a working IP-like protocol stack, decide how its layers and processes should talk to each other, and then implement it in C and test it in an emulated network.
 
 ## Project 1: MIP Daemon (Minimal Internet Protocol)
 
@@ -43,5 +43,5 @@ The second assignment added dynamic routing on top of the MIP stack.
 ## Testing
 All tests run in Mininet with configurable topologies (star, chain, mesh). The routing daemon converges correctly after link failures and recovers when links come back up.
 
-## What I learned
-Building a protocol stack from scratch makes abstract concepts concrete. Writing the ARP-equivalent discovery, handling byte-order conversions (`htons`/`ntohs`) everywhere, and debugging with Wireshark inside Mininet taught me more about how TCP/IP actually works than any course reading.
+## What I took from it
+The part I valued most was the design, not the C code itself. Deciding where the boundaries between the daemons should go, what the routing layer needs to know about the layer below it, and how to stop routing loops from forming made it much clearer to me why real protocols like IP and ARP are built the way they are. It is also where I found out that I am more interested in system structure and design trade-offs than in writing low-level code, which shaped the direction I have taken since.

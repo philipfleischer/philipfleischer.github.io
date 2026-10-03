@@ -14,6 +14,8 @@ const projects = defineCollection({
     tags: z.array(z.string()),
     topics: z.array(z.string()),
     featured: z.boolean().default(true),
+    order: z.number().optional(),
+    badge: z.string().optional(),
     links: z.array(linkSchema),
   }),
 });
@@ -28,6 +30,8 @@ const courses = defineCollection({
     tags: z.array(z.string()),
     topics: z.array(z.string()),
     year: z.number().optional(),
+    order: z.number().optional(),
+    badge: z.string().optional(),
     links: z.array(linkSchema),
   }),
 });

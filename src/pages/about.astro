@@ -3,83 +3,113 @@ import Layout from '../layouts/Layout.astro';
 
 const skills = [
   {
-    category: 'Core Languages',
-    icon: 'fa-code',
-    items: [
-      { name: 'C', tip: 'Low-level systems programming and networking' },
-      { name: 'Python', tip: 'Scripting, tooling, ML, and scientific computing' },
-      { name: 'Java', tip: 'Object-oriented programming' },
-      { name: 'Kotlin', tip: 'Android development and course projects' },
-      { name: 'JavaScript', tip: 'Frontend and backend scripting' },
-    ],
-  },
-  {
-    category: 'Web & Frontend',
-    icon: 'fa-globe',
-    items: [
-      { name: 'HTML / CSS', tip: 'Semantic markup and responsive layouts' },
-      { name: 'SCSS', tip: 'Modular styling with design tokens' },
-      { name: 'JavaScript', tip: 'Vanilla JS and DOM scripting' },
-      { name: 'TypeScript', tip: 'Typed JS, picked up building this site' },
-      { name: 'React', tip: 'Component-based UI, basic experience' },
-    ],
-  },
-  {
-    category: 'Backend & Databases',
-    icon: 'fa-server',
-    items: [
-      { name: 'Node.js', tip: 'Server-side JavaScript runtime' },
-      { name: 'Express', tip: 'REST API development with Node' },
-      { name: 'MongoDB', tip: 'NoSQL, used in MERN stack projects' },
-      { name: 'PostgreSQL', tip: 'Relational database and SQL' },
-    ],
-  },
-  {
-    category: 'Mobile (Android)',
-    icon: 'fa-mobile-screen',
-    items: [
-      { name: 'Android', tip: 'Native Android app development' },
-      { name: 'Jetpack Compose', tip: 'Declarative UI toolkit for Android' },
-      { name: 'Ktor', tip: 'HTTP client for Kotlin' },
-      { name: 'MapLibre', tip: 'Maps and geo-visualisation on Android' },
-    ],
-  },
-  {
-    category: 'Cloud & DevOps',
-    icon: 'fa-cloud',
-    items: [
-      { name: 'Docker', tip: 'Containerisation, basic hands-on experience' },
-      { name: 'Terraform', tip: 'Infrastructure as Code, basic, used with Azure' },
-      { name: 'Azure', tip: 'Microsoft cloud, basic, used in Terraform lab' },
-      { name: 'GitHub Actions', tip: 'CI/CD, set up for this portfolio' },
-    ],
-  },
-  {
-    category: 'Systems, Networking & Security',
+    category: 'Security & Architecture',
     icon: 'fa-shield-halved',
     items: [
-      { name: 'Linux', tip: 'Daily use, shell scripting, and system internals' },
-      { name: 'Bash', tip: 'Shell scripting and command-line tooling' },
-      { name: 'TCP/IP & Routing', tip: 'Studied and implemented in IN3230 Networks' },
-      { name: 'Wireshark', tip: 'Packet analysis and protocol debugging' },
+      { name: 'Zero Trust', tip: 'NIST SP 800-207, applied in the Zero-Trust Continuum project' },
+      { name: 'IAM & Access Control', tip: 'Identity, policy decision and enforcement points, credential models' },
+      { name: 'IEC 62443', tip: 'Zones, conduits and the Purdue model for industrial systems (TEK5520)' },
+      { name: 'Threat Modelling', tip: 'Cyber Kill Chain and risk analysis, e.g. the WannaCry report' },
+      { name: 'Defence in Depth', tip: 'Layered controls, segmentation and industrial DMZs' },
+      { name: 'System Design', tip: 'Layered architecture and trade-offs between security, performance and robustness' },
     ],
   },
   {
-    category: 'Quality & Tooling',
-    icon: 'fa-wrench',
+    category: 'Cloud, Fog & Distributed Systems',
+    icon: 'fa-cloud',
     items: [
-      { name: 'Git', tip: 'Version control, daily use' },
-      { name: 'pytest', tip: 'Unit testing for Python projects' },
-      { name: 'mypy', tip: 'Static type checking for Python' },
+      { name: 'Fog & Edge Computing', tip: 'Offloading, placement and the edge-fog-cloud continuum (IN5700)' },
+      { name: 'OMNeT++ / INET', tip: 'Network and fog simulation, used for the IN5700 group project' },
+      { name: 'Java RMI', tip: 'Distributed middleware, used for the IN5020 assignments' },
+      { name: 'Load Balancing & Caching', tip: 'Zone-based load balancer with FIFO and LRU caching (IN5020)' },
+      { name: 'Replication & Consensus', tip: 'Replicated state machines, ordered broadcast, Raft and Chord' },
+      { name: 'Docker', tip: 'Multi-stage images and Compose deployments with health checks' },
+      { name: 'Terraform', tip: 'Infrastructure as code, basic, used with Azure' },
+      { name: 'Azure', tip: 'Microsoft cloud, basic, used in a Terraform lab' },
+    ],
+  },
+  {
+    category: 'Systems & Networking',
+    icon: 'fa-network-wired',
+    items: [
+      { name: 'TCP/IP & Routing', tip: 'Designed a custom network stack with distance-vector routing (IN3230)' },
+      { name: 'Linux', tip: 'Daily use, shell scripting and system internals' },
+      { name: 'Wireshark', tip: 'Packet analysis and protocol debugging' },
+      { name: 'Operating Systems', tip: 'Processes, memory and scheduling (IN3000)' },
+      { name: 'Bash', tip: 'Shell scripting and command-line tooling' },
+    ],
+  },
+  {
+    category: 'Languages',
+    icon: 'fa-code',
+    items: [
+      { name: 'Python', tip: 'Scripting, data analysis, ML and plotting' },
+      { name: 'Java', tip: 'Object-oriented programming and Java RMI' },
+      { name: 'C / C++', tip: 'Networking and OS coursework, OMNeT++ simulation models' },
+      { name: 'Go', tip: 'Services in the Zero-Trust Continuum project' },
+      { name: 'Kotlin', tip: 'Android development and course projects' },
+      { name: 'JavaScript / TypeScript', tip: 'Frontend, backend and this site' },
     ],
   },
   {
     category: 'AI & APIs',
     icon: 'fa-robot',
     items: [
+      { name: 'Claude & Claude Code', tip: 'Daily tool for design discussions and implementation' },
+      { name: 'Anthropic API', tip: 'Claude API, personal projects' },
       { name: 'OpenAI API', tip: 'Built projects integrating GPT models' },
-      { name: 'Anthropic API', tip: 'Claude API, ongoing personal projects' },
-      { name: 'Prompt Engineering', tip: '2+ years daily use of AI tools in development' },
+      { name: 'Prompt Engineering', tip: '2+ years of daily use of AI tools in development' },
+    ],
+  },
+  {
+    category: 'Web, Backend & Mobile',
+    icon: 'fa-globe',
+    items: [
+      { name: 'React', tip: 'Component-based UI, basic experience' },
+      { name: 'Node.js / Express', tip: 'REST API development' },
+      { name: 'PostgreSQL', tip: 'Relational database and SQL' },
+      { name: 'MongoDB', tip: 'NoSQL, used in MERN stack projects' },
+      { name: 'Android / Jetpack Compose', tip: 'Native Android apps with MVVM and Clean Architecture' },
+    ],
+  },
+  {
+    category: 'Tooling & Practices',
+    icon: 'fa-wrench',
+    items: [
+      { name: 'Git & GitHub', tip: 'Version control, pull requests and issue tracking' },
+      { name: 'GitHub Actions', tip: 'CI/CD, set up for this site and the ZTC project' },
+      { name: 'Maven', tip: 'Java builds for the IN5020 assignments' },
+      { name: 'pytest', tip: 'Unit testing for Python projects' },
+    ],
+  },
+];
+
+const focus = [
+  {
+    icon: 'fa-book-open',
+    title: 'This semester (autumn 2026)',
+    items: [
+      'TEK5520: Cybersecurity in Industrial Systems',
+      'IN5020: Distributed Systems',
+      'IN5700: Fog and Cloud Computing',
+    ],
+  },
+  {
+    icon: 'fa-compass',
+    title: 'Where I am heading',
+    items: [
+      'Cloud and cloud security engineering, with security architecture as the long-term goal',
+      'Master\'s thesis in security architecture for cloud and edge systems',
+      'Applying it in sectors that matter for society, such as energy and critical infrastructure',
+    ],
+  },
+  {
+    icon: 'fa-person-running',
+    title: 'Outside of studies',
+    items: [
+      'Training every day, mostly running and strength training',
+      'Personal coding projects and keeping up with new technology',
+      'Weekly part-time job in building operations and maintenance',
     ],
   },
 ];
@@ -90,28 +120,28 @@ const education = [
     period: '2026 - Present',
     title: 'University of Oslo',
     sub: 'MSc Informatics, Programming and System Architecture',
-    desc: "Currently pursuing a master's degree in informatics, specialising in programming and system architecture with a focus on networks, communication, cybersecurity, and AI.",
+    desc: "Master's degree with a focus on cloud, fog and edge architecture and security. I am currently looking for a thesis topic within security architecture for cloud and edge systems, and I am open to writing it in collaboration with an organisation.",
   },
   {
     icon: 'fa-graduation-cap',
     period: '2026',
     title: 'University of Oslo',
     sub: 'BSc Informatics, Programming and System Architecture',
-    desc: "Completed my bachelor's degree in informatics, specialising in programming and system architecture.",
+    desc: "Completed in June 2026. Courses include networks (IN3230), information security (IN2120), operating systems (IN3000), algorithms (IN3130), software engineering in teams (IN2000) and machine learning (IN1160).",
   },
   {
-    icon: 'fa-code-branch',
-    period: 'Academic focus 2023 - 2024',
-    title: 'Systems, Networks, Security, Cloud & AI',
-    sub: 'Technical direction developed through coursework and project work',
-    desc: 'After exploring several academic directions, I chose to specialise further in computer science, with particular interest in backend systems, networking, information security, cloud infrastructure and applied AI.',
+    icon: 'fa-compass',
+    period: '2023 - 2024',
+    title: 'Study break',
+    sub: 'Economics, management and astrophysics',
+    desc: 'Took time to try courses in economics, management and astrophysics to see if another field suited me better. It confirmed that informatics was the right choice, and my progress and grades have been clearly stronger since I came back.',
   },
   {
     icon: 'fa-school',
     period: '2018 - 2021',
     title: 'Foss High School',
     sub: 'General Studies',
-    desc: 'General academic studies. Participated in academic summer programmes, including nanotechnology at the University of Oslo.',
+    desc: 'General academic studies. Took part in academic summer programmes, including nanotechnology at the University of Oslo.',
   },
 ];
 
@@ -119,9 +149,9 @@ const work = [
   {
     icon: 'fa-leaf',
     period: 'Jun 2025 - Present',
-    title: 'Housing Cooperative / Sameie',
-    sub: 'Seasonal Maintenance Worker',
-    desc: 'Part-time seasonal maintenance: lawn mowing, painting window frames, and general upkeep.',
+    title: 'Housing Cooperative (Sameie), Oslo',
+    sub: 'Operations & Maintenance Worker',
+    desc: 'Part-time job alongside my studies, every week all year round: general upkeep, repairs and seasonal work on the property.',
   },
   {
     icon: 'fa-wine-glass',
@@ -142,7 +172,7 @@ const work = [
     period: 'Jan 2014 - Jan 2015',
     title: 'Grefsen Tennisklubb',
     sub: 'Tennis Instructor',
-    desc: 'Coached children twice weekly and planned training sessions focused on progress and enjoyment.',
+    desc: 'Coached children and young players twice a week and planned training sessions focused on progress and enjoyment.',
   },
 ];
 ---
@@ -153,10 +183,10 @@ const work = [
       <span class="section-eyebrow">Background</span>
       <h1 class="section-title">About me</h1>
       <p class="section-subtitle">
-        I'm a master's student at UiO, studying Informatics: Programming and System Architecture. My main interests are networks, communication, cybersecurity, and AI, and I like working close to the metal and understanding how things actually work under the hood.
+        I'm Philip, a master's student in informatics at the University of Oslo, from Oslo. I started out with a broad interest in networks and systems, and designed and built my own network protocol stack with custom routing in one of my courses. Along the way I realised that the part I enjoy most is not writing low-level code, but thinking through how systems should be built: how access and trust are structured, which trade-offs to make between security, performance and robustness, and why things are designed the way they are.
       </p>
       <p class="section-subtitle" style="margin-top:-1.5rem">
-        I'm looking for internships or roles where I can work on real problems and learn from people with more experience. Especially within networking, security, or systems development.
+        That is the direction I am heading: cloud, fog and edge architecture combined with security. I want to use technology, including AI, in a responsible and well-considered way, and to work on something that matters for other people and for society, like critical infrastructure. I am open to a part-time job alongside my studies, to writing my thesis together with an organisation, and to full-time roles from summer 2027.
       </p>
       <div class="about-cta">
         <a
@@ -177,6 +207,30 @@ const work = [
         </a>
       </div>
     </header>
+
+    <!-- Right now -->
+    <section aria-labelledby="focus-heading">
+      <h2 class="section-title" id="focus-heading">
+        <i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i> Right now
+      </h2>
+      <div class="focus-grid">
+        {
+          focus.map((block) => (
+            <div class="skill-card">
+              <h3 class="skill-card__title">
+                <i class={`fa-solid ${block.icon}`} aria-hidden="true" />
+                {block.title}
+              </h3>
+              <ul class="focus-list">
+                {block.items.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <div class="divider"></div>
 
     <!-- Skills -->
     <section aria-labelledby="skills-heading">
@@ -263,6 +317,30 @@ const work = [
     gap: $sp-3;
     flex-wrap: wrap;
     margin-top: $sp-6;
+  }
+
+  // ── Right now ────────────────────────────────────────────────────
+  .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $sp-4;
+    margin-bottom: $sp-8;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .focus-list {
+    display: grid;
+    gap: $sp-2;
+    padding-left: $sp-5;
+    list-style: disc;
+    font-size: 0.88rem;
+    color: $text-muted;
+    line-height: 1.6;
+
+    li::marker { color: $accent; }
   }
 
   // ── Skills ───────────────────────────────────────────────────────
@@ -364,6 +442,12 @@ const work = [
     &:focus::after {
       opacity: 1;
       transform: translateX(-50%) translateY(0);
+    }
+
+    // Hidden tooltips near the screen edge widen the page on phones,
+    // and there is no hover on touch screens anyway
+    @media (max-width: 720px) {
+      &[data-tip]::after { display: none; }
     }
   }
 

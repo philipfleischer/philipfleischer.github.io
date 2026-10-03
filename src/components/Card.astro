@@ -8,17 +8,19 @@ export interface Props {
   links: { label: string; url: string }[];
   slug: string;
   detailPath: string;  // e.g. /projects/slug or /courses/slug
+  badge?: string;      // optional highlight label shown on the image
 }
 
-const { title, subtitle, image, tags, links, topics, slug, detailPath } = Astro.props;
+const { title, subtitle, image, tags, links, topics, slug, detailPath, badge } = Astro.props;
 ---
 
 <article
-  class="card"
+  class:list={['card', { 'card--highlight': badge }]}
   data-topics={topics.join(',')}
 >
   <a href={detailPath} class="card__media-link" tabindex="-1" aria-hidden="true">
     <div class="card__media">
+      {badge && <span class="card__badge">{badge}</span>}
       <img src={image} alt={title} loading="lazy" width="400" height="220" />
     </div>
   </a>
@@ -75,9 +77,14 @@ const { title, subtitle, image, tags, links, topics, slug, detailPath } = Astro.
     }
   }
 
+  .card--highlight {
+    border-color: $accent-border;
+  }
+
   .card__media-link { display: block; }
 
   .card__media {
+    position: relative;
     width: 100%;
     height: 190px;
     background: $bg-3;
@@ -90,6 +97,22 @@ const { title, subtitle, image, tags, links, topics, slug, detailPath } = Astro.
       filter: grayscale(15%);
       transition: filter $t-slow $ease, transform $t-slow $ease;
     }
+  }
+
+  .card__badge {
+    position: absolute;
+    top: $sp-3;
+    left: $sp-3;
+    z-index: 1;
+    padding: 0.25rem 0.65rem;
+    border-radius: $r-full;
+    background: $accent;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    box-shadow: $shadow-sm;
   }
 
   .card:hover .card__media img {

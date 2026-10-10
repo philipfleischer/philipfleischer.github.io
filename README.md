@@ -28,7 +28,6 @@ This portfolio showcases selected projects, skills, and contact information.
 - index.html – main entry point
 - styles/ – styling (SCSS/CSS)
 - app.js – client-side logic and navigation
-- assets/ – images and documents (e.g. CV)
 
 ---
 

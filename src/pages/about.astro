@@ -8,24 +8,24 @@ const skills = [
     items: [
       { name: 'Zero Trust', tip: 'NIST SP 800-207, applied in the Zero-Trust Continuum project' },
       { name: 'IAM & Access Control', tip: 'Identity, policy decision and enforcement points, credential models' },
-      { name: 'IEC 62443', tip: 'Zones, conduits and the Purdue model for industrial systems (TEK5520)' },
+      { name: 'System Design', tip: 'Layered architecture and trade-offs between security, performance and robustness' },
       { name: 'Threat Modelling', tip: 'Cyber Kill Chain and risk analysis, e.g. the WannaCry report' },
       { name: 'Defence in Depth', tip: 'Layered controls, segmentation and industrial DMZs' },
-      { name: 'System Design', tip: 'Layered architecture and trade-offs between security, performance and robustness' },
+      { name: 'IEC 62443', tip: 'Zones, conduits and the Purdue model for industrial systems (TEK5520)' },
     ],
   },
   {
     category: 'Cloud, Fog & Distributed Systems',
     icon: 'fa-cloud',
     items: [
-      { name: 'Fog & Edge Computing', tip: 'Offloading, placement and the edge-fog-cloud continuum (IN5700)' },
-      { name: 'OMNeT++ / INET', tip: 'Network and fog simulation, used for the IN5700 group project' },
-      { name: 'Java RMI', tip: 'Distributed middleware, used for the IN5020 assignments' },
-      { name: 'Load Balancing & Caching', tip: 'Zone-based load balancer with FIFO and LRU caching (IN5020)' },
-      { name: 'Replication & Consensus', tip: 'Replicated state machines, ordered broadcast, Raft and Chord' },
-      { name: 'Docker', tip: 'Multi-stage images and Compose deployments with health checks' },
-      { name: 'Terraform', tip: 'Infrastructure as code, basic, used with Azure' },
       { name: 'Azure', tip: 'Microsoft cloud, basic, used in a Terraform lab' },
+      { name: 'Terraform', tip: 'Infrastructure as code, basic, used with Azure' },
+      { name: 'Docker', tip: 'Multi-stage images and Compose deployments with health checks' },
+      { name: 'Fog & Edge Computing', tip: 'Offloading, placement and the edge-fog-cloud continuum (IN5700)' },
+      { name: 'Replication & Consensus', tip: 'Replicated state machines, ordered broadcast, Raft and Chord' },
+      { name: 'Load Balancing & Caching', tip: 'Zone-based load balancer with FIFO and LRU caching (IN5020)' },
+      { name: 'Java RMI', tip: 'Distributed middleware, used for the IN5020 assignments' },
+      { name: 'OMNeT++ / INET', tip: 'Network and fog simulation, used for the IN5700 group project' },
     ],
   },
   {
@@ -34,21 +34,42 @@ const skills = [
     items: [
       { name: 'TCP/IP & Routing', tip: 'Designed a custom network stack with distance-vector routing (IN3230)' },
       { name: 'Linux', tip: 'Daily use, shell scripting and system internals' },
+      { name: 'Bash', tip: 'Shell scripting and command-line tooling' },
       { name: 'Wireshark', tip: 'Packet analysis and protocol debugging' },
       { name: 'Operating Systems', tip: 'Processes, memory and scheduling (IN3000)' },
-      { name: 'Bash', tip: 'Shell scripting and command-line tooling' },
     ],
   },
   {
     category: 'Languages',
     icon: 'fa-code',
     items: [
+      { name: 'Go', tip: 'Services in the Zero-Trust Continuum project' },
       { name: 'Python', tip: 'Scripting, data analysis, ML and plotting' },
       { name: 'Java', tip: 'Object-oriented programming and Java RMI' },
       { name: 'C / C++', tip: 'Networking and OS coursework, OMNeT++ simulation models' },
-      { name: 'Go', tip: 'Services in the Zero-Trust Continuum project' },
-      { name: 'Kotlin', tip: 'Android development and course projects' },
       { name: 'JavaScript / TypeScript', tip: 'Frontend, backend and this site' },
+      { name: 'Kotlin', tip: 'Android development and course projects' },
+    ],
+  },
+  {
+    category: 'Tooling & Practices',
+    icon: 'fa-wrench',
+    items: [
+      { name: 'GitHub Actions', tip: 'CI/CD, set up for this site and the ZTC project' },
+      { name: 'Git & GitHub', tip: 'Version control, pull requests and issue tracking' },
+      { name: 'Maven', tip: 'Java builds for the IN5020 assignments' },
+      { name: 'pytest', tip: 'Unit testing for Python projects' },
+    ],
+  },
+  {
+    category: 'Web, Backend & Mobile',
+    icon: 'fa-globe',
+    items: [
+      { name: 'Node.js / Express', tip: 'REST API development' },
+      { name: 'PostgreSQL', tip: 'Relational database and SQL' },
+      { name: 'React', tip: 'Component-based UI, basic experience' },
+      { name: 'MongoDB', tip: 'NoSQL, used in MERN stack projects' },
+      { name: 'Android / Jetpack Compose', tip: 'Native Android apps with MVVM and Clean Architecture' },
     ],
   },
   {
@@ -59,27 +80,6 @@ const skills = [
       { name: 'Anthropic API', tip: 'Claude API, personal projects' },
       { name: 'OpenAI API', tip: 'Built projects integrating GPT models' },
       { name: 'Prompt Engineering', tip: '2+ years of daily use of AI tools in development' },
-    ],
-  },
-  {
-    category: 'Web, Backend & Mobile',
-    icon: 'fa-globe',
-    items: [
-      { name: 'React', tip: 'Component-based UI, basic experience' },
-      { name: 'Node.js / Express', tip: 'REST API development' },
-      { name: 'PostgreSQL', tip: 'Relational database and SQL' },
-      { name: 'MongoDB', tip: 'NoSQL, used in MERN stack projects' },
-      { name: 'Android / Jetpack Compose', tip: 'Native Android apps with MVVM and Clean Architecture' },
-    ],
-  },
-  {
-    category: 'Tooling & Practices',
-    icon: 'fa-wrench',
-    items: [
-      { name: 'Git & GitHub', tip: 'Version control, pull requests and issue tracking' },
-      { name: 'GitHub Actions', tip: 'CI/CD, set up for this site and the ZTC project' },
-      { name: 'Maven', tip: 'Java builds for the IN5020 assignments' },
-      { name: 'pytest', tip: 'Unit testing for Python projects' },
     ],
   },
 ];
@@ -196,14 +196,6 @@ const work = [
           rel="noopener"
         >
           <i class="fab fa-github fa-sm"></i> GitHub
-        </a>
-        <a
-          href="https://www.linkedin.com/in/philip-fleischer-ab9439229/"
-          class="btn-ghost"
-          target="_blank"
-          rel="noopener"
-        >
-          <i class="fab fa-linkedin-in fa-sm"></i> LinkedIn
         </a>
       </div>
     </header>

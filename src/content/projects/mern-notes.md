@@ -10,6 +10,7 @@ links:
     url: "https://github.com/philipfleischer/Notes-Full_Stack"
   - label: "Live Demo"
     url: "https://notes-full-stack-w3s5.onrender.com/"
+order: 11
 ---
 
 A production-ready full-stack notes application built to demonstrate real-world backend engineering and REST API best practices, not just "make it work," but make it work *correctly*.

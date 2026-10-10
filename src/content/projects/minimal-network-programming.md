@@ -8,6 +8,7 @@ featured: true
 links:
   - label: "GitHub Repo"
     url: "https://github.com/philipfleischer/Minimal-Network-Programming"
+order: 3
 ---
 
 A practical deep-dive into network programming from the socket layer upward. The goal was to understand network protocols by implementing them, not just by consuming library abstractions.

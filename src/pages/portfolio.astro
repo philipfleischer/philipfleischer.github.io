@@ -9,8 +9,7 @@ const allProjects = await getCollection('projects');
 const byOrder = (a, b) =>
   (a.data.order ?? Infinity) - (b.data.order ?? Infinity) ||
   a.data.title.localeCompare(b.data.title);
-const featured = allProjects.filter(p => p.data.featured).sort(byOrder);
-const other = allProjects.filter(p => !p.data.featured);
+const projects = [...allProjects].sort(byOrder);
 
 // Collect all unique topics
 const allTopics = [...new Set(allProjects.flatMap(p => p.data.topics))].sort();
@@ -31,22 +30,9 @@ const allTopics = [...new Set(allProjects.flatMap(p => p.data.topics))].sort();
     <FilterBar topics={allTopics} id="project-filter" />
 
     <section aria-label="Featured projects">
-      <h2 class="block-title">Featured</h2>
+      <h2 class="block-title">All projects</h2>
       <div class="card-grid" id="project-grid">
-        {featured.map(p => (
-          <Card
-            title={p.data.title}
-            subtitle={p.data.subtitle}
-            image={p.data.image}
-            tags={p.data.tags}
-            topics={p.data.topics}
-            links={p.data.links}
-            slug={p.slug}
-            detailPath={`/projects/${p.slug}`}
-            badge={p.data.badge}
-          />
-        ))}
-        {other.map(p => (
+        {projects.map(p => (
           <Card
             title={p.data.title}
             subtitle={p.data.subtitle}

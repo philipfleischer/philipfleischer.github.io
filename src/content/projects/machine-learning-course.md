@@ -8,6 +8,7 @@ featured: false
 links:
   - label: "GitHub Repo"
     url: "https://github.com/philipfleischer/Machine-Learning-Course-1"
+order: 2
 ---
 
 Hands-on machine learning projects built while working through a structured ML curriculum. The focus is on understanding *why* each technique works, not just calling `.fit()`.

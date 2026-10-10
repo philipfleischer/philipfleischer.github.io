@@ -10,6 +10,7 @@ links:
     url: "https://github.com/philipfleischer/TODO"
   - label: "Live Demo"
     url: "https://todo-of7e.vercel.app/"
+order: 12
 ---
 
 A modern full-stack Todo application: designed as a realistic deployment example using current tooling rather than a simple UI demo. The stack combines SvelteKit's server-side routing, Prisma's type-safe database access layer, and Neon's serverless PostgreSQL.

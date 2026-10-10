@@ -8,6 +8,7 @@ featured: true
 links:
   - label: "GitHub Repo"
     url: "https://github.com/philipfleischer/Networks/tree/main/IP_Routing_Project"
+order: 4
 ---
 
 Systems project from IN3230: Network Programming at UiO. The goal was to design a working IP-like protocol stack, decide how its layers and processes should talk to each other, and then implement it in C and test it in an emulated network.

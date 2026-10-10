@@ -8,6 +8,7 @@ featured: false
 links:
   - label: "GitHub Repo"
     url: "https://github.com/philipfleischer/Kotlin-Full-Course"
+order: 8
 ---
 
 Structured Kotlin learning material: built as a personal reference and preparation for Android development (IN2000). Covers the language from the ground up rather than skipping to Android APIs.

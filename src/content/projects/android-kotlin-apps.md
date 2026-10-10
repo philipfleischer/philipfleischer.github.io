@@ -8,6 +8,7 @@ featured: true
 links:
   - label: "GitHub Repo"
     url: "https://github.com/philipfleischer/Android-Kotlin-apps"
+order: 7
 ---
 
 A hands-on collection of Android applications built while deepening Kotlin and Android SDK knowledge beyond university coursework. Each sub-project targets a specific architectural pattern or Android API surface, making it easy to reference individual patterns in isolation.

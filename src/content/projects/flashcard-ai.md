@@ -8,6 +8,7 @@ featured: true
 links:
   - label: "GitHub Repo"
     url: "https://github.com/philipfleischer/Flash-Card"
+order: 13
 ---
 
 A full-stack learning assistant that turns PDFs into interactive study material, all in one application: **AI chat**, **summaries**, **concept explanations**, **auto-generated flashcards**, and **quizzes with results analytics**.

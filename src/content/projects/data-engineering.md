@@ -8,6 +8,7 @@ featured: true
 links:
   - label: "GitHub Repo"
     url: "https://github.com/philipfleischer/Data-Engineering"
+order: 10
 ---
 
 A structured exploration of the modern data engineering stack: building ELT pipelines that move, transform, and serve data at scale using the same tools used in industry.

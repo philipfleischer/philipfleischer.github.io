@@ -8,6 +8,7 @@ featured: true
 links:
   - label: "GitHub Repo"
     url: "https://github.com/philipfleischer/Operating-Systems-Internals-Experiments"
+order: 9
 ---
 
 A personal sandbox for exploring OS internals below the abstraction layers that most developers take for granted. This repository sits alongside the formal IN3000 coursework but goes further into personal experiments and notes.

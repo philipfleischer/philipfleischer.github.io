@@ -8,6 +8,7 @@ featured: true
 links:
   - label: "GitHub Repo"
     url: "https://github.com/philipfleischer/Cloud_Tutorial"
+order: 5
 ---
 
 A structured lab for learning Infrastructure as Code (IaC) using Terraform against the Azure cloud provider. The repository follows a progression from basic resource provisioning to multi-module, variable-driven deployments.

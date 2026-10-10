@@ -57,27 +57,27 @@ const nav = [
     />
   </head>
   <body>
-    <!-- Theme toggle button -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">
-      <i class="fa-solid fa-moon" aria-hidden="true"></i>
-    </button>
+    <!-- Top navigation (static, scrolls away with the page) -->
+    <header class="top-bar">
+      <nav class="top-nav" aria-label="Main navigation">
+        {nav.map(({ href, icon, label }) => (
+          <a
+            href={href}
+            class:list={['nav-item', { 'nav-item--active': isActive(href) }]}
+            aria-label={label}
+            aria-current={isActive(href) ? 'page' : undefined}
+            data-label={label}
+          >
+            <i class={`fa-solid ${icon}`} aria-hidden="true"></i>
+          </a>
+        ))}
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
+    </header>
 
     <slot />
-
-    <!-- Bottom navigation -->
-    <nav class="bottom-nav" aria-label="Main navigation">
-      {nav.map(({ href, icon, label }) => (
-        <a
-          href={href}
-          class:list={['nav-item', { 'nav-item--active': isActive(href) }]}
-          aria-label={label}
-          aria-current={isActive(href) ? 'page' : undefined}
-          data-label={label}
-        >
-          <i class={`fa-solid ${icon}`} aria-hidden="true"></i>
-        </a>
-      ))}
-    </nav>
   </body>
 </html>
 
@@ -116,11 +116,21 @@ const nav = [
 <style lang="scss">
   @use 'src/styles/variables' as *;
 
+  .top-bar {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $sp-4 $page-px;
+    border-bottom: 1px solid $border-subtle;
+  }
+
   .theme-toggle {
-    position: fixed;
-    top: 16px;
-    right: 20px;
-    z-index: 200;
+    position: absolute;
+    top: 50%;
+    right: $page-px;
+    transform: translateY(-50%);
     width: 40px;
     height: 40px;
     border-radius: $r-full;
@@ -140,27 +150,20 @@ const nav = [
       background: $bg-3;
       border-color: $accent;
       color: $accent;
-      transform: rotate(20deg);
+      transform: translateY(-50%) rotate(20deg);
     }
   }
 
-  .bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    height: $nav-h;
-
+  .top-nav {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: $sp-3;
 
-    background: var(--nav-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-top: 1px solid $border-subtle;
+    @media (max-width: 480px) {
+      gap: $sp-2;
+      margin-right: 48px; // leave room for the theme toggle
+    }
   }
 
   .nav-item {
@@ -181,13 +184,19 @@ const nav = [
 
     i { font-size: 1.1rem; pointer-events: none; }
 
+    @media (max-width: 480px) {
+      width: 44px;
+      height: 44px;
+      i { font-size: 1rem; }
+    }
+
     // Tooltip
     &::after {
       content: attr(data-label);
       position: absolute;
-      bottom: calc(100% + 10px);
+      top: calc(100% + 10px);
       left: 50%;
-      transform: translateX(-50%) translateY(4px);
+      transform: translateX(-50%) translateY(-4px);
       background: $bg-3;
       color: $text-muted;
       border: 1px solid $border;
@@ -205,7 +214,7 @@ const nav = [
       background: $bg-2;
       border-color: $border;
       color: $text-muted;
-      transform: translateY(-2px);
+      transform: translateY(2px);
       text-decoration: none;
       &::after { opacity: 1; transform: translateX(-50%) translateY(0); }
     }

@@ -8,6 +8,7 @@ featured: false
 links:
   - label: "GitHub Repo"
     url: "https://github.com/philipfleischer/Docker-Course"
+order: 6
 ---
 
 A lab-driven course through Docker from first principles, not just `docker run`, but understanding what containers actually are and how they differ from virtual machines.

@@ -48,15 +48,6 @@ const tagsCollapsible = tags.length > 12;
       })();
     </script>
 
-    <a href={backHref} class="back-link">
-      <i class="fa-solid fa-arrow-left fa-sm" aria-hidden="true"></i>
-      Back to {backLabel}
-    </a>
-
-    <div class="detail-hero-img">
-      <img src={image} alt={title} width="1100" height="380" />
-    </div>
-
     <div class="detail-layout">
 
       <aside class="detail-sidebar" aria-label="Page panel">
@@ -146,6 +137,15 @@ const tagsCollapsible = tags.length > 12;
       </aside>
 
       <article class="detail-main">
+        <a href={backHref} class="back-link">
+          <i class="fa-solid fa-arrow-left fa-sm" aria-hidden="true"></i>
+          Back to {backLabel}
+        </a>
+
+        <div class="detail-hero-img">
+          <img src={image} alt={title} width="1100" height="380" />
+        </div>
+
         {code && (
           <div class="course-eyebrow">
             <span class="course-code">{code}</span>
@@ -318,11 +318,21 @@ const tagsCollapsible = tags.length > 12;
   $panel-w: 260px;
   $rail-w: 2.75rem;
 
+  // The panel hugs the left edge of the window; the write-up is centred in
+  // the space to its right and gets wider when the panel is hidden.
   .detail-page {
-    max-width: $content-max;
-    margin: 0 auto;
-    padding: $sp-8 $page-px $sp-12;
+    padding: $sp-8 $page-px $sp-12 $sp-4;
+
+    @media (max-width: 860px) { padding-left: $page-px; }
   }
+
+  .detail-main {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .panel-collapsed .detail-main { max-width: $content-max; }
 
   .back-link {
     display: inline-flex;
@@ -354,7 +364,6 @@ const tagsCollapsible = tags.length > 12;
     grid-template-columns: $panel-w minmax(0, 1fr);
     gap: $sp-8;
     align-items: start;
-    transition: grid-template-columns $t-slow $ease;
 
     @media (max-width: 860px) {
       grid-template-columns: minmax(0, 1fr);

@@ -1,0 +1,716 @@
+---
+// Shared layout for project and course detail pages: a collapsible panel on
+// the left (links, topics, "On this page") and the write-up on the right.
+import Layout from './Layout.astro';
+
+interface Heading { depth: number; slug: string; text: string }
+
+export interface Props {
+  pageTitle: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  tags: string[];
+  topics: string[];
+  links: { label: string; url: string }[];
+  headings?: Heading[];
+  backHref: string;      // e.g. /portfolio
+  backLabel: string;     // e.g. Portfolio
+  allLabel: string;      // e.g. All Projects
+  code?: string;         // course code shown above the title
+  year?: number;
+}
+
+const {
+  pageTitle, title, subtitle, image, tags, topics, links,
+  headings = [], backHref, backLabel, allLabel, code, year,
+} = Astro.props;
+
+// Long write-ups get an "On this page" list and more space between sections.
+const toc = headings.filter(h => h.depth === 2);
+const isLong = toc.length >= 6;
+
+// Long tag lists start collapsed, showing only the first few.
+const TAGS_PREVIEW = 8;
+const tagsCollapsible = tags.length > 12;
+---
+
+<Layout title={pageTitle} description={subtitle}>
+  <main class="detail-page">
+    <!-- Restore the panel state before first paint: collapsed by default on
+         small screens, otherwise whatever the reader chose last time. -->
+    <script is:inline>
+      (function () {
+        var main = document.currentScript.parentElement;
+        var collapsed = window.matchMedia('(max-width: 860px)').matches;
+        try { if (!collapsed) collapsed = localStorage.getItem('pf-detail-panel') === 'collapsed'; } catch (e) {}
+        if (collapsed) main.classList.add('panel-collapsed');
+      })();
+    </script>
+
+    <a href={backHref} class="back-link">
+      <i class="fa-solid fa-arrow-left fa-sm" aria-hidden="true"></i>
+      Back to {backLabel}
+    </a>
+
+    <div class="detail-hero-img">
+      <img src={image} alt={title} width="1100" height="380" />
+    </div>
+
+    <div class="detail-layout">
+
+      <aside class="detail-sidebar" aria-label="Page panel">
+        <!-- Shown while the panel is collapsed -->
+        <button type="button" class="panel-rail" data-panel-toggle aria-controls="detail-panel" aria-expanded="false" title="Show panel">
+          <i class="fa-solid fa-angles-right" aria-hidden="true"></i>
+          <span>Links{isLong && ' & contents'}</span>
+        </button>
+
+        <div class="panel" id="detail-panel">
+          <button type="button" class="panel-hide" data-panel-toggle aria-controls="detail-panel" aria-expanded="true">
+            <i class="fa-solid fa-angles-left" aria-hidden="true"></i>
+            Hide panel
+          </button>
+
+          <section class="sidebar-card box" data-box="links">
+            <h2 class="box-heading">
+              <button type="button" class="box-toggle" aria-expanded="true">
+                Links &amp; topics
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h2>
+            <div class="box-body">
+              <div class="sidebar-links">
+                {links.map(l => (
+                  <a href={l.url} class="btn-ghost" target="_blank" rel="noopener noreferrer">
+                    {l.label.includes('GitHub') ? (
+                      <i class="fab fa-github fa-sm" aria-hidden="true"></i>
+                    ) : (
+                      <i class="fa-solid fa-arrow-up-right-from-square fa-xs" aria-hidden="true"></i>
+                    )}
+                    {l.label}
+                  </a>
+                ))}
+              </div>
+
+              <h3 class="sidebar-heading">Topics</h3>
+              <div class="sidebar-topics">
+                {topics.map(t => (
+                  <a href={`${backHref}?filter=${encodeURIComponent(t)}`} class="topic-pill">{t}</a>
+                ))}
+              </div>
+
+              {year && (
+                <>
+                  <h3 class="sidebar-heading">Year taken</h3>
+                  <p class="sidebar-meta">{year}</p>
+                </>
+              )}
+            </div>
+          </section>
+
+          {isLong && (
+            <nav class="sidebar-card box toc" data-box="toc" aria-label="On this page">
+              <h2 class="box-heading">
+                <button type="button" class="box-toggle" aria-expanded="true">
+                  On this page
+                  <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
+              </h2>
+              <ol class="box-body">
+                {toc.map(h => <li><a href={`#${h.slug}`} data-toc={h.slug}>{h.text}</a></li>)}
+              </ol>
+            </nav>
+          )}
+
+          <a href={backHref} class="btn-ghost all-link">
+            <i class="fa-solid fa-grip fa-sm" aria-hidden="true"></i>
+            {allLabel}
+          </a>
+        </div>
+
+        <!-- Restore which boxes the reader had folded -->
+        <script is:inline>
+          (function () {
+            var boxes = document.currentScript.parentElement.querySelectorAll('[data-box]');
+            boxes.forEach(function (box) {
+              var closed = false;
+              try { closed = localStorage.getItem('pf-box-' + box.dataset.box) === 'collapsed'; } catch (e) {}
+              if (closed) {
+                box.classList.add('is-collapsed');
+                box.querySelector('.box-toggle').setAttribute('aria-expanded', 'false');
+              }
+            });
+          })();
+        </script>
+      </aside>
+
+      <article class="detail-main">
+        {code && (
+          <div class="course-eyebrow">
+            <span class="course-code">{code}</span>
+            {year && <span class="course-year">{year}</span>}
+          </div>
+        )}
+        <h1 class="detail-title">{title}</h1>
+        <p class="detail-subtitle">{subtitle}</p>
+
+        <div class:list={['detail-tags-wrap', { 'is-collapsed': tagsCollapsible }]}>
+          <ul class="detail-tags" id="detail-tags">
+            {tags.map((t, i) => (
+              <li class:list={['tag', { 'tag--extra': tagsCollapsible && i >= TAGS_PREVIEW }]}>{t}</li>
+            ))}
+          </ul>
+          {tagsCollapsible && (
+            <button type="button" class="tags-toggle" aria-controls="detail-tags" aria-expanded="false"
+              data-more={`Show all ${tags.length} skills`} data-less="Show fewer">
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              <span>Show all {tags.length} skills</span>
+            </button>
+          )}
+        </div>
+
+        <div class="divider"></div>
+
+        <div class:list={['prose', { 'prose--long': isLong }]}>
+          <slot />
+        </div>
+      </article>
+    </div>
+
+    <!-- Full-size viewer for diagrams (figure.diagram in the content) -->
+    <dialog class="diagram-viewer" id="diagram-viewer" aria-label="Diagram">
+      <div class="viewer-bar">
+        <span class="viewer-title"></span>
+        <button type="button" class="viewer-btn" data-zoom>
+          <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+          <span>Actual size</span>
+        </button>
+        <a class="viewer-btn" data-open target="_blank" rel="noopener">
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          <span>New tab</span>
+        </a>
+        <button type="button" class="viewer-btn viewer-close" data-close aria-label="Close">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="viewer-body">
+        <img alt="" />
+      </div>
+    </dialog>
+
+  </main>
+</Layout>
+
+<script>
+  const store = {
+    get(key: string) { try { return localStorage.getItem(key); } catch { return null; } },
+    set(key: string, value: string) { try { localStorage.setItem(key, value); } catch { /* private mode */ } },
+  };
+  const isSmall = () => window.matchMedia('(max-width: 860px)').matches;
+
+  // ── Whole panel: hide / show ──────────────────────────────────────
+  const page = document.querySelector<HTMLElement>('.detail-page');
+  const panelToggles = document.querySelectorAll<HTMLButtonElement>('[data-panel-toggle]');
+  if (page) {
+    const sync = () => {
+      const collapsed = page.classList.contains('panel-collapsed');
+      panelToggles.forEach(b => b.setAttribute('aria-expanded', String(!collapsed)));
+    };
+    sync();
+    panelToggles.forEach(btn => btn.addEventListener('click', () => {
+      const collapsed = page.classList.toggle('panel-collapsed');
+      // Only remember the choice on wide screens; small screens always start folded.
+      if (!isSmall()) store.set('pf-detail-panel', collapsed ? 'collapsed' : 'open');
+      sync();
+      (collapsed ? document.querySelector<HTMLElement>('.panel-rail') : document.querySelector<HTMLElement>('.panel-hide'))?.focus();
+    }));
+  }
+
+  // ── Single boxes: fold / unfold ───────────────────────────────────
+  document.querySelectorAll<HTMLElement>('[data-box]').forEach(box => {
+    const btn = box.querySelector<HTMLButtonElement>('.box-toggle')!;
+    btn.addEventListener('click', () => {
+      const collapsed = box.classList.toggle('is-collapsed');
+      btn.setAttribute('aria-expanded', String(!collapsed));
+      store.set(`pf-box-${box.dataset.box}`, collapsed ? 'collapsed' : 'open');
+    });
+  });
+
+  // ── Long tag list: show all / fewer ───────────────────────────────
+  const tagsWrap = document.querySelector<HTMLElement>('.detail-tags-wrap');
+  const tagsBtn = tagsWrap?.querySelector<HTMLButtonElement>('.tags-toggle');
+  if (tagsWrap && tagsBtn) {
+    tagsBtn.addEventListener('click', () => {
+      const collapsed = tagsWrap.classList.toggle('is-collapsed');
+      tagsBtn.setAttribute('aria-expanded', String(!collapsed));
+      tagsBtn.querySelector('span')!.textContent = collapsed ? tagsBtn.dataset.more! : tagsBtn.dataset.less!;
+    });
+  }
+
+  // ── On small screens, fold the panel again after jumping to a section ─
+  document.querySelectorAll<HTMLAnchorElement>('.toc a').forEach(a => {
+    a.addEventListener('click', () => { if (isSmall()) page?.classList.add('panel-collapsed'); });
+  });
+
+  // ── Diagram viewer ────────────────────────────────────────────────
+  const viewer = document.getElementById('diagram-viewer') as HTMLDialogElement | null;
+  const diagramLinks = document.querySelectorAll<HTMLAnchorElement>('.prose figure.diagram a');
+
+  if (viewer && typeof viewer.showModal === 'function') {
+    const img = viewer.querySelector('img')!;
+    const titleEl = viewer.querySelector('.viewer-title')!;
+    const zoomBtn = viewer.querySelector<HTMLButtonElement>('[data-zoom]')!;
+    const zoomLabel = zoomBtn.querySelector('span')!;
+    const openLink = viewer.querySelector<HTMLAnchorElement>('[data-open]')!;
+
+    const setZoom = (on: boolean) => {
+      viewer.classList.toggle('is-zoomed', on);
+      zoomLabel.textContent = on ? 'Fit to screen' : 'Actual size';
+    };
+
+    diagramLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const thumb = link.querySelector('img');
+        const caption = link.closest('figure')?.querySelector('figcaption strong');
+        img.src = link.href;
+        img.alt = thumb?.alt ?? '';
+        titleEl.textContent = caption?.textContent?.replace(/\.$/, '') ?? '';
+        openLink.href = link.href;
+        setZoom(false);
+        viewer.showModal();
+      });
+    });
+
+    zoomBtn.addEventListener('click', () => setZoom(!viewer.classList.contains('is-zoomed')));
+    viewer.querySelector('[data-close]')!.addEventListener('click', () => viewer.close());
+    // Click on the dark backdrop (outside the content) closes the viewer.
+    viewer.addEventListener('click', e => { if (e.target === viewer) viewer.close(); });
+  }
+
+  // ── Highlight the section being read in "On this page" ───────────
+  const tocLinks = document.querySelectorAll<HTMLAnchorElement>('.toc a[data-toc]');
+  if (tocLinks.length && 'IntersectionObserver' in window) {
+    const byId = new Map(Array.from(tocLinks, a => [a.dataset.toc!, a]));
+    const list = document.querySelector<HTMLElement>('.toc .box-body')!;
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const active = byId.get(entry.target.id);
+        if (!active) return;
+        tocLinks.forEach(a => a.classList.remove('is-active'));
+        active.classList.add('is-active');
+        // Keep the active entry visible inside the list without moving the page.
+        const top = active.offsetTop - list.offsetTop;
+        if (top < list.scrollTop || top + active.offsetHeight > list.scrollTop + list.clientHeight) {
+          list.scrollTo({ top: top - list.clientHeight / 2, behavior: 'smooth' });
+        }
+      });
+    }, { rootMargin: '0px 0px -75% 0px' });
+    document.querySelectorAll('.prose h2[id]').forEach(h => observer.observe(h));
+  }
+</script>
+
+<style lang="scss">
+  @use 'src/styles/variables' as *;
+
+  $panel-w: 260px;
+  $rail-w: 2.75rem;
+
+  .detail-page {
+    max-width: $content-max;
+    margin: 0 auto;
+    padding: $sp-8 $page-px $sp-12;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: $sp-2;
+    color: $text-muted;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: $sp-6;
+    transition: color $t-fast $ease;
+    &:hover { color: $accent; text-decoration: none; }
+  }
+
+  .detail-hero-img {
+    width: 100%;
+    height: 300px;
+    border-radius: $r-lg;
+    overflow: hidden;
+    border: 1px solid $border-subtle;
+    margin-bottom: $sp-8;
+
+    img { width: 100%; height: 100%; object-fit: cover; }
+  }
+
+  // ── Two columns: panel on the left, content on the right ─────────
+  .detail-layout {
+    display: grid;
+    grid-template-columns: $panel-w minmax(0, 1fr);
+    gap: $sp-8;
+    align-items: start;
+    transition: grid-template-columns $t-slow $ease;
+
+    @media (max-width: 860px) {
+      grid-template-columns: minmax(0, 1fr);
+      gap: $sp-6;
+    }
+  }
+
+  .panel-collapsed .detail-layout {
+    grid-template-columns: $rail-w minmax(0, 1fr);
+
+    @media (max-width: 860px) { grid-template-columns: minmax(0, 1fr); }
+  }
+
+  // The panel stays in view while scrolling and never grows taller than the
+  // window: only the "On this page" list shrinks and scrolls inside itself.
+  .detail-sidebar {
+    position: sticky;
+    top: $sp-6;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - #{$sp-6 * 2});
+    min-width: 0;
+
+    @media (max-width: 860px) {
+      position: static;
+      max-height: none;
+    }
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    gap: $sp-3;
+    min-height: 0;
+
+    > * { flex-shrink: 0; }
+  }
+
+  .panel-collapsed .panel { display: none; }
+
+  // "Hide panel" at the top of the open panel
+  .panel-hide {
+    display: inline-flex;
+    align-items: center;
+    gap: $sp-2;
+    align-self: flex-start;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid $border;
+    border-radius: $r-full;
+    background: $bg-2;
+    color: $text-muted;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color $t-fast $ease, border-color $t-fast $ease;
+    &:hover { color: $accent; border-color: $accent; }
+
+    @media (max-width: 860px) { align-self: stretch; justify-content: center; }
+  }
+
+  // Thin rail shown while the panel is collapsed
+  .panel-rail {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: $sp-3;
+    width: $rail-w;
+    padding: $sp-3 0;
+    border: 1px solid $border;
+    border-radius: $r-lg;
+    background: $bg-2;
+    color: $text-muted;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color $t-fast $ease, border-color $t-fast $ease;
+
+    span {
+      writing-mode: vertical-rl;
+      letter-spacing: 0.04em;
+    }
+
+    &:hover { color: $accent; border-color: $accent; }
+
+    @media (max-width: 860px) {
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      padding: $sp-3 $sp-4;
+
+      i { transform: rotate(90deg); }
+      span { writing-mode: horizontal-tb; }
+    }
+  }
+
+  .panel-collapsed .panel-rail { display: flex; }
+
+  // ── Boxes ────────────────────────────────────────────────────────
+  .sidebar-card {
+    background: $bg-2;
+    border: 1px solid $border-subtle;
+    border-radius: $r-lg;
+    padding: $sp-4 $sp-5;
+  }
+
+  .box-heading { margin: 0; }
+
+  .box-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    color: $text-dim;
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+
+    i { transition: transform $t-normal $ease; }
+    &:hover { color: $accent; }
+  }
+
+  .box-body { margin-top: $sp-4; }
+
+  .box.is-collapsed {
+    .box-body { display: none; }
+    .box-toggle i { transform: rotate(-90deg); }
+  }
+
+  .sidebar-heading {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $text-dim;
+    margin: $sp-5 0 $sp-3;
+  }
+
+  .sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: $sp-2;
+    a { justify-content: center; }
+  }
+
+  .sidebar-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $sp-2;
+  }
+
+  .sidebar-meta {
+    font-size: 0.9rem;
+    color: $text-muted;
+    margin: 0;
+  }
+
+  .topic-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.7rem;
+    border-radius: $r-full;
+    border: 1px solid $border;
+    background: $bg-3;
+    color: $text-muted;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color $t-fast $ease, color $t-fast $ease;
+    &:hover { border-color: $accent; color: $accent; text-decoration: none; }
+  }
+
+  .all-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  // ── On this page ─────────────────────────────────────────────────
+  // Takes the space left in the panel; the list scrolls inside itself.
+  .panel > .toc { flex-shrink: 1; }
+
+  .toc {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+
+    .box-body {
+      min-height: 0;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    a {
+      display: block;
+      padding: 0.3rem 0.6rem;
+      border-left: 2px solid $border-subtle;
+      color: $text-muted;
+      font-size: 0.82rem;
+      line-height: 1.4;
+      text-decoration: none;
+      transition: color $t-fast $ease, border-color $t-fast $ease;
+      &:hover { color: $accent; text-decoration: none; }
+      &.is-active { color: $accent; border-left-color: $accent; font-weight: 600; }
+    }
+  }
+
+  // ── Title area ───────────────────────────────────────────────────
+  .course-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: $sp-3;
+    margin-bottom: $sp-3;
+  }
+
+  .course-code {
+    font-family: $font-mono;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: $accent;
+    background: $accent-subtle;
+    border: 1px solid $accent-border;
+    border-radius: $r-sm;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .course-year {
+    font-size: 0.8rem;
+    color: $text-dim;
+  }
+
+  .detail-title {
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 800;
+    color: $text;
+    margin-bottom: $sp-3;
+    line-height: 1.2;
+  }
+
+  .detail-subtitle {
+    font-size: 1rem;
+    color: $text-muted;
+    line-height: 1.7;
+    margin-bottom: $sp-5;
+  }
+
+  .detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $sp-2;
+  }
+
+  .detail-tags-wrap.is-collapsed .tag--extra { display: none; }
+
+  .tags-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: $sp-2;
+    margin-top: $sp-3;
+    padding: 0.3rem 0.8rem;
+    border: 1px dashed $border;
+    border-radius: $r-full;
+    background: transparent;
+    color: $accent;
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color $t-fast $ease;
+
+    i { transition: transform $t-normal $ease; }
+    &[aria-expanded='true'] i { transform: rotate(180deg); }
+    &:hover { border-color: $accent; }
+  }
+
+  // ── Diagram viewer ───────────────────────────────────────────────
+  .diagram-viewer {
+    width: 96vw;
+    max-width: 96vw;
+    height: 94vh;
+    max-height: 94vh;
+    margin: auto;
+    padding: 0;
+    border: 1px solid $border;
+    border-radius: $r-lg;
+    background: $bg;
+    color: $text;
+    overflow: hidden;
+
+    &[open] { display: flex; flex-direction: column; }
+    &::backdrop { background: rgba(0, 0, 0, 0.75); }
+  }
+
+  .viewer-bar {
+    display: flex;
+    align-items: center;
+    gap: $sp-2;
+    padding: $sp-3 $sp-4;
+    border-bottom: 1px solid $border-subtle;
+    background: $bg-2;
+  }
+
+  .viewer-title {
+    flex: 1;
+    font-weight: 700;
+    font-size: 0.95rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .viewer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid $border;
+    border-radius: $r-sm;
+    background: $bg-3;
+    color: $text-muted;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover { color: $accent; border-color: $accent; text-decoration: none; }
+
+    @media (max-width: 600px) { span { display: none; } }
+  }
+
+  .viewer-body {
+    flex: 1;
+    overflow: auto;
+    background: #fff;
+    padding: $sp-4;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+
+  .diagram-viewer.is-zoomed .viewer-body img {
+    width: auto;
+    max-width: none;
+  }
+</style>

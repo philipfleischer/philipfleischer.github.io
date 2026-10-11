@@ -344,4 +344,66 @@ button {
     max-width: 100%;
     margin: 1.25rem 0;
   }
+
+  h2, h3 { scroll-margin-top: $sp-6; }
+
+  // Diagram with caption; the link opens the full-size viewer
+  figure.diagram {
+    margin: 1.75rem 0 2.25rem;
+
+    a {
+      position: relative;
+      display: block;
+      padding: 0.75rem;
+      background: #fff; // diagrams are drawn on white, in both themes
+      border: 1px solid $border;
+      border-radius: $r;
+      cursor: zoom-in;
+      transition: border-color $t-fast $ease, box-shadow $t-fast $ease;
+
+      &::after {
+        content: 'Click to enlarge';
+        position: absolute;
+        right: 0.75rem;
+        bottom: 0.75rem;
+        padding: 0.25rem 0.6rem;
+        border-radius: $r-full;
+        background: rgba(15, 23, 42, 0.75);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        opacity: 0;
+        transition: opacity $t-fast $ease;
+      }
+
+      &:hover, &:focus-visible {
+        border-color: $accent;
+        box-shadow: $shadow;
+        text-decoration: none;
+        &::after { opacity: 1; }
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      border-radius: 4px;
+    }
+
+    figcaption {
+      margin-top: 0.75rem;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: $text-muted;
+    }
+  }
+
+  // Long write-ups: more air between sections
+  &.prose--long {
+    h2 { margin-top: 4rem; }
+    h3 { margin-top: 2.5rem; }
+    > p:first-child { margin-top: 0; }
+  }
 }

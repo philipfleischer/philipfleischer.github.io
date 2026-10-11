@@ -8,8 +8,12 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const { Content } = await project.render();
+const { Content, headings } = await project.render();
 const { title, subtitle, image, tags, topics, links } = project.data;
+
+// Long write-ups get an "On this page" list and more space between sections.
+const toc = headings.filter(h => h.depth === 2);
+const isLong = toc.length >= 6;
 ---
 
 <Layout title={`${title} - Philip Fleischer`} description={subtitle}>
@@ -39,7 +43,16 @@ const { title, subtitle, image, tags, topics, links } = project.data;
 
         <div class="divider"></div>
 
-        <div class="prose">
+        {isLong && (
+          <details class="toc-mobile">
+            <summary>On this page</summary>
+            <ol>
+              {toc.map(h => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}
+            </ol>
+          </details>
+        )}
+
+        <div class:list={['prose', { 'prose--long': isLong }]}>
           <Content />
         </div>
       </article>
@@ -69,6 +82,15 @@ const { title, subtitle, image, tags, topics, links } = project.data;
           </div>
         </div>
 
+        {isLong && (
+          <nav class="sidebar-card toc" aria-label="On this page">
+            <h2 class="sidebar-heading">On this page</h2>
+            <ol>
+              {toc.map(h => <li><a href={`#${h.slug}`} data-toc={h.slug}>{h.text}</a></li>)}
+            </ol>
+          </nav>
+        )}
+
         <a href="/portfolio" class="btn-ghost" style="margin-top:1rem;width:100%;justify-content:center;">
           <i class="fa-solid fa-grid-2 fa-sm" aria-hidden="true"></i>
           All Projects
@@ -76,8 +98,80 @@ const { title, subtitle, image, tags, topics, links } = project.data;
       </aside>
     </div>
 
+    <!-- Full-size viewer for diagrams (figure.diagram in the content) -->
+    <dialog class="diagram-viewer" id="diagram-viewer" aria-label="Diagram">
+      <div class="viewer-bar">
+        <span class="viewer-title"></span>
+        <button type="button" class="viewer-btn" data-zoom>
+          <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+          <span>Actual size</span>
+        </button>
+        <a class="viewer-btn" data-open target="_blank" rel="noopener">
+          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          <span>New tab</span>
+        </a>
+        <button type="button" class="viewer-btn viewer-close" data-close aria-label="Close">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="viewer-body">
+        <img alt="" />
+      </div>
+    </dialog>
+
   </main>
 </Layout>
+
+<script>
+  const viewer = document.getElementById('diagram-viewer') as HTMLDialogElement | null;
+  const links = document.querySelectorAll<HTMLAnchorElement>('.prose figure.diagram a');
+
+  if (viewer && typeof viewer.showModal === 'function') {
+    const img = viewer.querySelector('img')!;
+    const titleEl = viewer.querySelector('.viewer-title')!;
+    const zoomBtn = viewer.querySelector<HTMLButtonElement>('[data-zoom]')!;
+    const zoomLabel = zoomBtn.querySelector('span')!;
+    const openLink = viewer.querySelector<HTMLAnchorElement>('[data-open]')!;
+
+    const setZoom = (on: boolean) => {
+      viewer.classList.toggle('is-zoomed', on);
+      zoomLabel.textContent = on ? 'Fit to screen' : 'Actual size';
+    };
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const thumb = link.querySelector('img');
+        const caption = link.closest('figure')?.querySelector('figcaption strong');
+        img.src = link.href;
+        img.alt = thumb?.alt ?? '';
+        titleEl.textContent = caption?.textContent?.replace(/\.$/, '') ?? '';
+        openLink.href = link.href;
+        setZoom(false);
+        viewer.showModal();
+      });
+    });
+
+    zoomBtn.addEventListener('click', () => setZoom(!viewer.classList.contains('is-zoomed')));
+    viewer.querySelector('[data-close]')!.addEventListener('click', () => viewer.close());
+    // Click on the dark backdrop (outside the content) closes the viewer.
+    viewer.addEventListener('click', e => { if (e.target === viewer) viewer.close(); });
+  }
+
+  // Highlight the section currently being read in the sidebar list.
+  const tocLinks = document.querySelectorAll<HTMLAnchorElement>('.toc a[data-toc]');
+  if (tocLinks.length && 'IntersectionObserver' in window) {
+    const byId = new Map(Array.from(tocLinks, a => [a.dataset.toc!, a]));
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        tocLinks.forEach(a => a.classList.remove('is-active'));
+        byId.get(entry.target.id)?.classList.add('is-active');
+      });
+    }, { rootMargin: '0px 0px -75% 0px' });
+    document.querySelectorAll('.prose h2[id]').forEach(h => observer.observe(h));
+  }
+</script>
 
 <style lang="scss">
   @use 'src/styles/variables' as *;
@@ -182,6 +276,134 @@ const { title, subtitle, image, tags, topics, links } = project.data;
     display: flex;
     flex-wrap: wrap;
     gap: $sp-2;
+  }
+
+  // ── Table of contents ────────────────────────────────────────────
+  .toc {
+    margin-top: 1rem;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+
+    ol {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    a {
+      display: block;
+      padding: 0.3rem 0.6rem;
+      border-left: 2px solid $border-subtle;
+      color: $text-muted;
+      font-size: 0.82rem;
+      line-height: 1.4;
+      text-decoration: none;
+      transition: color $t-fast $ease, border-color $t-fast $ease;
+      &:hover { color: $accent; text-decoration: none; }
+      &.is-active { color: $accent; border-left-color: $accent; font-weight: 600; }
+    }
+
+    @media (max-width: 860px) { display: none; }
+  }
+
+  .toc-mobile {
+    display: none;
+    margin-top: $sp-6;
+    background: $bg-2;
+    border: 1px solid $border-subtle;
+    border-radius: $r-lg;
+    padding: $sp-4 $sp-5;
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: $text;
+    }
+
+    ol {
+      margin: $sp-3 0 0;
+      padding-left: 1.25rem;
+      list-style: decimal;
+      li { margin-bottom: 0.3rem; font-size: 0.9rem; }
+      a { color: $text-muted; &:hover { color: $accent; } }
+    }
+
+    @media (max-width: 860px) { display: block; }
+  }
+
+  // ── Diagram viewer ───────────────────────────────────────────────
+  .diagram-viewer {
+    width: 96vw;
+    max-width: 96vw;
+    height: 94vh;
+    max-height: 94vh;
+    margin: auto;
+    padding: 0;
+    border: 1px solid $border;
+    border-radius: $r-lg;
+    background: $bg;
+    color: $text;
+    overflow: hidden;
+
+    &[open] { display: flex; flex-direction: column; }
+    &::backdrop { background: rgba(0, 0, 0, 0.75); }
+  }
+
+  .viewer-bar {
+    display: flex;
+    align-items: center;
+    gap: $sp-2;
+    padding: $sp-3 $sp-4;
+    border-bottom: 1px solid $border-subtle;
+    background: $bg-2;
+  }
+
+  .viewer-title {
+    flex: 1;
+    font-weight: 700;
+    font-size: 0.95rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .viewer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid $border;
+    border-radius: $r-sm;
+    background: $bg-3;
+    color: $text-muted;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover { color: $accent; border-color: $accent; text-decoration: none; }
+
+    @media (max-width: 600px) { span { display: none; } }
+  }
+
+  .viewer-body {
+    flex: 1;
+    overflow: auto;
+    background: #fff;
+    padding: $sp-4;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+
+  .diagram-viewer.is-zoomed .viewer-body img {
+    width: auto;
+    max-width: none;
   }
 
   .topic-pill {

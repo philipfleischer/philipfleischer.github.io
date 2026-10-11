@@ -10,6 +10,7 @@ const {
 } = Astro.props;
 
 const pathname = Astro.url.pathname;
+const buildId = __BUILD_ID__;
 const isActive = (href: string) => {
   if (href === '/') return pathname === '/';
   return pathname.startsWith(href);
@@ -28,6 +29,34 @@ const nav = [
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- GitHub Pages lets browsers reuse a page for 10 minutes, so after a
+         deploy Safari can keep showing an old copy of each page. Ask for the
+         latest build id without the cache, and load the page fresh once if
+         this copy is older. -->
+    <script is:inline define:vars={{ buildId }}>
+      (function () {
+        var url = new URL(location.href);
+        if (url.searchParams.has('v')) {
+          url.searchParams.delete('v');
+          history.replaceState(history.state, '', url.pathname + url.search + url.hash);
+        }
+        if (!window.fetch || location.protocol === 'file:') return;
+        fetch('/version.json', { cache: 'no-store' })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (d) {
+            if (!d || !d.version || d.version === buildId) return;
+            var key = 'pf-fresh-' + d.version + location.pathname;
+            try {
+              if (sessionStorage.getItem(key)) return; // tried once already
+              sessionStorage.setItem(key, '1');
+            } catch (e) { return; }
+            var fresh = new URL(location.href);
+            fresh.searchParams.set('v', d.version);
+            location.replace(fresh.href);
+          })
+          .catch(function () {});
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />

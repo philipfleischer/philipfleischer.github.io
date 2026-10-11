@@ -166,7 +166,15 @@ const isLong = toc.length >= 6;
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         tocLinks.forEach(a => a.classList.remove('is-active'));
-        byId.get(entry.target.id)?.classList.add('is-active');
+        const active = byId.get(entry.target.id);
+        if (!active) return;
+        active.classList.add('is-active');
+        // Keep the active entry visible inside the list without moving the page.
+        const list = active.closest<HTMLElement>('.toc')!;
+        const top = active.offsetTop - list.offsetTop;
+        if (top < list.scrollTop || top + active.offsetHeight > list.scrollTop + list.clientHeight) {
+          list.scrollTo({ top: top - list.clientHeight / 2, behavior: 'smooth' });
+        }
       });
     }, { rootMargin: '0px 0px -75% 0px' });
     document.querySelectorAll('.prose h2[id]').forEach(h => observer.observe(h));
@@ -243,9 +251,22 @@ const isLong = toc.length >= 6;
   }
 
   // ── Sidebar ──────────────────────────────────────────────────────
+  // The sidebar stays in view while scrolling and never grows taller than
+  // the window: Links/Topics and the button keep their size, and only the
+  // "On this page" list shrinks and scrolls inside itself.
   .detail-sidebar {
     position: sticky;
     top: $sp-6;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - #{$sp-6 * 2});
+
+    > * { flex-shrink: 0; }
+
+    @media (max-width: 860px) {
+      position: static;
+      max-height: none;
+    }
   }
 
   .sidebar-card {
@@ -279,10 +300,15 @@ const isLong = toc.length >= 6;
   }
 
   // ── Table of contents ────────────────────────────────────────────
+  .detail-sidebar > .toc {
+    flex: 1 1 auto;
+    min-height: 8rem;
+  }
+
   .toc {
     margin-top: 1rem;
-    max-height: calc(100vh - 6rem);
     overflow-y: auto;
+    overscroll-behavior: contain;
 
     ol {
       list-style: none;

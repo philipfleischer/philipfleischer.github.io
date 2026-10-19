@@ -21,8 +21,8 @@ links:
 
 | | Assignment | Topic | Status |
 |---|---|---|---|
-| **A1** | Java RMI International Statistics Service | Middleware, load balancing, caching | Completed |
-| **A2** | Replicated Bank Account | Replication, totally ordered broadcast | Completed |
+| **A1** | Java RMI International Statistics Service | Middleware, load balancing, caching | [Completed](https://github.com/philipfleischer/IN5020-A1-G1-RMI) |
+| **A2** | Replicated Bank Account | Replication, totally ordered broadcast | [Completed](https://github.com/philipfleischer/IN5020-A2-G1-RBA) |
 | **A3** | Chord Peer-to-Peer Lookup | Distributed hash tables, routing | Upcoming |
 
 ---
@@ -78,7 +78,6 @@ All the diagrams below were drawn by our group while working on the assignment, 
 - **What:** a replicated bank account. N bank servers each hold a full copy, and one Message Delivery server decides the order of every change.
 - **Core idea:** same start state + same transactions + same order = same end state. The replicas never compare balances. They only have to agree on the order.
 - **Main mechanisms:** a sequencer for total order, ACK before the next message, resend after 2 s, FAIL after 5 s, state transfer for late joiners, and duplicate detection so every transaction runs exactly once.
-- **The interesting part:** `getSyncedBalance`, built in a naive and a correct version, and the observed difference between them.
 - **Built with:** Java 11, Java RMI in both directions, no external libraries.
 
 ### How to read the diagrams
@@ -127,17 +126,6 @@ It is easy to think it is enough that every replica gets every transaction. It i
 
 It does not matter *which* order the server picks, only that everyone uses the same one. That makes the account a **replicated state machine**, and the server a **sequencer**: the simplest way to get a totally ordered broadcast.
 
-### The bank analogy
-
-Useful when explaining the system out loud. Each row links something everyone knows from a bank to a part of the code.
-
-<figure class="diagram">
-  <a href="/img/in5020-a2/02-bank-analogy.svg"><img src="/img/in5020-a2/02-bank-analogy.svg" alt="Table mapping a bank with branches and a head office to the parts of the system" width="1500" height="1246" loading="lazy" /></a>
-  <figcaption><strong>The bank analogy.</strong> Left: a bank with many branches and one head office. Right: the matching part of the system.</figcaption>
-</figure>
-
-The way I would say it: every bank server is a branch with its own copy of the ledger. The Message Delivery server is the head office with a ticket machine. It books nothing itself, it only decides the order. Because every branch books the same slips in the same order, every ledger ends up the same.
-
 ### Life of one transaction
 
 <figure class="diagram">
@@ -172,30 +160,6 @@ The cost: the group moves at the speed of the slowest replica, and in the worst 
 **Exactly once.** Duplicates can happen in two ways: the broadcast thread resends the whole inbox if the last send has not come back yet, and the server resends a message after 2 s without ACK. Every replica keeps the ids of everything it has executed in `executedIds` and skips anything it has seen before, but still sends the ACK. Because everyone sees the messages in the same order, everyone skips the same duplicates.
 
 Why not just check `executed_list`? Because `cleanHistory` empties it. After a cleanHistory the replica would forget what it had executed, and a duplicate would run twice. `executedIds` is never cleared.
-
-### getSyncedBalance: naive vs correct
-
-This is the part the assignment asks us to observe and explain. `getQuickBalance` answers from the local copy straight away, so it can miss the replica's own transactions that are not ordered yet. `getSyncedBalance` should wait until they are executed.
-
-<figure class="diagram">
-  <a href="/img/in5020-a2/07-getsyncedbalance.svg"><img src="/img/in5020-a2/07-getsyncedbalance.svg" alt="The same three commands in the correct version, which answers 100.00, and the naive version, which answers 110.00" width="1600" height="1040" loading="lazy" /></a>
-  <figcaption><strong>Same commands in both versions.</strong> The correct version answers 100.00, the naive one 110.00, because it includes a deposit that was issued after the request.</figcaption>
-</figure>
-
-- **Naive:** wait until `outstanding_collection` is empty, then read the balance. If new transactions arrive while it waits, they are included in the answer. Under steady load the inbox is never empty and it waits forever. The assignment calls this a deadlock; more precisely it is starvation, since nothing is locked, the condition just never becomes true.
-- **Correct:** put a marker in the inbox behind the transactions already there. It is ordered like any other transaction. When it comes back, only the replica that created it answers, and it is not added to the history. The answer is the state exactly where the request sits in the global order, and it always comes within one broadcast round.
-
-Neither version blocks the command loop. That is what makes the difference visible: new commands can come in while the request waits.
-
-What we observed with the example command file, one replica in each mode:
-
-| Call | Correct | Naive | Why they differ |
-|---|---|---|---|
-| 2 (after deposit USD 100) | 100.00 USD | 110.00 USD | naive includes a deposit issued after the request |
-| 4 (after addInterest USD 10) | 120.00 USD | 306.00 USD | naive includes six later deposits |
-| 6 (last) | 651.64 USD | 651.64 USD | no new commands, so both agree |
-
-The naive answers depend on timing and change from run to run. The correct ones are always the same.
 
 ### Membership: startup, late join, leave and crash
 

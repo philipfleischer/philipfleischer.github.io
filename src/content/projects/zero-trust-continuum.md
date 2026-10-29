@@ -115,25 +115,42 @@ The same visual language is used in every diagram, so a colour or line style alw
 | Solid black arrow | a request or data on its way |
 | Dashed red arrow | a trust signal (the system re-checking itself) |
 | Dashed blue arrow | control traffic, such as "throw away old decisions" |
+| Thick green arrow | measurements on their way to the control centre |
+| Dotted grey arrow | a copy of traffic, sent for inspection |
+| Numbered circle | a step of the zero-trust cycle |
 | Thick dashed red line | a trust boundary |
 
 ## The big picture
 
-This is the finished system I am working towards. Everything else on this page is a zoomed-in part of this picture.
+This is the finished system I am working towards. Everything else on this page is a zoomed-in part of this picture. It comes in two versions: a simple one that shows the overall idea, and the full target architecture.
 
 <figure class="diagram">
-  <a href="/img/ztc/00-system-overview-1.svg"><img src="/img/ztc/00-system-overview-1.svg" alt="Target architecture of ZTC: cloud control centre, OT-DMZ, fog substation and edge devices, with the numbered zero-trust cycle" width="1802" height="2070" loading="lazy" /></a>
-  <figcaption><strong>Target architecture.</strong> The four horizontal bands are the layers of the substation, from the control centre at the top to the field devices at the bottom. Follow the circled numbers ① to ⑥ to see one full cycle of zero trust.</figcaption>
+  <a href="/img/ztc/00-system-overview-1.svg"><img src="/img/ztc/00-system-overview-1.svg" alt="ZTC at a glance: control centre, buffer zone, substation and field devices, with one box per role and the six numbered steps of the zero-trust cycle" width="1800" height="1930" loading="lazy" /></a>
+  <figcaption><strong>At a glance.</strong> The four layers of the substation and the job each one does, with the same colours and numbers as the full diagram below.</figcaption>
+</figure>
+
+Each layer has one job:
+
+- **Cloud** (the control centre) decides. It gives every device and service its own identity, judges every request against the rules and a live trust score, and keeps the measurements and the records.
+- **OT-DMZ** (a buffer zone) controls every crossing between the substation and the control centre. A firewall with an encrypted tunnel carries identities, decisions and revocations, and a broker carries measurements and trust signals.
+- **Fog** (the substation itself) enforces. A gatekeeper, the Policy Enforcement Point, checks every request close to the devices and remembers recent answers, so it keeps working when the connection to the control centre is cut. Next to it, the fog node processes data and an intrusion detection system watches the traffic.
+- **Edge** is the physical grid: devices that measure, protect and control, charge and maintain. Every device has its own identity, and an attacker can sit on the same network.
+
+The numbers follow one request through the system, from the moment a device gets its identity to the moment it is locked out. The six steps are described under the full diagram.
+
+<figure class="diagram">
+  <a href="/img/ztc/00-system-overview-2.svg"><img src="/img/ztc/00-system-overview-2.svg" alt="Target architecture of ZTC: control centre, OT-DMZ, substation and field devices with all components, trust boundaries and the numbered zero-trust cycle" width="2580" height="3633" loading="lazy" /></a>
+  <figcaption><strong>Target architecture.</strong> The same four layers with every component. Follow the numbers 1 to 6 to see one full cycle of zero trust. An arrow that ends at the firewall or the broker carries on out of the other side with the same number.</figcaption>
 </figure>
 
 ### One full cycle, in six steps
 
-1. A field device proves who it is and sends a request together with its credential.
-2. The gatekeeper on the substation, called the Policy Enforcement Point (PEP), asks whether the request is allowed.
-3. If it has no recent answer stored, it asks the Policy Decision Point (PDP) in the control centre.
-4. If the answer is yes, the request goes through to the fog node that does the actual work.
-5. An intrusion detection system watches the traffic. If a device starts behaving oddly, its trust score goes down.
-6. The control centre tells every gatekeeper to throw away its stored answers, so the next request from that device is denied.
+1. **Enrol.** A device proves that it may join with a one-time join token, and gets a short-lived certificate with its own identity from the identity provider. Like everything that leaves the substation, the request passes the firewall.
+2. **Request.** Every request the device sends carries that certificate. It goes over the field network to the Policy Enforcement Point (PEP), which checks it with mutual TLS.
+3. **Decide.** The PEP first looks for a recent answer in its decision cache. If there is none, it asks the Policy Engine in the control centre through the firewall. The answer combines the policy with the device's current trust score, and the audit log records it.
+4. **Enforce.** Only allowed requests are passed on to the fog node. A denied request stops at the PEP.
+5. **Watch.** The intrusion detection system gets a copy of the field traffic from the fog node. When a device behaves suspiciously, it sends a trust signal through the broker, and the device's trust score drops.
+6. **Revoke.** The Policy Administrator announces a new revocation epoch through the firewall. Every PEP clears its cached answers, so the device's next request is decided again with the lower score, and denied.
 
 ### Choices that shape everything
 

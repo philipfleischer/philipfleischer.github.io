@@ -166,9 +166,11 @@ The project is built around four open questions. Each one comes from a way the f
 | # | Question | Where on this page |
 |---|---|---|
 | RQ1 | **Where should access decisions be made?** In the cloud only, in a hierarchy with a cache on the substation, or with a full copy on the substation. What does each cost in speed, availability when the network is down, and how out of date a decision can get? | [Where decisions are made](#where-should-decisions-be-made) |
-| RQ2 | **Which kind of credential fits a moving system?** Tokens, certificates or capabilities that can be narrowed down. Overhead, how fast they can be revoked, and how they pass along a chain of tasks. | [Credentials and trust](#credentials-and-trust) |
+| RQ2 | **Which kind of credential fits a moving system?** Tokens, certificates or capabilities that can be narrowed down. Overhead, how fast they can be revoked, and how they pass along a chain of tasks. | [Identity and encrypted connections](#identity-and-encrypted-connections) |
 | RQ3 | **How does trust follow a service that moves?** Re-authenticate from scratch, prepare the new host in advance, or hand over a short-lived ticket. Downtime against exposure. | [When a service moves](#when-a-service-moves) |
 | RQ4 | **Does continuous checking catch a compromised device fast enough?** How quickly a device that is logged in but misbehaving is locked out. | [Catching a compromised device](#catching-a-compromised-device) |
+
+<!-- HIDDEN (plan and foundation sections), kept for later:
 
 ## The plan: one layer at a time
 
@@ -213,6 +215,8 @@ The sections below follow the milestones.
 - **Fail fast on bad configuration.** A typo in a setting should stop a service at start, not make it quietly run in the wrong mode.
 - **"Alive" and "ready" are different.** A decision service without a policy loaded is alive (do not restart it) but not ready (do not send it traffic).
 
+-->
+
 ## The decision chain: how one request is judged
 
 *Milestone M1.* This is the heart of zero trust: the chain from a request arriving to a yes or no.
@@ -254,6 +258,8 @@ The design follows NIST SP 800-207, the US standard that describes zero trust. A
 - **The decision point owns time and trust.** If the caller could send them, it could replay old timestamps or claim to be more trusted than it is.
 - **Short answers for dangerous actions.** Permission to operate a breaker is only valid for 10 seconds, and emergency access for 1 second, so those decisions are made again often.
 
+<!-- HIDDEN (credentials and trust section), kept for later:
+
 ## Credentials and trust
 
 *Milestone M1, design questions RQ2 and RQ4.* How a device proves who it is, how much the system trusts it right now, and how stored decisions are kept from going stale.
@@ -286,6 +292,8 @@ The score is not fixed. A login counts for less as time passes (it halves every 
 </figure>
 
 Storing decisions on the substation keeps things fast, but a stored "yes" is a decision made under old conditions. If a device's trust drops and the cache does not notice, the system keeps letting in a device it would now refuse. So a stored answer is only used while it is fresh, while the policy is unchanged, and while no revocation has happened. As soon as a device is denied once, all its stored "yes" answers are dropped.
+
+-->
 
 ## Where should decisions be made?
 
@@ -396,12 +404,33 @@ Containers are minimal: no shell, not running as root, read-only file system. Th
 
 ## Zones and conduits
 
-*Milestone M5.* Industrial networks are split into zones with controlled crossings between them, following the IEC 62443 standard. ZTC uses both: network separation shrinks what an attacker can reach, and identity checks stop the attacker who is already inside a zone.
+*Milestone M5.* Industrial networks are split into zones with controlled crossings between them, called conduits, following the IEC 62443 standard. ZTC uses both: network separation shrinks what an attacker can reach, and identity checks stop the attacker who is already inside a zone. The design follows the ISA/IEC 62443-3-2 process, the same way I used it for the WannaCry case in TEK5520.
+
+The first requirement (ZCR 1) identifies the System under Consideration (SuC). Here it is one digital substation and what it talks to: enterprise IT, the control centre, the WAN between them, a buffer zone (OT-DMZ), the substation fog servers, the station bus with its field devices, the process bus with the protection relays, and temporary vendor access. The second (ZCR 2) is the initial risk assessment, where risk is likelihood times impact. In a flat substation network one rogue laptop or one compromised device can reach the breakers, and the impact is loss of grid control or safety, so the risk is above what a utility would tolerate (ZCR 4). That makes partitioning into zones and conduits necessary (ZCR 3).
+
+<figure class="diagram">
+  <a href="/img/ztc/10-m5-zones-and-conduits.svg"><img src="/img/ztc/10-m5-zones-and-conduits.svg" alt="Seven IEC 62443 zones for the ZTC substation, Z1 to Z7, with conduits C1 to C8 and target security levels" width="1380" height="1720" loading="lazy" /></a>
+  <figcaption><strong>Zones and conduits.</strong> Proposed zones (Z1 to Z7) and conduits (C1 to C8) following IEC 62443-3-2. Each conduit label gives the target security level (SL-T) and what enforces it. A solid arrow points to the side that receives a connection, a dashed arrow is a conduit that can only be opened from the substation, and each box in a zone is a separate segment. The SL-T values are proposals.</figcaption>
+</figure>
+
+The figure shows the proposed design. Seven zones separate assets by function and trust, and inside each zone every box is its own segment with no traffic between the boxes except where an arrow is drawn. Enterprise IT (Z1, Purdue Level 5) holds analytics and business systems and has no path to the substation at all, only read access to the measurements. The control centre (Z2, Level 4) holds the parts that decide: the identity provider, the three replicas of the Policy Decision Point, the telemetry store, and the audit log, monitoring and SCADA. Between the control centre and the substation lies the WAN, which is treated as untrusted because it can be slow, cut or listened to. The OT-DMZ (Z3, Level 3.5) is the buffer zone, with the substation firewall that ends the encrypted tunnel, the message broker and a jump host with multi-factor authentication and session recording, so that nothing outside the substation talks directly to the devices. The substation fog (Z4, Level 3) holds the Policy Enforcement Point, the fog node and the intrusion detection. The station bus (Z5, Level 2) holds the field devices that send data and receive commands, and every one of them has its own identity and talks only to the PEP. The process bus and protection (Z6, Level 1) is its own zone, because the protection relays must be able to trip a breaker within milliseconds, and those GOOSE messages stay on that bus and never wait for an access check. Vendor and temporary connections (Z7) get a zone of their own, so a service laptop is never plugged straight into the substation.
+
+The conduits carry the main improvements, and each is drawn with what enforces it and a target security level. C1 is the only way between the substation and the control centre: a zone-based firewall and an IPsec tunnel across the WAN, default deny, that reaches only the identity provider, the decision point and the telemetry store. The broker does not have its own way out, it forwards measurements and trust signals into the same tunnel. C2 connects the fog and the OT-DMZ and can only be opened from the substation side. The PEP asks for decisions and enrolment through the firewall, and the fog node and the intrusion detection send summaries and trust signals to the broker, so nothing on the WAN can open a connection into the substation. C3 and C4 are the zero-trust part: every device on the station bus may only talk to the PEP over mutual TLS, and only commands the PEP has allowed go back down. C5 is a managed switch with VLANs and access lists that lets only the bay controllers reach the protection relays, using MMS over TLS. Vendor access takes two conduits and never reaches a device directly: C7 is a VPN with multi-factor authentication on the substation firewall that leads to the jump host only, and C8 lets the jump host reach the PEP only, so every maintenance request is checked against the policy like any other request. C6 lets analytics read the telemetry store over HTTPS and nothing else. In terms of the foundational requirements, the conduits address restricted data flow (FR5), the identities and the PEP address identification and authentication (FR1) and use control (FR2), and the intrusion detection and the audit log address timely response to events (FR6).
+
+The target security levels in the figure (SL-T 3 for the control centre, fog, station bus and process bus zones, SL-T 2 for enterprise IT, the OT-DMZ and vendor access) are proposals. SL-T 3 is the usual target for protection and control in a substation, while the other zones hold no control functions. A conduit is given the higher level of the two zones it connects, so every conduit is SL-T 3 except C7. This rule is my own assumption, and the jump host sits in an SL-T 2 zone while giving a path towards SL-T 3 zones, which is why it needs multi-factor authentication and may reach only the PEP. All levels are meant to be confirmed in a detailed risk assessment (ZCR 5), which would need data from a real utility.
+
+Physical security completes the design, because a network control is weak if someone can plug a laptop into the substation network. The fog servers and network cabinets should sit in locked rooms or cabinets with access logging, unused switch ports should be disabled or moved to a parking VLAN, and every port that is in use checks the device with 802.1X before it gets on the network. The last two requirements (ZCR 6 and 7), documentation and approval by the asset owner, should name who owns each firewall and switch rule. In ZTC the zone model is written once in code and the firewall, switch, container and Kubernetes rules are generated from it, so the documentation and the rules cannot drift apart.
+
+<!-- HIDDEN (previous zones diagram, replaced by 10-m5-zones-and-conduits.svg), kept for later:
 
 <figure class="diagram">
   <a href="/img/ztc/10-m5-iec62443-zones-1.svg"><img src="/img/ztc/10-m5-iec62443-zones-1.svg" alt="Six IEC 62443 zones stacked by Purdue level with conduits and security levels" width="1722" height="1197" loading="lazy" /></a>
   <figcaption><strong>Zones and conduits.</strong> Six zones stacked from the enterprise at the top to the protection devices at the bottom, each with a target security level. Arrows are the only allowed crossings. The red arrow is an example the model rejects: a shortcut from the field straight to the control centre that skips the buffer zone.</figcaption>
 </figure>
+
+-->
+
+<!-- HIDDEN (M5 one zone model, exported to every enforcement layer), kept for later:
 
 <figure class="diagram">
   <a href="/img/ztc/10-m5-iec62443-zones-2.svg"><img src="/img/ztc/10-m5-iec62443-zones-2.svg" alt="One zone model exported to Kubernetes, Cisco ACLs, Docker Compose and OpenStack security groups" width="1721" height="932" loading="lazy" /></a>
@@ -409,6 +438,10 @@ Containers are minimal: no shell, not running as root, read-only file system. Th
 </figure>
 
 Hand-written copies of the same rules in four places will drift apart over time. Generating them from one model, and failing the build if any copy is edited by hand, keeps them the same.
+
+-->
+
+<!-- HIDDEN (threat model section), kept for later:
 
 ## Threat model
 
@@ -426,6 +459,8 @@ I used STRIDE, a checklist of six threat types (spoofing, tampering, repudiation
   <figcaption><strong>Defence in depth.</strong> Five layers around what must be protected (breaker control, protection settings, correct measurements). The table follows a real-world style attack on the grid step by step and names the layer that stops or detects each step.</figcaption>
 </figure>
 
+-->
+
 ## Identity and encrypted connections
 
 *Milestone M5.* Every device and service gets its own identity, carried in a short-lived certificate.
@@ -437,12 +472,16 @@ I used STRIDE, a checklist of six threat types (spoofing, tampering, repudiation
 
 The names describe *what* a workload is (layer, type, name), not *where* it is, so they survive address changes and migration, and the same name is used both for the encrypted connection and in the access rules. The private key never leaves the device, and a device cannot pick its own name.
 
+<!-- HIDDEN (M5 request over mutual TLS), kept for later:
+
 <figure class="diagram">
   <a href="/img/ztc/12-m5-identity-mtls-2.svg"><img src="/img/ztc/12-m5-identity-mtls-2.svg" alt="Sequence of a request over mutual TLS from enrolment to revocation" width="1546" height="1290" loading="lazy" /></a>
   <figcaption><strong>A request over mutual TLS.</strong> Both sides check each other's certificate before anything is sent. When a device is revoked, its open connections are closed too.</figcaption>
 </figure>
 
 Certificates live for a short time and are renewed automatically. A substation may not be able to reach a revocation list during an outage, but an identity that is not renewed simply expires on its own.
+
+-->
 
 ## When a service moves
 
@@ -453,12 +492,16 @@ Certificates live for a short time and are renewed automatically. A substation m
   <figcaption><strong>Handover ticket.</strong> The old host freezes the service and gives the new host a ticket that is single-use, tied to the new host's key and valid for 10 seconds. The state is sent encrypted so only the new host can open it. After the first decision, nothing here needs the cloud.</figcaption>
 </figure>
 
+<!-- HIDDEN (M6 three ways for trust to follow a migrating service), kept for later:
+
 <figure class="diagram">
   <a href="/img/ztc/13-m6-secure-migration-2.svg"><img src="/img/ztc/13-m6-secure-migration-2.svg" alt="Timelines comparing full re-authentication, pre-authentication and token handover" width="1721" height="1067" loading="lazy" /></a>
   <figcaption><strong>Three strategies compared.</strong> Timelines showing downtime and how long credentials sit exposed for each approach, and how failures are handled so there is never more than one running copy.</figcaption>
 </figure>
 
 Re-authenticating from scratch at the cloud makes downtime grow with network delay and fails during an outage. Preparing the new host in advance gives short downtime but leaves valid credentials sitting there long before they are needed. The ticket gives both short downtime and a short exposure window.
+
+-->
 
 ## Proving it with numbers
 
@@ -474,6 +517,8 @@ Re-authenticating from scratch at the cloud makes downtime grow with network del
   <figcaption><strong>The simulated network.</strong> Three substations connected to a cloud decision point. One controller cuts a substation's connection, another moves services between fog nodes.</figcaption>
 </figure>
 
+<!-- HIDDEN (M6 evaluation plan), kept for later:
+
 <figure class="diagram">
   <a href="/img/ztc/14-m6-simulation-evaluation-3.svg"><img src="/img/ztc/14-m6-simulation-evaluation-3.svg" alt="Evaluation matrix for RQ1 to RQ4 with variables, metrics and hypotheses" width="1722" height="587" loading="lazy" /></a>
   <figcaption><strong>Evaluation plan.</strong> For each design question: what is varied, what is measured, and what I expect to find.</figcaption>
@@ -481,9 +526,23 @@ Re-authenticating from scratch at the cloud makes downtime grow with network del
 
 Every experiment is repeated with confidence intervals, so differences that fall inside the uncertainty are not claimed. The limits of the simulation are written down, so the results are read the right way.
 
+-->
+
 ## Real infrastructure and network
 
 *Milestone M7.* Showing that the same zone model holds all the way down to switches and routers, and that the whole setup can be rebuilt from the repository.
+
+### The network: my initial plan
+
+I want to build the substation network on real Cisco equipment, so that the zones above are not only rules in software but also separate networks on the router and switches. Each zone gets its own VLAN. One router at the edge of the substation works as the firewall between the substation, the buffer zone and the outside, and it carries the encrypted tunnel to the control centre. A core switch moves traffic between the zones and only lets through the crossings the zone model allows. The switch that the devices plug into checks every device before it is let onto the network, so a laptop that someone plugs in gets nowhere.
+
+Why: zero trust checks every request, but the network is still the first barrier. If the PEP has a bug, the network should still stop a device from reaching things it has no business with. Building it on real equipment also shows that the design works outside a simulation.
+
+### Rebuilding everything from code: my future plan
+
+When I get this far, the goal is that the whole setup can be built again from the repository with a few commands, instead of by hand. Terraform will create the machines and one network per zone. Ansible will then set up and harden the machines and install Kubernetes. Last, the ZTC services are deployed on top, also on Raspberry Pis that act as fog nodes. To test without Cisco equipment, the same network can run as a free lab on a laptop. The clocks on every machine must also stay in sync, because the short-lived certificates stop working if the clocks drift apart.
+
+<!-- HIDDEN (M7 Purdue-segmented network and M7 Terraform to Kubernetes diagrams), kept for later:
 
 <figure class="diagram">
   <a href="/img/ztc/15-m7-infrastructure-network-1.svg"><img src="/img/ztc/15-m7-infrastructure-network-1.svg" alt="Cisco network design with edge router, core switch and industrial access switch" width="1720" height="1054" loading="lazy" /></a>
@@ -496,6 +555,8 @@ Every experiment is repeated with confidence intervals, so differences that fall
 </figure>
 
 Each tool does the part it is good at: Terraform describes the infrastructure, Ansible configures it, and Kubernetes runs the services. Clock synchronisation is treated as a security control here, because short-lived certificates fail if clocks drift apart.
+
+-->
 
 ## Security in the delivery pipeline
 

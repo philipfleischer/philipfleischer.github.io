@@ -323,6 +323,7 @@ This is the classic trade-off between consistency and availability. What I would
 
 The fog node sees every raw reading (50 per second), so detection does not depend on the cloud connection. Only summaries cross the network, about 50 times less traffic.
 
+<!-- HIDDEN (anomaly lock-out loop and hash-chained audit log), kept for later:
 ### From anomaly to lock-out
 
 <figure class="diagram">
@@ -338,6 +339,7 @@ A compromised measurement unit starts sending false readings. They are still all
   <a href="/img/ztc/07-m2-fog-telemetry-ids-3.svg"><img src="/img/ztc/07-m2-fog-telemetry-ids-3.svg" alt="Hash-chained audit log where each entry contains the hash of the previous one" width="1722" height="665" loading="lazy" /></a>
   <figcaption><strong>Audit log.</strong> Each entry includes a fingerprint (hash) of the one before. Changing any entry breaks every link after it, and the verification tool points out the first broken one.</figcaption>
 </figure>
+-->
 
 ## No single point of failure
 

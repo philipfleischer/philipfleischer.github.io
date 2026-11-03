@@ -403,8 +403,8 @@ A fast but untrusted node is never chosen, and nodes below a minimum trust level
   <figcaption><strong>Kubernetes.</strong> Everything is blocked by default, and one rule per allowed crossing opens exactly the ports it needs. The decision point runs as three stable copies, and maintenance can never take away the majority.</figcaption>
 </figure>
 
--->
 Containers are minimal: no shell, not running as root, read-only file system. That leaves very little for an attacker to work with, and the separation is proven by a test that tries forbidden connections from inside the containers.
+-->
 
 ## Zones and conduits
 

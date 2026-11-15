@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+<defs><marker id="a0f172a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker><marker id="a15803d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="a2563eb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="adc2626" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker></defs>
+<rect width="1000" height="560" fill="#ffffff"/>
+<text x="30" y="40" font-size="20" fill="#0f172a" text-anchor="start" font-weight="700">TicToc18: mean hop count grows much faster than the network</text>
+<text x="30" y="64" font-size="14" fill="#64748b" text-anchor="start" font-weight="400">Mean number of hops per delivered message, all nodes and 4 repetitions per network size. From my own result files.</text>
+<line x1="90" y1="480.0" x2="960" y2="480.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="78" y="485.0" font-size="13" fill="#64748b" text-anchor="end" font-weight="400">0</text>
+<line x1="90" y1="385.0" x2="960" y2="385.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="78" y="390.0" font-size="13" fill="#64748b" text-anchor="end" font-weight="400">1 000</text>
+<line x1="90" y1="290.0" x2="960" y2="290.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="78" y="295.0" font-size="13" fill="#64748b" text-anchor="end" font-weight="400">2 000</text>
+<line x1="90" y1="195.0" x2="960" y2="195.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="78" y="200.0" font-size="13" fill="#64748b" text-anchor="end" font-weight="400">3 000</text>
+<line x1="90" y1="100.0" x2="960" y2="100.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="78" y="105.0" font-size="13" fill="#64748b" text-anchor="end" font-weight="400">4 000</text>
+<text x="90.0" y="504" font-size="13" fill="#64748b" text-anchor="middle" font-weight="400">0</text>
+<text x="264.0" y="504" font-size="13" fill="#64748b" text-anchor="middle" font-weight="400">20</text>
+<text x="438.0" y="504" font-size="13" fill="#64748b" text-anchor="middle" font-weight="400">40</text>
+<text x="612.0" y="504" font-size="13" fill="#64748b" text-anchor="middle" font-weight="400">60</text>
+<text x="786.0" y="504" font-size="13" fill="#64748b" text-anchor="middle" font-weight="400">80</text>
+<text x="960.0" y="504" font-size="13" fill="#64748b" text-anchor="middle" font-weight="400">100</text>
+<line x1="90" y1="480" x2="960" y2="480" stroke="#64748b" stroke-width="1"/>
+<text x="525.0" y="538" font-size="14" fill="#64748b" text-anchor="middle" font-weight="400">Number of central nodes N (network size N + 4)</text>
+<text x="24" y="290.0" font-size="14" fill="#64748b" text-anchor="middle" transform="rotate(-90 24 290.0)">Mean hop count</text>
+<polyline points="107.4,479.1 124.8,478.2 142.2,477.1 159.6,475.8 177.0,474.1 194.4,472.3 211.8,470.0 229.2,467.8 246.6,465.1 264.0,462.1 281.4,458.9 298.8,455.6 316.2,451.9 333.6,448.1 351.0,443.6 368.4,439.0 385.8,435.9 403.2,429.5 420.6,423.7 438.0,419.9 455.4,412.2 472.8,405.8 490.2,401.0 507.6,393.8 525.0,389.3 542.4,378.5 559.8,372.8 577.2,368.3 594.6,359.9 612.0,350.2 629.4,344.6 646.8,334.7 664.2,322.6 681.6,313.6 699.0,309.8 716.4,299.8 733.8,285.2 751.2,275.6 768.6,269.4 786.0,263.2 803.4,244.0 820.8,234.6 838.2,215.3 855.6,222.6 873.0,195.3 890.4,189.3 907.8,177.2 925.2,173.2 942.6,164.5 960.0,131.3" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="107.4" cy="479.1" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 2: 9.65 hops</title></circle>
+<circle cx="124.8" cy="478.2" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 4: 18.51 hops</title></circle>
+<circle cx="142.2" cy="477.1" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 6: 30.11 hops</title></circle>
+<circle cx="159.6" cy="475.8" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 8: 44.63 hops</title></circle>
+<circle cx="177.0" cy="474.1" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 10: 62.17 hops</title></circle>
+<circle cx="194.4" cy="472.3" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 12: 81.4 hops</title></circle>
+<circle cx="211.8" cy="470.0" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 14: 104.84 hops</title></circle>
+<circle cx="229.2" cy="467.8" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 16: 128.67 hops</title></circle>
+<circle cx="246.6" cy="465.1" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 18: 156.69 hops</title></circle>
+<circle cx="264.0" cy="462.1" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 20: 188.34 hops</title></circle>
+<circle cx="281.4" cy="458.9" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 22: 222.41 hops</title></circle>
+<circle cx="298.8" cy="455.6" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 24: 256.53 hops</title></circle>
+<circle cx="316.2" cy="451.9" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 26: 296.29 hops</title></circle>
+<circle cx="333.6" cy="448.1" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 28: 335.72 hops</title></circle>
+<circle cx="351.0" cy="443.6" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 30: 383.11 hops</title></circle>
+<circle cx="368.4" cy="439.0" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 32: 431.81 hops</title></circle>
+<circle cx="385.8" cy="435.9" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 34: 463.99 hops</title></circle>
+<circle cx="403.2" cy="429.5" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 36: 531.3 hops</title></circle>
+<circle cx="420.6" cy="423.7" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 38: 592.62 hops</title></circle>
+<circle cx="438.0" cy="419.9" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 40: 633.09 hops</title></circle>
+<circle cx="455.4" cy="412.2" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 42: 713.77 hops</title></circle>
+<circle cx="472.8" cy="405.8" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 44: 781.3 hops</title></circle>
+<circle cx="490.2" cy="401.0" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 46: 831.13 hops</title></circle>
+<circle cx="507.6" cy="393.8" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 48: 907.46 hops</title></circle>
+<circle cx="525.0" cy="389.3" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 50: 954.33 hops</title></circle>
+<circle cx="542.4" cy="378.5" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 52: 1068.35 hops</title></circle>
+<circle cx="559.8" cy="372.8" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 54: 1128.05 hops</title></circle>
+<circle cx="577.2" cy="368.3" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 56: 1175.87 hops</title></circle>
+<circle cx="594.6" cy="359.9" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 58: 1264.39 hops</title></circle>
+<circle cx="612.0" cy="350.2" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 60: 1365.87 hops</title></circle>
+<circle cx="629.4" cy="344.6" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 62: 1425.19 hops</title></circle>
+<circle cx="646.8" cy="334.7" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 64: 1529.93 hops</title></circle>
+<circle cx="664.2" cy="322.6" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 66: 1657.29 hops</title></circle>
+<circle cx="681.6" cy="313.6" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 68: 1751.44 hops</title></circle>
+<circle cx="699.0" cy="309.8" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 70: 1791.74 hops</title></circle>
+<circle cx="716.4" cy="299.8" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 72: 1896.49 hops</title></circle>
+<circle cx="733.8" cy="285.2" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 74: 2050.99 hops</title></circle>
+<circle cx="751.2" cy="275.6" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 76: 2151.54 hops</title></circle>
+<circle cx="768.6" cy="269.4" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 78: 2216.54 hops</title></circle>
+<circle cx="786.0" cy="263.2" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 80: 2282.21 hops</title></circle>
+<circle cx="803.4" cy="244.0" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 82: 2483.69 hops</title></circle>
+<circle cx="820.8" cy="234.6" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 84: 2583.3 hops</title></circle>
+<circle cx="838.2" cy="215.3" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 86: 2786.34 hops</title></circle>
+<circle cx="855.6" cy="222.6" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 88: 2709.51 hops</title></circle>
+<circle cx="873.0" cy="195.3" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 90: 2996.85 hops</title></circle>
+<circle cx="890.4" cy="189.3" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 92: 3060.49 hops</title></circle>
+<circle cx="907.8" cy="177.2" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 94: 3187.81 hops</title></circle>
+<circle cx="925.2" cy="173.2" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 96: 3229.0 hops</title></circle>
+<circle cx="942.6" cy="164.5" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 98: 3321.34 hops</title></circle>
+<circle cx="960.0" cy="131.3" r="4" fill="#2563eb" stroke="#ffffff" stroke-width="2"><title>N = 100: 3670.18 hops</title></circle>
+<text x="169.0" y="460.09385" font-size="13" fill="#0f172a" text-anchor="end" font-weight="600">N = 10: 62 hops</text>
+<text x="517.0" y="375.33865000000003" font-size="13" fill="#0f172a" text-anchor="end" font-weight="600">N = 50: 954 hops</text>
+<text x="952.0" y="117.3329" font-size="13" fill="#0f172a" text-anchor="end" font-weight="600">N = 100: 3 670 hops</text>
+</svg>

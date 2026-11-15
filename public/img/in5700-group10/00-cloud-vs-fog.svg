@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+<defs><marker id="a0f172a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker><marker id="a15803d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="a2563eb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="adc2626" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker></defs>
+<rect width="1200" height="560" fill="#ffffff"/>
+<text x="30" y="40" font-size="20" fill="#0f172a" text-anchor="start" font-weight="700">Cloud-based vs fog-based: the same 14 messages over different links</text>
+<text x="30" y="64" font-size="14" fill="#64748b" text-anchor="start" font-weight="400">Questions 1 and 4 to each can are lost three times before an answer comes back. Only who reports a full can to the cloud differs.</text>
+<rect x="30" y="90" width="555" height="440" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="50" y="120" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">Cloud-based (GarbageIntheCansAndSlow)</text>
+<rect x="230" y="150" width="160" height="60" rx="10" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<text x="310.0" y="177.0" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">Cloud</text>
+<text x="310.0" y="196.0" font-size="12" fill="#64748b" text-anchor="middle" font-weight="400">central garbage site</text>
+<rect x="60" y="400" width="170" height="64" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="145.0" y="429.0" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">Smartphone</text>
+<text x="145.0" y="448.0" font-size="12" fill="#64748b" text-anchor="middle" font-weight="400">in the truck</text>
+<rect x="390" y="330" width="150" height="56" rx="10" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<text x="465.0" y="363.0" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">can</text>
+<rect x="390" y="430" width="150" height="56" rx="10" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<text x="465.0" y="463.0" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">anotherCan</text>
+<line x1="230" y1="420" x2="390" y2="360" stroke="#2563eb" stroke-width="2"/>
+<line x1="230" y1="444" x2="390" y2="456" stroke="#2563eb" stroke-width="2"/>
+<text x="310" y="482" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="600">Wi-Fi 802.11g · 5 ms</text>
+<text x="310" y="498" font-size="12" fill="#64748b" text-anchor="middle" font-weight="400">questions 1/4, answers YES/NO</text>
+<line x1="145" y1="400" x2="260" y2="210" stroke="#dc2626" stroke-width="3"/>
+<text x="60" y="280" font-size="13" fill="#dc2626" text-anchor="start" font-weight="700">4G/LTE + internet</text>
+<text x="60" y="297" font-size="13" fill="#dc2626" text-anchor="start" font-weight="700">10 Mbit/s · 75 ms</text>
+<text x="60" y="316" font-size="12" fill="#64748b" text-anchor="start" font-weight="400">7/9 Collect garbage, 8/10 OK</text>
+<line x1="465" y1="330" x2="370" y2="210" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="5 5"/>
+<path d="M390,185 H565 V458 H540" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="5 5"/>
+<text x="485" y="250" font-size="12" fill="#64748b" text-anchor="middle" font-weight="400" font-style="italic">fiber unused</text>
+<rect x="615" y="90" width="555" height="440" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="635" y="120" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">Fog-based (GarbageIntheCansAndFast)</text>
+<rect x="815" y="150" width="160" height="60" rx="10" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<text x="895.0" y="177.0" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">Cloud</text>
+<text x="895.0" y="196.0" font-size="12" fill="#64748b" text-anchor="middle" font-weight="400">central garbage site</text>
+<rect x="645" y="400" width="170" height="64" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="730.0" y="429.0" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">Smartphone</text>
+<text x="730.0" y="448.0" font-size="12" fill="#64748b" text-anchor="middle" font-weight="400">in the truck</text>
+<rect x="975" y="330" width="150" height="56" rx="10" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<text x="1050.0" y="363.0" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">can</text>
+<rect x="975" y="430" width="150" height="56" rx="10" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+<text x="1050.0" y="463.0" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">anotherCan</text>
+<line x1="815" y1="420" x2="975" y2="360" stroke="#2563eb" stroke-width="2"/>
+<line x1="815" y1="444" x2="975" y2="456" stroke="#2563eb" stroke-width="2"/>
+<text x="895" y="482" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="600">Wi-Fi 802.11g · 5 ms</text>
+<text x="895" y="498" font-size="12" fill="#64748b" text-anchor="middle" font-weight="400">questions 1/4, answers YES/NO</text>
+<line x1="730" y1="400" x2="845" y2="210" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="5 5"/>
+<text x="675" y="300" font-size="12" fill="#64748b" text-anchor="start" font-weight="400" font-style="italic">LTE unused</text>
+<line x1="1050" y1="330" x2="955" y2="210" stroke="#15803d" stroke-width="3"/>
+<path d="M975,185 H1150 V458 H1125" fill="none" stroke="#15803d" stroke-width="3"/>
+<text x="983" y="262" font-size="13" fill="#15803d" text-anchor="end" font-weight="700">Fiber · 1 Gbit/s · 10 ms</text>
+<text x="983" y="279" font-size="12" fill="#64748b" text-anchor="end" font-weight="400">7/9 Collect can garbage,</text>
+<text x="983" y="295" font-size="12" fill="#64748b" text-anchor="end" font-weight="400">8/10 OK</text>
+</svg>

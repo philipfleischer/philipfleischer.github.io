@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1000" viewBox="0 0 1100 1000" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+<defs><marker id="a0f172a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker><marker id="a15803d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="a2563eb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="adc2626" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker></defs>
+<rect width="1100" height="1000" fill="#ffffff"/>
+<text x="30" y="40" font-size="20" fill="#0f172a" text-anchor="start" font-weight="700">FogCloudProject: recovering from a lost message with a timeout</text>
+<text x="30" y="64" font-size="14" fill="#64748b" text-anchor="start" font-weight="400">Both links have a 100 ms delay. The cloud drops the first three copies of message 3. Time runs downwards.</text>
+<rect x="210" y="88" width="180" height="44" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="300.0" y="115.0" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">computerNode</text>
+<rect x="670" y="88" width="180" height="44" rx="10" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<text x="760.0" y="115.0" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">cloudNode</text>
+<line x1="300" y1="132" x2="300" y2="965.0" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="760" y1="132" x2="760" y2="965.0" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="293" y="295.0" width="14" height="170.0" rx="3" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<rect x="293" y="465.0" width="14" height="170.0" rx="3" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<rect x="293" y="635.0" width="14" height="170.0" rx="3" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<rect x="293" y="805.0" width="14" height="120.0" rx="3" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="282" y="470.0" font-size="12" fill="#7c3aed" text-anchor="end" font-weight="600">timeout (1 s)</text>
+<text x="282" y="640.0" font-size="12" fill="#7c3aed" text-anchor="end" font-weight="600">timeout (1 s)</text>
+<text x="282" y="810.0" font-size="12" fill="#7c3aed" text-anchor="end" font-weight="600">timeout (1 s)</text>
+<text x="282" y="930.0" font-size="12" fill="#7c3aed" text-anchor="end" font-weight="600">timer cancelled</text>
+<text x="40" y="180.0" font-size="12" fill="#64748b" text-anchor="start" font-weight="400">t = 0 s</text>
+<text x="40" y="240.0" font-size="12" fill="#64748b" text-anchor="start" font-weight="400">t = 0.1 s</text>
+<text x="40" y="300.0" font-size="12" fill="#64748b" text-anchor="start" font-weight="400">t = 0.2 s</text>
+<text x="40" y="470.0" font-size="12" fill="#64748b" text-anchor="start" font-weight="400">t = 1.2 s</text>
+<text x="40" y="640.0" font-size="12" fill="#64748b" text-anchor="start" font-weight="400">t = 2.2 s</text>
+<text x="40" y="810.0" font-size="12" fill="#64748b" text-anchor="start" font-weight="400">t = 3.2 s</text>
+<text x="40" y="870.0" font-size="12" fill="#64748b" text-anchor="start" font-weight="400">t = 3.3 s</text>
+<text x="40" y="930.0" font-size="12" fill="#64748b" text-anchor="start" font-weight="400">t = 3.4 s</text>
+<text x="40" y="980" font-size="12" fill="#64748b" text-anchor="start" font-weight="400" font-style="italic">Vertical spacing is not to scale: the waits between attempts are 1 s, the link delays 0.1 s.</text>
+<line x1="308" y1="175.0" x2="752" y2="235.0" stroke="#0f172a" stroke-width="2" marker-end="url(#a0f172a)"/>
+<text x="330" y="167.0" font-size="13" fill="#0f172a" text-anchor="start" font-weight="600">1- Hello</text>
+<line x1="752" y1="235.0" x2="308" y2="295.0" stroke="#15803d" stroke-width="2" marker-end="url(#a15803d)"/>
+<text x="730" y="227.0" font-size="13" fill="#0f172a" text-anchor="end" font-weight="600">2- Ack</text>
+<line x1="308" y1="295.0" x2="748" y2="355.0" stroke="#dc2626" stroke-width="2" stroke-dasharray="7 5"/>
+<line x1="742" y1="347.0" x2="756" y2="361.0" stroke="#dc2626" stroke-width="3"/>
+<line x1="742" y1="361.0" x2="756" y2="347.0" stroke="#dc2626" stroke-width="3"/>
+<text x="778" y="360.0" font-size="12" fill="#dc2626" text-anchor="start" font-weight="600">dropped, bubble “message lost”</text>
+<text x="330" y="287.0" font-size="13" fill="#dc2626" text-anchor="start" font-weight="600">3- Test Message (attempt 1)</text>
+<line x1="308" y1="465.0" x2="748" y2="525.0" stroke="#dc2626" stroke-width="2" stroke-dasharray="7 5"/>
+<line x1="742" y1="517.0" x2="756" y2="531.0" stroke="#dc2626" stroke-width="3"/>
+<line x1="742" y1="531.0" x2="756" y2="517.0" stroke="#dc2626" stroke-width="3"/>
+<text x="778" y="530.0" font-size="12" fill="#dc2626" text-anchor="start" font-weight="600">dropped, bubble “message lost”</text>
+<text x="330" y="457.0" font-size="13" fill="#dc2626" text-anchor="start" font-weight="600">3- Test Message (attempt 2)</text>
+<line x1="308" y1="635.0" x2="748" y2="695.0" stroke="#dc2626" stroke-width="2" stroke-dasharray="7 5"/>
+<line x1="742" y1="687.0" x2="756" y2="701.0" stroke="#dc2626" stroke-width="3"/>
+<line x1="742" y1="701.0" x2="756" y2="687.0" stroke="#dc2626" stroke-width="3"/>
+<text x="778" y="700.0" font-size="12" fill="#dc2626" text-anchor="start" font-weight="600">dropped, bubble “message lost”</text>
+<text x="330" y="627.0" font-size="13" fill="#dc2626" text-anchor="start" font-weight="600">3- Test Message (attempt 3)</text>
+<line x1="308" y1="805.0" x2="752" y2="865.0000000000002" stroke="#0f172a" stroke-width="2" marker-end="url(#a0f172a)"/>
+<text x="330" y="797.0" font-size="13" fill="#0f172a" text-anchor="start" font-weight="600">3- Test Message (attempt 4)</text>
+<text x="778" y="870.0" font-size="12" fill="#15803d" text-anchor="start" font-weight="600">accepted</text>
+<line x1="752" y1="865.0" x2="308" y2="925.0" stroke="#15803d" stroke-width="2" marker-end="url(#a15803d)"/>
+<text x="730" y="857.0" font-size="13" fill="#0f172a" text-anchor="end" font-weight="600">4- Ack</text>
+</svg>

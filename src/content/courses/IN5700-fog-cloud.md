@@ -1,9 +1,9 @@
 ---
 title: "IN5700: Fog and Cloud Computing"
 courseCode: "IN5700"
-subtitle: "Master's course on designing systems across the edge-fog-cloud continuum. A group project in OMNeT++ comparing a cloud-based and a fog-based smart garbage collection system, a presentation of the research paper Fogify: A Fog Computing Emulation Framework, and an individual OMNeT++ assignment on loss and retransmission."
+subtitle: "Master's course on designing systems across the edge-fog-cloud continuum. A group project in OMNeT++ comparing a cloud-based and a fog-based smart garbage collection system, a presentation of the research paper Fogify: A Fog Computing Emulation Framework, and an individual OMNeT++ assignment on loss and retransmission, and the official OMNeT++ TicToc tutorial."
 image: "/img/IN5700.png"
-tags: ["OMNeT++", "C++", "INET", "Fog Computing", "Cloud", "Simulation", "Emulation", "Fogify", "Docker", "Performance Analysis"]
+tags: ["OMNeT++", "C++", "INET", "Fog Computing", "Cloud", "Simulation", "Emulation", "Fogify", "Docker", "Performance Analysis", "TurtleMobility", "Retransmission", "Parameter Studies"]
 topics: ["Cloud", "Distributed Systems", "Networking"]
 year: 2026
 order: 1
@@ -15,44 +15,111 @@ links: []
 
 This is the course closest to the direction I want to work in, and it is where my [Zero-Trust Continuum](/projects/zero-trust-continuum) project comes from.
 
-The page has three parts:
+The page has four parts:
 
 | # | Work | Status |
 |---|---|---|
-| 1 | [Group project: smart garbage collection](#group-project-smart-garbage-collection-with-fog-and-cloud-computing) | In progress |
+| 1 | [Group project: smart garbage collection](#group-project-smart-garbage-collection-with-fog-and-cloud-computing) | Completed |
 | 2 | [Paper presentation: Fogify](#paper-presentation-fogify-a-fog-computing-emulation-framework) | Presented 21 October 2026 |
 | 3 | [Individual project: FogCloudProject](#individual-project-fogcloudproject) | Completed |
+| 4 | [Tutorial: the OMNeT++ TicToc tutorial](#tutorial-the-omnet-tictoc-tutorial) | Completed |
 
 ## Group project: Smart garbage collection with fog and cloud computing
 
-*Status: work in progress. Group 10, three members. Built in OMNeT++ 6.4 with INET 4.7.*
+*Status: completed. Group 10, three members. Built in OMNeT++ 6.4 with INET 4.7. This is the work I am proudest of in this course. My part: I set up the repository and built most of the simulation, including the shared message layer, the message flow for all three solutions, the moving truck, the canvas, the link model, the videos and the report.*
 
-A garbage truck drives along three streets. The driver's smartphone asks two smart garbage cans whether they are full, and if a can is full, the central garbage site in the cloud is told so the can gets emptied. The point of the project is to compare two architectures for the same job:
+A garbage truck drives along three streets. The driver's smartphone asks two smart garbage cans whether they are full, and if a can is full, the central garbage site in the cloud is told so the can gets emptied. The point of the project is to compare two architectures for the same job and measure the difference. The screenshots below are from our own simulation runs. **Click any picture to see it in full size.**
 
-- **Cloud-based**: the smartphone tells the cloud over a slow 4G/LTE link
-- **Fog-based**: each full can tells the cloud itself over a fast fiber connection
-- **No garbage**: a baseline where the cans are empty and the cloud is never contacted
+<figure class="diagram">
+  <a href="/img/in5700-group10/02-fog-final.png"><img src="/img/in5700-group10/02-fog-final.png" alt="Final state of the fog-based simulation in OMNeT++ at t = 17.9 s: the truck at the end of the route with its green trail, the two cans, the cloud, the counters above every module and the total link times on the right" width="2689" height="980" loading="lazy" /></a>
+  <figcaption><strong>The fog-based solution when the run has finished (t = 17.9 s).</strong> The green line is the route the truck drove. The blue counters above each module show how many fast and slow messages it sent and received, and the text on the right shows the total time spent on each kind of link, in milliseconds.</figcaption>
+</figure>
 
-The first three questions to each can are deliberately lost, so the smartphone has to detect the loss with a timeout and retransmit.
+### At a glance
+
+- **What:** a smart garbage collection system simulated in OMNeT++, with three selectable solutions.
+- **Cloud-based** (`GarbageIntheCansAndSlow`): the smartphone tells the cloud over a slow 4G/LTE link.
+- **Fog-based** (`GarbageIntheCansAndFast`): each full can tells the cloud itself over fast fiber.
+- **No garbage** (`NoGarbageInTheCans`): a baseline where the cans are empty and the cloud is never contacted.
+- **The twist:** the first three questions to each can are deliberately lost, so the smartphone has to detect every loss with a timeout and ask again.
+- **Key result:** the fog-based design spent about **3.9 times less** time on the network when sending, and the real bottleneck turned out to be the retransmission timeout, not the links.
+
+### Two architectures, same messages
+
+<figure class="diagram">
+  <a href="/img/in5700-group10/00-cloud-vs-fog.svg"><img src="/img/in5700-group10/00-cloud-vs-fog.svg" alt="Two panels. Cloud-based: the smartphone talks to the cans over Wi-Fi and to the cloud over 4G/LTE, and the fiber is unused. Fog-based: the smartphone only uses Wi-Fi, and each can talks to the cloud over fiber" width="1200" height="560" loading="lazy" /></a>
+  <figcaption><strong>Who reports a full can, and over which link.</strong> In both designs the smartphone asks the cans over Wi-Fi. In the cloud-based design it then reports to the cloud over LTE (red). In the fog-based design the can reports itself over fiber (green), so the slow link is never used.</figcaption>
+</figure>
+
+### One run, step by step
+
+1. At 4 s the smartphone's timer fires, and it sends "1-Is the can full?" to the first can.
+2. The can drops the first three questions. The smartphone asks again every second (4, 5, 6 and 7 s).
+3. The fourth question is answered with "3-YES", or "2-NO" in the no garbage solution.
+4. On YES, the smartphone sends "7-Collect garbage" over LTE (cloud-based), or the can sends "7-Collect can garbage" over fiber (fog-based). The cloud answers "8-OK" on the same link.
+5. Four seconds later the same happens at the second can, with messages 4, 5 or 6, 9 and 10.
+
+The truck drives the route with INET's TurtleMobility and parks at each can while it asks (3.2–8.2 s and 10.1–15.1 s), then leaves along the bottom street. The moving truck was the advanced part of the assignment. With static mobility every message, counter and delay stays the same.
+
+<figure class="diagram">
+  <a href="/img/in5700-group10/04-lost-message.png"><img src="/img/in5700-group10/04-lost-message.png" alt="The first can shows the bubble Lost Message while the truck is parked next to it, and its lost-message counter shows 1" width="1700" height="599" loading="lazy" /></a>
+  <figcaption><strong>A lost question.</strong> The truck is parked at the first can, and the can drops the question with the bubble "Lost Message". The counter <code>numberOfLostCanMsgs</code> climbs to 3 before the can answers.</figcaption>
+</figure>
+
+<figure class="diagram">
+  <a href="/img/in5700-group10/05-cloud-collect.png"><img src="/img/in5700-group10/05-cloud-collect.png" alt="Cloud-based solution: the red message 7-Collect garbage travels from the truck towards the cloud" width="1700" height="599" loading="lazy" /></a>
+  <figcaption><strong>Cloud-based: the smartphone reports the full can.</strong> The red dot is "7-Collect garbage" on its way from the truck to the cloud over the slow 4G/LTE link (75 ms).</figcaption>
+</figure>
+
+<figure class="diagram">
+  <a href="/img/in5700-group10/06-fog-collect.png"><img src="/img/in5700-group10/06-fog-collect.png" alt="Fog-based solution: the message 7-Collect can garbage leaves the can towards the cloud" width="1700" height="599" loading="lazy" /></a>
+  <figcaption><strong>Fog-based: the can reports itself.</strong> Right after answering YES to the truck, the can sends "7-Collect can garbage" straight to the cloud over fiber (10 ms). The truck is not involved.</figcaption>
+</figure>
 
 ### Design choices
-- A shared `NodeBase` class handles creating, sending and counting messages, so the smartphone, cans and cloud only contain their own logic
-- Link parameters are based on real technologies and justified in the report: Wi-Fi 802.11g (54 Mbit/s, 5 ms), LTE plus internet to a data centre (10 Mbit/s, 75 ms) and street-level fiber (1 Gbit/s, 10 ms)
-- Because the simulation uses plain messages rather than packets, transmission time (size divided by data rate) is calculated explicitly and added on top of the link delay
-- The truck moves with INET's mobility model along a scripted route and parks at each can while it asks
 
-### Results so far
-Both garbage scenarios send the same number of messages (14). The difference is *which links* they use. In the cloud-based design four messages cross the slow mobile link, in the fog-based design none do.
+- A shared `NodeBase` class handles creating, sending and counting messages, so the smartphone, cans and cloud only contain their own logic.
+- Link parameters are based on real technologies and justified in the report:
+
+| Link | Technology | Data rate | Delay |
+|---|---|---|---|
+| Smartphone ↔ cans | Wi-Fi 802.11g | 54 Mbit/s | 5 ms |
+| Smartphone ↔ cloud | 4G/LTE and the internet to a data centre | 10 Mbit/s | 75 ms |
+| Cans ↔ cloud | Street-level fiber | 1 Gbit/s | 10 ms |
+
+- The simulation uses plain messages (red dots, like the reference videos) rather than packets. OMNeT++ only applies the data rate to packets, so `NodeBase` calculates the transmission time (size divided by data rate) itself and sends the message that much later, and the channel adds its delay on top.
+- Questions, answers and OK messages are 64 bytes. A collect request also carries the can's id, position and fill level, so it is 128 bytes.
+
+### Results
+
+<figure class="diagram">
+  <a href="/img/in5700-group10/01-cloud-final.png"><img src="/img/in5700-group10/01-cloud-final.png" alt="Final state of the cloud-based solution with 150 ms on the slow links in each direction" width="2689" height="980" loading="lazy" /></a>
+  <figcaption><strong>Cloud-based, final state.</strong> 150 ms was spent on the slow link in each direction, from the smartphone and from the cloud.</figcaption>
+</figure>
+
+<figure class="diagram">
+  <a href="/img/in5700-group10/03-no-garbage-final.png"><img src="/img/in5700-group10/03-no-garbage-final.png" alt="Final state of the no garbage solution, where the cloud has sent and received nothing" width="2690" height="980" loading="lazy" /></a>
+  <figcaption><strong>No garbage, final state.</strong> The cans answer NO, the cloud is never contacted, and only the Wi-Fi link is used.</figcaption>
+</figure>
 
 | | Cloud-based | Fog-based | No garbage |
 |---|---|---|---|
 | Messages sent | 14 | 14 | 10 |
 | Messages on the slow link | 4 | 0 | 0 |
 | Total time on links (sending) | 350.4 ms | 90.1 ms | 50.1 ms |
+| Total time on links (receiving) | 320.3 ms | 60.0 ms | 20.0 ms |
 
-The fog-based design spent about **3.9 times less** time on the network when sending and about **5.3 times less** when receiving. From the point of view of one full can, the cloud knew about it after 10 ms in the fog design and after 80 ms in the cloud design.
+Both garbage scenarios send the same number of messages. The difference is *which links* they use. The fog-based design spent about **3.9 times less** time on the network when sending and about **5.3 times less** when receiving. From the point of view of one full can, the cloud knew about it after 10 ms in the fog design and after 80 ms in the cloud design, and the OK came back after 20 ms instead of 155 ms.
 
-The most useful finding was that the link delays were not the real bottleneck. The 1-second retransmission timeout cost 3 seconds per can, far more than all the link delays combined. The report proposes improvements on that basis: an adaptive timeout based on measured round-trip time, letting the cans push a notification when their sensor says they are full instead of being polled, batching requests over the slow link, and 5G with an edge server to cut the mobile delay.
+### The real bottleneck, and how to fix it
+
+The most useful finding was that the link delays were not the real bottleneck. An answer arrives after about 10 ms, but the smartphone waits a full second before asking again, so the three lost questions cost **3 seconds per can**, far more than all the link delays combined. The report proposes:
+
+- **An adaptive timeout** based on the measured round-trip time, for example 50 ms, which cuts the waiting per can from 3 s to about 0.16 s.
+- **Push instead of poll:** in the fog design the cans could report as soon as their sensor says they are full, so the questions and answers disappear and the cloud can plan a route that skips empty cans.
+- **Batching** over the slow link: one request for both cans halves the LTE messages and saves about 150 ms.
+- **5G with an edge server** at the base station, which would cut the mobile delay from 75 ms to about 10 ms.
+- **Fewer losses**, for example by stopping closer to the can or using a radio with frequency hopping such as Bluetooth Low Energy.
 
 ## Paper presentation: Fogify, A Fog Computing Emulation Framework
 
@@ -160,7 +227,12 @@ What I took from it for my own work: it is the testing approach I want for the f
 
 *Status: completed. Mandatory individual assignment, built in OMNeT++ 6.4 with C++.*
 
-A computer and a cloud node exchange messages over 100 ms links, and the point is to handle message loss:
+A computer and a cloud node exchange messages over 100 ms links, and the point is to handle message loss with a timer. I drew the sequence diagram below from the code.
+
+<figure class="diagram">
+  <a href="/img/in5700-labs/fogcloud-sequence.svg"><img src="/img/in5700-labs/fogcloud-sequence.svg" alt="Sequence diagram: the computer sends Hello and gets an Ack, then sends message 3, which the cloud drops three times. A 1-second timeout resends it each time, the fourth copy is accepted, the cloud answers with message 4 and the timer is cancelled" width="1100" height="1000" loading="lazy" /></a>
+  <figcaption><strong>Recovering from a lost message with a timeout.</strong> Time runs downwards. The purple bar is the 1-second retransmission timer on the computer, re-armed after every attempt and cancelled when message 4 arrives.</figcaption>
+</figure>
 
 1. The computer sends **message 1** (Hello), and the cloud answers with **message 2** (ACK).
 2. The computer then sends **message 3** (a test message) and starts a **1-second retransmission timer** as a self-message.
@@ -168,7 +240,35 @@ A computer and a cloud node exchange messages over 100 ms links, and the point i
 4. Each time the timer fires without an ACK, the computer resends message 3 and re-arms the timer.
 5. The fourth copy is accepted, the cloud answers with **message 4** (ACK), and the computer cancels and deletes the timer.
 
-The group project above uses the same idea, a self-scheduled timeout followed by a retransmission, to recover from the lost questions to the garbage cans. The repository also holds the queueing, source-sink and Ethernet models I built while learning OMNeT++.
+The group project above uses the same idea, a self-scheduled timeout followed by a retransmission, to recover from the lost questions to the garbage cans.
+
+## Tutorial: the OMNeT++ TicToc tutorial
+
+*Completed. I worked through the official [TicToc tutorial](https://doc.omnetpp.org/omnetpp/tictoc-tutorial/) from the OMNeT++ documentation, all 18 steps, to learn the simulator before the projects.*
+
+The tutorial builds one model step by step, and each step adds one OMNeT++ concept. The diagram shows the three networks it uses.
+
+<figure class="diagram">
+  <a href="/img/in5700-labs/tictoc-networks.svg"><img src="/img/in5700-labs/tictoc-networks.svg" alt="Three networks: two nodes tic and toc in steps 1 to 9, six nodes with random routing in steps 10 to 17, and a chain of N central nodes with two nodes at each end in step 18" width="1200" height="400" loading="lazy" /></a>
+  <figcaption><strong>The networks in the TicToc tutorial.</strong> Every link has a 100 ms delay.</figcaption>
+</figure>
+
+| Steps | What the step adds |
+|---|---|
+| 1–6 | Two modules passing one message back and forth, then icons, logging, state variables, parameters, NED inheritance and processing delay with self-messages |
+| 7–9 | Random delays and random loss, then a timeout and retransmission of a copy: a stop-and-wait protocol |
+| 10–13 | A network of six nodes with vector gates, channels and bidirectional links, random routing and a custom message class with a hop count |
+| 14–17 | Statistics: counters on the canvas, vectors and histograms, signals with `@statistic`, and canvas figures |
+| 18 | A parameter study over network size, with repeated runs |
+
+<figure class="diagram">
+  <a href="/img/in5700-labs/tictoc18-hopcount.svg"><img src="/img/in5700-labs/tictoc18-hopcount.svg" alt="Line chart of the mean hop count against the number of central nodes N, rising from about 62 hops at N = 10 to 954 at N = 50 and 3 670 at N = 100" width="1000" height="560" loading="lazy" /></a>
+  <figcaption><strong>The parameter study in step 18.</strong> I calculated the mean hop count per delivered message from my own 200 runs (N = 2 to 100, 4 repetitions each, 250 000 s of simulated time per run).</figcaption>
+</figure>
+
+Messages are routed on a random gate, so each message does a random walk along the chain. The hop count grows roughly with the square of the network size, from about 62 hops at N = 10 to 3 670 at N = 100. Random routing is fine for a tutorial, but it does not scale.
+
+The repository also holds the queueing, source-sink and Ethernet models I built while learning OMNeT++ and INET.
 
 ## Repositories
 
@@ -176,6 +276,6 @@ The group project above uses the same idea, a self-scheduled timeout followed by
 |---|---|
 | Group project: smart garbage collection | group10-FC-2026 (private while the course runs) |
 | Paper presentation: Fogify | Fog--and-Cloud-Computing (slides, private while the course runs) |
-| Individual project and labs | Fog--and-Cloud-Computing (private while the course runs) |
+| Individual project, TicToc tutorial and labs | Fog--and-Cloud-Computing (private while the course runs) |
 
 The reports, code, slides and simulation videos are available on request.

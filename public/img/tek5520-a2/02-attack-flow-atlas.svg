@@ -1,0 +1,564 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2955" height="3689" viewBox="0 0 2955 3689" font-family="Arial, Helvetica, sans-serif" xmlns:c2pa="http://c2pa.org/manifest">
+<rect width="2955" height="3689" fill="#141414"/>
+<polyline points="810.0,1741.5 840.0,1741.5" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="840.0,1741.5 828.0,1747.5 828.0,1735.5" fill="#465bf8"/>
+<polyline points="1180.0,1741.5 1230.0,1741.5" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1230.0,1741.5 1218.0,1747.5 1218.0,1735.5" fill="#465bf8"/>
+<polyline points="1570.0,1635.8 2072.5,1635.8 2072.5,1670.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="2072.5,1670.0 2066.5,1658.0 2078.5,1658.0" fill="#465bf8"/>
+<polyline points="590.0,556.5 590.0,556.5 590.0,555.0 655.0,555.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="655.0,555.0 643.0,561.0 643.0,549.0" fill="#465bf8"/>
+<polyline points="985.0,555.0 985.0,555.0 985.0,560.0 1040.0,560.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1040.0,560.0 1028.0,566.0 1028.0,554.0" fill="#465bf8"/>
+<polyline points="2420.0,765.8 2060.0,765.8 2060.0,658.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="2060.0,658.0 2066.0,670.0 2054.0,670.0" fill="#465bf8"/>
+<polyline points="1805.0,408.1 1805.0,408.1 1805.0,416.5 2260.0,416.5" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="2260.0,416.5 2248.0,422.5 2248.0,410.5" fill="#465bf8"/>
+<polyline points="835.0,2456.5 1015.0,2456.5" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1015.0,2456.5 1003.0,2462.5 1003.0,2450.5" fill="#465bf8"/>
+<polyline points="1355.0,2456.5 1535.0,2456.5" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1535.0,2456.5 1523.0,2462.5 1523.0,2450.5" fill="#465bf8"/>
+<polyline points="1875.0,2456.5 2065.0,2456.5" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="2065.0,2456.5 2053.0,2462.5 2053.0,2450.5" fill="#465bf8"/>
+<polyline points="2385.0,2456.5 2575.0,2456.5" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="2575.0,2456.5 2563.0,2462.5 2563.0,2450.5" fill="#465bf8"/>
+<polyline points="2745.0,2658.0 2745.0,2730.0 670.0,2730.0 670.0,2815.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="670.0,2815.0 664.0,2803.0 676.0,2803.0" fill="#465bf8"/>
+<polyline points="840.0,3016.5 1020.0,3016.5" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1020.0,3016.5 1008.0,3022.5 1008.0,3010.5" fill="#465bf8"/>
+<polyline points="1360.0,3016.5 1360.0,3016.5 1360.0,3020.0 1540.0,3020.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1540.0,3020.0 1528.0,3026.0 1528.0,3014.0" fill="#465bf8"/>
+<polyline points="2400.0,3016.5 2400.0,3016.5 2400.0,3015.0 2585.0,3015.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="2585.0,3015.0 2573.0,3021.0 2573.0,3009.0" fill="#465bf8"/>
+<polyline points="1380.0,528.3 1410.0,528.3 1410.0,695.5 1445.0,695.5" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1445.0,695.5 1433.0,701.5 1433.0,689.5" fill="#465bf8"/>
+<polyline points="1755.0,668.2 1781.0,668.2 1781.0,471.5 1805.0,471.5" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1805.0,471.5 1793.0,477.5 1793.0,465.5" fill="#465bf8"/>
+<polyline points="1755.0,714.0 1965.0,714.0 1965.0,851.5 2420.0,851.5" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="2420.0,851.5 2408.0,857.5 2408.0,845.5" fill="#465bf8"/>
+<polyline points="1880.0,2995.0 1964.0,2995.0 1964.0,3016.5 2060.0,3016.5" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="2060.0,3016.5 2048.0,3022.5 2048.0,3010.5" fill="#465bf8"/>
+<polyline points="2342.5,588.0 2342.5,1635.8 1570.0,1635.8" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1570.0,1635.8 1582.0,1629.8 1582.0,1641.8" fill="#465bf8"/>
+<polyline points="400.0,1746.5 400.0,1746.5 400.0,1741.5 470.0,1741.5" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="470.0,1741.5 458.0,1747.5 458.0,1735.5" fill="#465bf8"/>
+<polyline points="2665.0,2063.0 2665.0,2165.0 2305.0,2165.0 2305.0,2275.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="2305.0,2275.0 2299.0,2263.0 2311.0,2263.0" fill="#465bf8"/>
+<polyline points="1190.0,3265.0 1190.0,3208.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1190.0,3208.0 1196.0,3220.0 1184.0,3220.0" fill="#465bf8"/>
+<polyline points="2072.5,1670.0 2072.5,930.0 425.0,930.0 425.0,748.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="425.0,748.0 431.0,760.0 419.0,760.0" fill="#465bf8"/>
+<polyline points="2237.5,1820.0 2237.5,2184.0 665.0,2184.0 665.0,2265.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="665.0,2265.0 659.0,2253.0 671.0,2253.0" fill="#465bf8"/>
+<polyline points="260.0,556.5 211.0,556.5 211.0,557.0 209.0,557.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="209.0,557.0 221.0,551.0 221.0,563.0" fill="#465bf8"/>
+<polyline points="1400.0,1953.0 1400.0,2016.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1400.0,2016.0 1394.0,2004.0 1406.0,2004.0" fill="#465bf8"/>
+<polyline points="1010.0,1996.0 1010.0,1933.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1010.0,1933.0 1016.0,1945.0 1004.0,1945.0" fill="#465bf8"/>
+<polyline points="2590.0,1023.0 2590.0,1201.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="2590.0,1201.0 2584.0,1189.0 2596.0,1189.0" fill="#465bf8"/>
+<polyline points="1360.0,3112.2 1580.0,3112.2 1580.0,3181.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1580.0,3181.0 1574.0,3169.0 1586.0,3169.0" fill="#465bf8"/>
+<polyline points="245.0,1393.0 245.0,1465.0 555.0,1465.0 555.0,1550.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="555.0,1550.0 549.0,1538.0 561.0,1538.0" fill="#465bf8"/>
+<polyline points="610.0,1349.0 610.0,1447.0 640.0,1447.0 640.0,1550.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="640.0,1550.0 634.0,1538.0 646.0,1538.0" fill="#465bf8"/>
+<polyline points="985.0,1373.0 985.0,1457.0 925.0,1457.0 925.0,1550.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="925.0,1550.0 919.0,1538.0 931.0,1538.0" fill="#465bf8"/>
+<polyline points="1405.0,1383.0 1405.0,1435.0 1095.0,1435.0 1095.0,1550.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1095.0,1550.0 1089.0,1538.0 1101.0,1538.0" fill="#465bf8"/>
+<polyline points="1790.0,1393.0 1790.0,1469.0 1400.0,1469.0 1400.0,1530.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1400.0,1530.0 1394.0,1518.0 1406.0,1518.0" fill="#465bf8"/>
+<polyline points="1210.0,423.0 1210.0,465.0" fill="none" stroke="#465bf8" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1210.0,465.0 1204.0,453.0 1216.0,453.0" fill="#465bf8"/>
+<rect x="470" y="1550" width="340" height="383" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M470,1620 V1556 a6,6 0 0 1 6,-6 H804 a6,6 0 0 1 6,6 V1620 z" fill="#0a2a66"/>
+<text x="490.0" y="1578.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="490.0" y="1599.0" font-size="17" font-weight="700" fill="#e6e6e6">1. Prepare weaponised worm</text>
+<text x="490.0" y="1645.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="490.0" y="1665.0" font-size="14" fill="#d8d8d8">[ENT] TA0042 Resource Development</text>
+<text x="490.0" y="1695.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="490.0" y="1715.0" font-size="14" fill="#d8d8d8">[ENT] T1587.001 Malware</text>
+<text x="490.0" y="1745.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="490.0" y="1765.0" font-size="14" fill="#d8d8d8">The attackers assemble the worm from a</text>
+<text x="490.0" y="1785.0" font-size="14" fill="#d8d8d8">ransomware component and the SMBv1 exploit</text>
+<text x="490.0" y="1805.0" font-size="14" fill="#d8d8d8">EternalBlue. The capability is developed</text>
+<text x="490.0" y="1825.0" font-size="14" fill="#d8d8d8">(T1587.001*) and the exploit is obtained</text>
+<text x="490.0" y="1845.0" font-size="14" fill="#d8d8d8">(T1588.005*). MITRE does not state these</text>
+<text x="490.0" y="1865.0" font-size="14" fill="#d8d8d8">mappings.</text>
+<text x="490.0" y="1894.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="490.0" y="1914.0" font-size="14" fill="#d8d8d8">Probable</text>
+<rect x="840" y="1550" width="340" height="383" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M840,1620 V1556 a6,6 0 0 1 6,-6 H1174 a6,6 0 0 1 6,6 V1620 z" fill="#0a2a66"/>
+<text x="860.0" y="1578.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="860.0" y="1599.0" font-size="17" font-weight="700" fill="#e6e6e6">2. Infect first host(s)</text>
+<text x="860.0" y="1645.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="860.0" y="1665.0" font-size="14" fill="#d8d8d8">[ENT] TA0001 Initial Access</text>
+<text x="860.0" y="1695.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="860.0" y="1715.0" font-size="14" fill="#d8d8d8">[ENT] T1190 Exploit Public-Facing Application</text>
+<text x="860.0" y="1745.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="860.0" y="1765.0" font-size="14" fill="#d8d8d8">The first host is infected before the worm</text>
+<text x="860.0" y="1785.0" font-size="14" fill="#d8d8d8">spreads by itself. Sources disagree on the entry</text>
+<text x="860.0" y="1805.0" font-size="14" fill="#d8d8d8">vector: exposed SMB (T1190*) or phishing</text>
+<text x="860.0" y="1825.0" font-size="14" fill="#d8d8d8">(T1566.001*). MITRE does not state an initial</text>
+<text x="860.0" y="1845.0" font-size="14" fill="#d8d8d8">access technique.</text>
+<text x="860.0" y="1894.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="860.0" y="1914.0" font-size="14" fill="#d8d8d8">Even Odds</text>
+<rect x="1230" y="1530" width="340" height="423" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M1230,1600 V1536 a6,6 0 0 1 6,-6 H1564 a6,6 0 0 1 6,6 V1600 z" fill="#0a2a66"/>
+<text x="1250.0" y="1558.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="1250.0" y="1579.0" font-size="17" font-weight="700" fill="#e6e6e6">3. Probe kill-switch domain</text>
+<text x="1250.0" y="1625.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="1250.0" y="1645.0" font-size="14" fill="#d8d8d8">[ENT] TA0005 Stealth</text>
+<text x="1250.0" y="1675.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="1250.0" y="1695.0" font-size="14" fill="#d8d8d8">[ENT] T1497.001 System Checks</text>
+<text x="1250.0" y="1725.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="1250.0" y="1745.0" font-size="14" fill="#d8d8d8">On start-up the worm tries an HTTP connection</text>
+<text x="1250.0" y="1765.0" font-size="14" fill="#d8d8d8">to a hard-coded domain. If the connection</text>
+<text x="1250.0" y="1785.0" font-size="14" fill="#d8d8d8">succeeds, the worm exits, so spreading and</text>
+<text x="1250.0" y="1805.0" font-size="14" fill="#d8d8d8">encryption do not run on that host. The check</text>
+<text x="1250.0" y="1825.0" font-size="14" fill="#d8d8d8">may work as sandbox evasion (T1497.001*).</text>
+<text x="1250.0" y="1845.0" font-size="14" fill="#d8d8d8">MITRE does not list this mapping.</text>
+<text x="1250.0" y="1914.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="1250.0" y="1934.0" font-size="14" fill="#d8d8d8">Even Odds</text>
+<rect x="260" y="365" width="330" height="383" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M260,435 V371 a6,6 0 0 1 6,-6 H584 a6,6 0 0 1 6,6 V435 z" fill="#0a2a66"/>
+<text x="280.0" y="393.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="280.0" y="414.0" font-size="17" font-weight="700" fill="#e6e6e6">4. Install service mssecsvc2.0</text>
+<text x="280.0" y="460.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="280.0" y="480.0" font-size="14" fill="#d8d8d8">[ENT] TA0003 Persistence</text>
+<text x="280.0" y="510.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="280.0" y="530.0" font-size="14" fill="#d8d8d8">[ENT] T1543.003 Windows Service</text>
+<text x="280.0" y="560.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="280.0" y="580.0" font-size="14" fill="#d8d8d8">The worm copies itself to</text>
+<text x="280.0" y="600.0" font-size="14" fill="#d8d8d8">C:\Windows\mssecsvc.exe and creates the</text>
+<text x="280.0" y="620.0" font-size="14" fill="#d8d8d8">service mssecsvc2.0 with the display name</text>
+<text x="280.0" y="640.0" font-size="14" fill="#d8d8d8">‘Microsoft Security Center (2.0) Service’</text>
+<text x="280.0" y="660.0" font-size="14" fill="#d8d8d8">(T1543.003).</text>
+<text x="280.0" y="709.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="280.0" y="729.0" font-size="14" fill="#d8d8d8">Very Probable</text>
+<rect x="655" y="341" width="330" height="428" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M655,431 V347 a6,6 0 0 1 6,-6 H979 a6,6 0 0 1 6,6 V431 z" fill="#0a2a66"/>
+<text x="675.0" y="369.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="675.0" y="390.0" font-size="17" font-weight="700" fill="#e6e6e6">5. Discover network and scan</text>
+<text x="675.0" y="410.0" font-size="17" font-weight="700" fill="#e6e6e6">TCP/445</text>
+<text x="675.0" y="456.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="675.0" y="476.0" font-size="14" fill="#d8d8d8">[ENT] TA0007 Discovery</text>
+<text x="675.0" y="506.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="675.0" y="526.0" font-size="14" fill="#d8d8d8">[ENT] T1018 Remote System Discovery</text>
+<text x="675.0" y="556.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="675.0" y="576.0" font-size="14" fill="#d8d8d8">The worm finds its local network segment</text>
+<text x="675.0" y="596.0" font-size="14" fill="#d8d8d8">(T1016) and scans for systems to infect</text>
+<text x="675.0" y="616.0" font-size="14" fill="#d8d8d8">(T1018). One thread scans the local subnet</text>
+<text x="675.0" y="636.0" font-size="14" fill="#d8d8d8">and another scans random external</text>
+<text x="675.0" y="656.0" font-size="14" fill="#d8d8d8">addresses. The target is SMB on TCP/445</text>
+<text x="675.0" y="676.0" font-size="14" fill="#d8d8d8">(T1046*).</text>
+<text x="675.0" y="730.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="675.0" y="750.0" font-size="14" fill="#d8d8d8">Very Probable</text>
+<rect x="2420" y="680" width="340" height="343" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M2420,750 V686 a6,6 0 0 1 6,-6 H2754 a6,6 0 0 1 6,6 V750 z" fill="#0a2a66"/>
+<text x="2440.0" y="708.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="2440.0" y="729.0" font-size="17" font-weight="700" fill="#e6e6e6">6. Exploit SMBv1 (MS17-010)</text>
+<text x="2440.0" y="775.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="2440.0" y="795.0" font-size="14" fill="#d8d8d8">[ENT] TA0008 Lateral Movement</text>
+<text x="2440.0" y="825.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="2440.0" y="845.0" font-size="14" fill="#d8d8d8">[ENT] T1210 Exploitation of Remote Services</text>
+<text x="2440.0" y="875.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="2440.0" y="895.0" font-size="14" fill="#d8d8d8">The worm exploits the SMBv1 vulnerability</text>
+<text x="2440.0" y="915.0" font-size="14" fill="#d8d8d8">MS17-010 (CVE-2017-0144) on remote hosts to</text>
+<text x="2440.0" y="935.0" font-size="14" fill="#d8d8d8">run code and spread (T1210). In industrial</text>
+<text x="2440.0" y="955.0" font-size="14" fill="#d8d8d8">networks MITRE maps this to ICS T0866.</text>
+<text x="2440.0" y="984.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="2440.0" y="1004.0" font-size="14" fill="#d8d8d8">Certain</text>
+<rect x="1805" y="285" width="340" height="373" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M1805,355 V291 a6,6 0 0 1 6,-6 H2139 a6,6 0 0 1 6,6 V355 z" fill="#0a2a66"/>
+<text x="1825.0" y="313.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="1825.0" y="334.0" font-size="17" font-weight="700" fill="#e6e6e6">7. Execute payload via DoublePulsar</text>
+<text x="1825.0" y="380.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="1825.0" y="400.0" font-size="14" fill="#d8d8d8">[ENT] TA0002 Execution</text>
+<text x="1825.0" y="430.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="1825.0" y="450.0" font-size="14" fill="#d8d8d8">The worm uses the DoublePulsar backdoor to</text>
+<text x="1825.0" y="470.0" font-size="14" fill="#d8d8d8">install and run its payload on the host.</text>
+<text x="1825.0" y="490.0" font-size="14" fill="#d8d8d8">DoublePulsar is either already present or has</text>
+<text x="1825.0" y="510.0" font-size="14" fill="#d8d8d8">just been installed by the EternalBlue exploit in</text>
+<text x="1825.0" y="530.0" font-size="14" fill="#d8d8d8">step 6. MITRE does not list a technique for this</text>
+<text x="1825.0" y="550.0" font-size="14" fill="#d8d8d8">step, so only the tactic Execution (TA0002) is</text>
+<text x="1825.0" y="570.0" font-size="14" fill="#d8d8d8">set.</text>
+<text x="1825.0" y="619.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="1825.0" y="639.0" font-size="14" fill="#d8d8d8">Probable</text>
+<rect x="2260" y="245" width="330" height="343" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M2260,315 V251 a6,6 0 0 1 6,-6 H2584 a6,6 0 0 1 6,6 V315 z" fill="#0a2a66"/>
+<text x="2280.0" y="273.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="2280.0" y="294.0" font-size="17" font-weight="700" fill="#e6e6e6">8. Copy worm to new host</text>
+<text x="2280.0" y="340.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="2280.0" y="360.0" font-size="14" fill="#d8d8d8">[ENT] TA0008 Lateral Movement</text>
+<text x="2280.0" y="390.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="2280.0" y="410.0" font-size="14" fill="#d8d8d8">[ENT] T1570 Lateral Tool Transfer</text>
+<text x="2280.0" y="440.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="2280.0" y="460.0" font-size="14" fill="#d8d8d8">The worm copies itself to the compromised</text>
+<text x="2280.0" y="480.0" font-size="14" fill="#d8d8d8">host and starts there (T1570, ICS T0867). The</text>
+<text x="2280.0" y="500.0" font-size="14" fill="#d8d8d8">new host repeats the flow from step 3.</text>
+<text x="2280.0" y="549.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="2280.0" y="569.0" font-size="14" fill="#d8d8d8">Certain</text>
+<rect x="495" y="2265" width="340" height="383" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M495,2335 V2271 a6,6 0 0 1 6,-6 H829 a6,6 0 0 1 6,6 V2335 z" fill="#0a2a66"/>
+<text x="515.0" y="2293.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="515.0" y="2314.0" font-size="17" font-weight="700" fill="#e6e6e6">9. Enumerate files and drives</text>
+<text x="515.0" y="2360.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="515.0" y="2380.0" font-size="14" fill="#d8d8d8">[ENT] TA0007 Discovery</text>
+<text x="515.0" y="2410.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="515.0" y="2430.0" font-size="14" fill="#d8d8d8">[ENT] T1083 File and Directory Discovery</text>
+<text x="515.0" y="2460.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="515.0" y="2480.0" font-size="14" fill="#d8d8d8">The worm enumerates local, removable and</text>
+<text x="515.0" y="2500.0" font-size="14" fill="#d8d8d8">mapped network drives and searches for user</text>
+<text x="515.0" y="2520.0" font-size="14" fill="#d8d8d8">files by extension (T1083). It also scans for</text>
+<text x="515.0" y="2540.0" font-size="14" fill="#d8d8d8">newly attached drives and encrypts files on</text>
+<text x="515.0" y="2560.0" font-size="14" fill="#d8d8d8">them (T1120).</text>
+<text x="515.0" y="2609.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="515.0" y="2629.0" font-size="14" fill="#d8d8d8">Very Probable</text>
+<rect x="1015" y="2255" width="340" height="403" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M1015,2325 V2261 a6,6 0 0 1 6,-6 H1349 a6,6 0 0 1 6,6 V2325 z" fill="#0a2a66"/>
+<text x="1035.0" y="2283.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="1035.0" y="2304.0" font-size="17" font-weight="700" fill="#e6e6e6">10. Stop database and mail services</text>
+<text x="1035.0" y="2350.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="1035.0" y="2370.0" font-size="14" fill="#d8d8d8">[ENT] TA0040 Impact</text>
+<text x="1035.0" y="2400.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="1035.0" y="2420.0" font-size="14" fill="#d8d8d8">[ENT] T1489 Service Stop</text>
+<text x="1035.0" y="2450.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="1035.0" y="2470.0" font-size="14" fill="#d8d8d8">The worm kills database and mail server</text>
+<text x="1035.0" y="2490.0" font-size="14" fill="#d8d8d8">processes, such as mysqld.exe, sqlwriter.exe,</text>
+<text x="1035.0" y="2510.0" font-size="14" fill="#d8d8d8">sqlserver.exe and Exchange, so their data files</text>
+<text x="1035.0" y="2530.0" font-size="14" fill="#d8d8d8">are unlocked and can be encrypted (T1489).</text>
+<text x="1035.0" y="2619.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="1035.0" y="2639.0" font-size="14" fill="#d8d8d8">Very Probable</text>
+<rect x="1535" y="2265" width="340" height="383" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M1535,2335 V2271 a6,6 0 0 1 6,-6 H1869 a6,6 0 0 1 6,6 V2335 z" fill="#0a2a66"/>
+<text x="1555.0" y="2293.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="1555.0" y="2314.0" font-size="17" font-weight="700" fill="#e6e6e6">11. Hide files and set permissions</text>
+<text x="1555.0" y="2360.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="1555.0" y="2380.0" font-size="14" fill="#d8d8d8">[ENT] TA0005 Stealth</text>
+<text x="1555.0" y="2410.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="1555.0" y="2430.0" font-size="14" fill="#d8d8d8">[ENT] T1564.001 Hidden Files and Directories</text>
+<text x="1555.0" y="2460.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="1555.0" y="2480.0" font-size="14" fill="#d8d8d8">The worm hides its files with ‘attrib +h’</text>
+<text x="1555.0" y="2500.0" font-size="14" fill="#d8d8d8">(T1564.001) and grants everyone full access</text>
+<text x="1555.0" y="2520.0" font-size="14" fill="#d8d8d8">with ‘icacls . /grant Everyone:F /T /C /Q’</text>
+<text x="1555.0" y="2540.0" font-size="14" fill="#d8d8d8">(T1222.001).</text>
+<text x="1555.0" y="2609.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="1555.0" y="2629.0" font-size="14" fill="#d8d8d8">Very Probable</text>
+<rect x="2065" y="2275" width="320" height="363" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M2065,2345 V2281 a6,6 0 0 1 6,-6 H2379 a6,6 0 0 1 6,6 V2345 z" fill="#0a2a66"/>
+<text x="2085.0" y="2303.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="2085.0" y="2324.0" font-size="17" font-weight="700" fill="#e6e6e6">12. Delete shadow copies</text>
+<text x="2085.0" y="2370.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="2085.0" y="2390.0" font-size="14" fill="#d8d8d8">[ENT] TA0040 Impact</text>
+<text x="2085.0" y="2420.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="2085.0" y="2440.0" font-size="14" fill="#d8d8d8">[ENT] T1490 Inhibit System Recovery</text>
+<text x="2085.0" y="2470.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="2085.0" y="2490.0" font-size="14" fill="#d8d8d8">The worm deletes shadow copies and</text>
+<text x="2085.0" y="2510.0" font-size="14" fill="#d8d8d8">recovery options with vssadmin, wmic,</text>
+<text x="2085.0" y="2530.0" font-size="14" fill="#d8d8d8">bcdedit and wbadmin (T1490). The use of</text>
+<text x="2085.0" y="2550.0" font-size="14" fill="#d8d8d8">wmic is also T1047.</text>
+<text x="2085.0" y="2599.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="2085.0" y="2619.0" font-size="14" fill="#d8d8d8">Certain</text>
+<rect x="2575" y="2255" width="340" height="403" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M2575,2345 V2261 a6,6 0 0 1 6,-6 H2909 a6,6 0 0 1 6,6 V2345 z" fill="#0a2a66"/>
+<text x="2595.0" y="2283.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="2595.0" y="2304.0" font-size="17" font-weight="700" fill="#e6e6e6">13. Show ransom note on RDP</text>
+<text x="2595.0" y="2324.0" font-size="17" font-weight="700" fill="#e6e6e6">sessions</text>
+<text x="2595.0" y="2370.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="2595.0" y="2390.0" font-size="14" fill="#d8d8d8">[ENT] TA0008 Lateral Movement</text>
+<text x="2595.0" y="2420.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="2595.0" y="2440.0" font-size="14" fill="#d8d8d8">[ENT] T1563.002 RDP Hijacking</text>
+<text x="2595.0" y="2470.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="2595.0" y="2490.0" font-size="14" fill="#d8d8d8">The helper tool taskse.exe enumerates active</text>
+<text x="2595.0" y="2510.0" font-size="14" fill="#d8d8d8">Remote Desktop sessions and starts the</text>
+<text x="2595.0" y="2530.0" font-size="14" fill="#d8d8d8">ransom window in each, so remote users also</text>
+<text x="2595.0" y="2550.0" font-size="14" fill="#d8d8d8">see the note (T1563.002, listed by MITRE).</text>
+<text x="2595.0" y="2619.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="2595.0" y="2639.0" font-size="14" fill="#d8d8d8">Probable</text>
+<rect x="500" y="2815" width="340" height="403" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M500,2885 V2821 a6,6 0 0 1 6,-6 H834 a6,6 0 0 1 6,6 V2885 z" fill="#0a2a66"/>
+<text x="520.0" y="2843.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="520.0" y="2864.0" font-size="17" font-weight="700" fill="#e6e6e6">14. Start Tor and contact C2</text>
+<text x="520.0" y="2910.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="520.0" y="2930.0" font-size="14" fill="#d8d8d8">[ENT] TA0011 Command and Control</text>
+<text x="520.0" y="2960.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="520.0" y="2980.0" font-size="14" fill="#d8d8d8">[ENT] T1090.003 Multi-hop Proxy</text>
+<text x="520.0" y="3010.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="520.0" y="3030.0" font-size="14" fill="#d8d8d8">The worm installs Tor as taskhsvc.exe and</text>
+<text x="520.0" y="3050.0" font-size="14" fill="#d8d8d8">contacts hard-coded .onion C2 addresses</text>
+<text x="520.0" y="3070.0" font-size="14" fill="#d8d8d8">through a local SOCKS5 proxy (T1090.003). A</text>
+<text x="520.0" y="3090.0" font-size="14" fill="#d8d8d8">custom cryptographic protocol over the circuit is</text>
+<text x="520.0" y="3110.0" font-size="14" fill="#d8d8d8">used for key exchange and payment checks</text>
+<text x="520.0" y="3130.0" font-size="14" fill="#d8d8d8">(T1573.002).</text>
+<text x="520.0" y="3179.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="520.0" y="3199.0" font-size="14" fill="#d8d8d8">Very Probable</text>
+<rect x="1020" y="2825" width="340" height="383" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M1020,2895 V2831 a6,6 0 0 1 6,-6 H1354 a6,6 0 0 1 6,6 V2895 z" fill="#0a2a66"/>
+<text x="1040.0" y="2853.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="1040.0" y="2874.0" font-size="17" font-weight="700" fill="#e6e6e6">15. Encrypt files, show ransom note</text>
+<text x="1040.0" y="2920.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="1040.0" y="2940.0" font-size="14" fill="#d8d8d8">[ENT] TA0040 Impact</text>
+<text x="1040.0" y="2970.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="1040.0" y="2990.0" font-size="14" fill="#d8d8d8">[ENT] T1486 Data Encrypted for Impact</text>
+<text x="1040.0" y="3020.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="1040.0" y="3040.0" font-size="14" fill="#d8d8d8">Files are encrypted with a per-file AES-128 key</text>
+<text x="1040.0" y="3060.0" font-size="14" fill="#d8d8d8">protected by RSA-2048 (T1486). The ransom</text>
+<text x="1040.0" y="3080.0" font-size="14" fill="#d8d8d8">note demands $300 in Bitcoin, rising to $600 if</text>
+<text x="1040.0" y="3100.0" font-size="14" fill="#d8d8d8">payment is delayed.</text>
+<text x="1040.0" y="3169.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="1040.0" y="3189.0" font-size="14" fill="#d8d8d8">Certain</text>
+<rect x="2060" y="2825" width="340" height="383" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M2060,2895 V2831 a6,6 0 0 1 6,-6 H2394 a6,6 0 0 1 6,6 V2895 z" fill="#0a2a66"/>
+<text x="2080.0" y="2853.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="2080.0" y="2874.0" font-size="17" font-weight="700" fill="#e6e6e6">16. Spread into OT Windows hosts</text>
+<text x="2080.0" y="2920.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="2080.0" y="2940.0" font-size="14" fill="#d8d8d8">[ICS] TA0109 Lateral Movement</text>
+<text x="2080.0" y="2970.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="2080.0" y="2990.0" font-size="14" fill="#d8d8d8">[ICS] T0866 Exploitation of Remote Services</text>
+<text x="2080.0" y="3020.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="2080.0" y="3040.0" font-size="14" fill="#d8d8d8">If a route from the infected IT network to the OT</text>
+<text x="2080.0" y="3060.0" font-size="14" fill="#d8d8d8">network exists, the worm spreads to Windows</text>
+<text x="2080.0" y="3080.0" font-size="14" fill="#d8d8d8">hosts in industrial networks via SMB (ICS</text>
+<text x="2080.0" y="3100.0" font-size="14" fill="#d8d8d8">T0866, T0867). The step is conditional because</text>
+<text x="2080.0" y="3120.0" font-size="14" fill="#d8d8d8">the spread depends on network segmentation.</text>
+<text x="2080.0" y="3169.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="2080.0" y="3189.0" font-size="14" fill="#d8d8d8">Probable</text>
+<rect x="2585" y="2811" width="330" height="408" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M2585,2881 V2817 a6,6 0 0 1 6,-6 H2909 a6,6 0 0 1 6,6 V2881 z" fill="#0a2a66"/>
+<text x="2605.0" y="2839.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="2605.0" y="2860.0" font-size="17" font-weight="700" fill="#e6e6e6">17. Disrupt operations</text>
+<text x="2605.0" y="2906.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="2605.0" y="2926.0" font-size="14" fill="#d8d8d8">[ICS] TA0105 Impact</text>
+<text x="2605.0" y="2956.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="2605.0" y="2976.0" font-size="14" fill="#d8d8d8">[ICS] T0828 Loss of Productivity and Revenue</text>
+<text x="2605.0" y="3006.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="2605.0" y="3026.0" font-size="14" fill="#d8d8d8">Infected systems lose availability (ICS T0826*)</text>
+<text x="2605.0" y="3046.0" font-size="14" fill="#d8d8d8">and operations stop (ICS T0828*). Renault</text>
+<text x="2605.0" y="3066.0" font-size="14" fill="#d8d8d8">halted production at several plants after</text>
+<text x="2605.0" y="3086.0" font-size="14" fill="#d8d8d8">infection. Loss of view (ICS T0829*) is an</text>
+<text x="2605.0" y="3106.0" font-size="14" fill="#d8d8d8">expected effect but is not confirmed in the</text>
+<text x="2605.0" y="3126.0" font-size="14" fill="#d8d8d8">sources.</text>
+<text x="2605.0" y="3180.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="2605.0" y="3200.0" font-size="14" fill="#d8d8d8">Probable</text>
+<rect x="1990" y="1670" width="330" height="150" rx="6" fill="#0e662a" stroke="#1d8a3f"/>
+<text x="2010.0" y="1698.0" fill="#9a9a9a" font-size="11" font-weight="700">CONDITION</text>
+<text x="2010.0" y="1719.0" font-size="17" font-weight="700" fill="#d8d8d8">Kill-switch domain reachable?</text>
+<text x="2010.0" y="1763.0" font-size="17" font-weight="700" fill="#d8d8d8">True: the worm halts and the host</text>
+<text x="2010.0" y="1785.0" font-size="17" font-weight="700" fill="#d8d8d8">stays inert (end of flow for this</text>
+<text x="2010.0" y="1807.0" font-size="17" font-weight="700" fill="#d8d8d8">host).</text>
+<rect x="2306.0" y="1707.0" width="28" height="26" rx="5" fill="#1f1f1f" stroke="#3a3a3a"/>
+<text x="2320.0" y="1725.0" font-size="15" fill="#d8d8d8" text-anchor="middle">T</text>
+<rect x="2306.0" y="1757.0" width="28" height="26" rx="5" fill="#1f1f1f" stroke="#3a3a3a"/>
+<text x="2320.0" y="1775.0" font-size="15" fill="#d8d8d8" text-anchor="middle">F</text>
+<rect x="1040" y="465" width="340" height="190" rx="6" fill="#0e662a" stroke="#1d8a3f"/>
+<text x="1060.0" y="493.0" fill="#9a9a9a" font-size="11" font-weight="700">CONDITION</text>
+<text x="1060.0" y="514.0" font-size="17" font-weight="700" fill="#d8d8d8">Target reachable on 445 and</text>
+<text x="1060.0" y="536.0" font-size="17" font-weight="700" fill="#d8d8d8">unpatched?</text>
+<text x="1060.0" y="580.0" font-size="17" font-weight="700" fill="#d8d8d8">False: the target is skipped, nothing</text>
+<text x="1060.0" y="602.0" font-size="17" font-weight="700" fill="#d8d8d8">happens to it, and the scan moves</text>
+<text x="1060.0" y="624.0" font-size="17" font-weight="700" fill="#d8d8d8">on to the next address (end of flow</text>
+<text x="1060.0" y="646.0" font-size="17" font-weight="700" fill="#d8d8d8">for this target).</text>
+<rect x="1366.0" y="515.3" width="28" height="26" rx="5" fill="#1f1f1f" stroke="#3a3a3a"/>
+<text x="1380.0" y="533.3" font-size="15" fill="#d8d8d8" text-anchor="middle">T</text>
+<rect x="1366.0" y="578.7" width="28" height="26" rx="5" fill="#1f1f1f" stroke="#3a3a3a"/>
+<text x="1380.0" y="596.7" font-size="15" fill="#d8d8d8" text-anchor="middle">F</text>
+<rect x="1445" y="641" width="310" height="109" rx="6" fill="#0e662a" stroke="#1d8a3f"/>
+<text x="1465.0" y="669.0" fill="#9a9a9a" font-size="11" font-weight="700">CONDITION</text>
+<text x="1465.0" y="690.0" font-size="17" font-weight="700" fill="#d8d8d8">DoublePulsar already present?</text>
+<rect x="1741.0" y="664.3" width="28" height="26" rx="5" fill="#1f1f1f" stroke="#3a3a3a"/>
+<text x="1755.0" y="682.3" font-size="15" fill="#d8d8d8" text-anchor="middle">T</text>
+<rect x="1741.0" y="700.7" width="28" height="26" rx="5" fill="#1f1f1f" stroke="#3a3a3a"/>
+<text x="1755.0" y="718.7" font-size="15" fill="#d8d8d8" text-anchor="middle">F</text>
+<rect x="1540" y="2945" width="340" height="150" rx="6" fill="#0e662a" stroke="#1d8a3f"/>
+<text x="1560.0" y="2973.0" fill="#9a9a9a" font-size="11" font-weight="700">CONDITION</text>
+<text x="1560.0" y="2994.0" font-size="17" font-weight="700" fill="#d8d8d8">Path from IT host to OT?</text>
+<text x="1560.0" y="3038.0" font-size="17" font-weight="700" fill="#d8d8d8">False: no route to OT exists, so the</text>
+<text x="1560.0" y="3060.0" font-size="17" font-weight="700" fill="#d8d8d8">impact stays in the IT network (end</text>
+<text x="1560.0" y="3082.0" font-size="17" font-weight="700" fill="#d8d8d8">of flow).</text>
+<rect x="1866.0" y="2982.0" width="28" height="26" rx="5" fill="#1f1f1f" stroke="#3a3a3a"/>
+<text x="1880.0" y="3000.0" font-size="15" fill="#d8d8d8" text-anchor="middle">T</text>
+<rect x="1866.0" y="3032.0" width="28" height="26" rx="5" fill="#1f1f1f" stroke="#3a3a3a"/>
+<text x="1880.0" y="3050.0" font-size="15" fill="#d8d8d8" text-anchor="middle">F</text>
+<rect x="60" y="1555" width="340" height="383" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M60,1625 V1561 a6,6 0 0 1 6,-6 H394 a6,6 0 0 1 6,6 V1625 z" fill="#0a2a66"/>
+<text x="80.0" y="1583.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="80.0" y="1604.0" font-size="17" font-weight="700" fill="#e6e6e6">A1. Obtain generative AI capability</text>
+<text x="80.0" y="1650.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="80.0" y="1670.0" font-size="14" fill="#d8d8d8">[ATL] AML.TA0003 Resource Development</text>
+<text x="80.0" y="1700.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="80.0" y="1720.0" font-size="14" fill="#d8d8d8">[ATL] AML.T0016.002 Generative AI</text>
+<text x="80.0" y="1750.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="80.0" y="1770.0" font-size="14" fill="#d8d8d8">Before the attack, the adversary obtains access</text>
+<text x="80.0" y="1790.0" font-size="14" fill="#d8d8d8">to a generative AI model or agent tool, for</text>
+<text x="80.0" y="1810.0" font-size="14" fill="#d8d8d8">example a commercial LLM service, an</text>
+<text x="80.0" y="1830.0" font-size="14" fill="#d8d8d8">open-weight model or an agent framework,</text>
+<text x="80.0" y="1850.0" font-size="14" fill="#d8d8d8">which the later ATLAS steps rely on.</text>
+<text x="80.0" y="1899.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="80.0" y="1919.0" font-size="14" fill="#d8d8d8">Probable</text>
+<rect x="75" y="1010" width="340" height="383" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M75,1100 V1016 a6,6 0 0 1 6,-6 H409 a6,6 0 0 1 6,6 V1100 z" fill="#0a2a66"/>
+<text x="95.0" y="1038.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="95.0" y="1059.0" font-size="17" font-weight="700" fill="#e6e6e6">A2. Autonomous exploit</text>
+<text x="95.0" y="1079.0" font-size="17" font-weight="700" fill="#e6e6e6">development</text>
+<text x="95.0" y="1125.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="95.0" y="1145.0" font-size="12" fill="#d8d8d8">[ATL] AML.TA0003 Resource Development</text>
+<text x="95.0" y="1172.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="95.0" y="1192.0" font-size="12" fill="#d8d8d8">[ATL] AML.T0017.001 Autonomous Exploit Development</text>
+<text x="95.0" y="1219.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="95.0" y="1239.0" font-size="12" fill="#d8d8d8">An agent analyses a vulnerability and builds or adapts</text>
+<text x="95.0" y="1256.0" font-size="12" fill="#d8d8d8">an exploit with little human input (AML.CS0068,</text>
+<text x="95.0" y="1273.0" font-size="12" fill="#d8d8d8">AML.CS0069). This shortens the time between a patch</text>
+<text x="95.0" y="1290.0" font-size="12" fill="#d8d8d8">and a working exploit. ATLAS maturity: Realized.</text>
+<text x="95.0" y="1354.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="95.0" y="1374.0" font-size="14" fill="#d8d8d8">Even Odds</text>
+<rect x="820" y="1030" width="330" height="343" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M820,1100 V1036 a6,6 0 0 1 6,-6 H1144 a6,6 0 0 1 6,6 V1100 z" fill="#0a2a66"/>
+<text x="840.0" y="1058.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="840.0" y="1079.0" font-size="17" font-weight="700" fill="#e6e6e6">A4. Autonomous reconnaissance</text>
+<text x="840.0" y="1125.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="840.0" y="1145.0" font-size="13" fill="#d8d8d8">[ATL] AML.TA0002 Reconnaissance</text>
+<text x="840.0" y="1173.5" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="840.0" y="1193.5" font-size="13" fill="#d8d8d8">[ATL] AML.T0116 Autonomous Reconnaissance</text>
+<text x="840.0" y="1222.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="840.0" y="1242.0" font-size="13" fill="#d8d8d8">An agent decides what to investigate and which</text>
+<text x="840.0" y="1260.5" font-size="13" fill="#d8d8d8">targets to prioritise, for example organisations with</text>
+<text x="840.0" y="1279.0" font-size="13" fill="#d8d8d8">IT-OT links, instead of scanning blindly. ATLAS</text>
+<text x="840.0" y="1297.5" font-size="13" fill="#d8d8d8">maturity: Realized.</text>
+<text x="840.0" y="1334.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="840.0" y="1354.0" font-size="14" fill="#d8d8d8">Probable</text>
+<rect x="1235" y="1020" width="340" height="363" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M1235,1090 V1026 a6,6 0 0 1 6,-6 H1569 a6,6 0 0 1 6,6 V1090 z" fill="#0a2a66"/>
+<text x="1255.0" y="1048.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="1255.0" y="1069.0" font-size="17" font-weight="700" fill="#e6e6e6">A5. LLM-assisted spearphishing</text>
+<text x="1255.0" y="1115.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="1255.0" y="1135.0" font-size="14" fill="#d8d8d8">[ATL] AML.TA0004 Initial Access</text>
+<text x="1255.0" y="1165.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="1255.0" y="1185.0" font-size="14" fill="#d8d8d8">[ATL] AML.T0052.000 Phishing: Spearphishing</text>
+<text x="1255.0" y="1205.0" font-size="14" fill="#d8d8d8">via Social Engineering LLM</text>
+<text x="1255.0" y="1235.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="1255.0" y="1255.0" font-size="14" fill="#d8d8d8">An LLM writes convincing phishing lures for the</text>
+<text x="1255.0" y="1275.0" font-size="14" fill="#d8d8d8">phishing branch of initial access, which is the</text>
+<text x="1255.0" y="1295.0" font-size="14" fill="#d8d8d8">uncertain part of the original flow. ATLAS</text>
+<text x="1255.0" y="1315.0" font-size="14" fill="#d8d8d8">maturity: Realized.</text>
+<text x="1255.0" y="1344.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="1255.0" y="1364.0" font-size="14" fill="#d8d8d8">Even Odds</text>
+<rect x="445" y="1021" width="330" height="328" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M445,1111 V1027 a6,6 0 0 1 6,-6 H769 a6,6 0 0 1 6,6 V1111 z" fill="#0a2a66"/>
+<text x="465.0" y="1049.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="465.0" y="1070.0" font-size="17" font-weight="700" fill="#e6e6e6">A3. Verify evasion against ML</text>
+<text x="465.0" y="1090.0" font-size="17" font-weight="700" fill="#e6e6e6">detectors</text>
+<text x="465.0" y="1136.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="465.0" y="1156.0" font-size="14" fill="#d8d8d8">[ATL] AML.TA0001 AI Attack Adaptation</text>
+<text x="465.0" y="1186.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="465.0" y="1206.0" font-size="14" fill="#d8d8d8">[ATL] AML.T0042 Verify Attack</text>
+<text x="465.0" y="1236.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="465.0" y="1256.0" font-size="14" fill="#d8d8d8">The attacker tests malware variants against</text>
+<text x="465.0" y="1276.0" font-size="14" fill="#d8d8d8">ML-based detection before release.</text>
+<text x="465.0" y="1310.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="465.0" y="1330.0" font-size="14" fill="#d8d8d8">Doubtful</text>
+<rect x="1625" y="1010" width="330" height="383" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M1625,1100 V1016 a6,6 0 0 1 6,-6 H1949 a6,6 0 0 1 6,6 V1100 z" fill="#0a2a66"/>
+<text x="1645.0" y="1038.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="1645.0" y="1059.0" font-size="17" font-weight="700" fill="#e6e6e6">A6. Environment checks in place of</text>
+<text x="1645.0" y="1079.0" font-size="17" font-weight="700" fill="#e6e6e6">fixed kill switch</text>
+<text x="1645.0" y="1125.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="1645.0" y="1145.0" font-size="14" fill="#d8d8d8">[ATL] AML.TA0007 Defense Evasion</text>
+<text x="1645.0" y="1175.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="1645.0" y="1195.0" font-size="14" fill="#d8d8d8">[ATL] AML.T0097 Virtualization/Sandbox</text>
+<text x="1645.0" y="1215.0" font-size="14" fill="#d8d8d8">Evasion</text>
+<text x="1645.0" y="1245.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="1645.0" y="1265.0" font-size="14" fill="#d8d8d8">The single hard-coded kill-switch check is</text>
+<text x="1645.0" y="1285.0" font-size="14" fill="#d8d8d8">replaced by varied sandbox checks, so one</text>
+<text x="1645.0" y="1305.0" font-size="14" fill="#d8d8d8">registered domain can no longer stop the</text>
+<text x="1645.0" y="1325.0" font-size="14" fill="#d8d8d8">outbreak.</text>
+<text x="1645.0" y="1354.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="1645.0" y="1374.0" font-size="14" fill="#d8d8d8">Doubtful</text>
+<rect x="1040" y="40" width="340" height="383" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M1040,110 V46 a6,6 0 0 1 6,-6 H1374 a6,6 0 0 1 6,6 V110 z" fill="#0a2a66"/>
+<text x="1060.0" y="68.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="1060.0" y="89.0" font-size="17" font-weight="700" fill="#e6e6e6">A7. Attack-path adaptation</text>
+<text x="1060.0" y="135.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="1060.0" y="155.0" font-size="14" fill="#d8d8d8">[ATL] AML.TA0001 AI Attack Adaptation</text>
+<text x="1060.0" y="185.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="1060.0" y="205.0" font-size="14" fill="#d8d8d8">[ATL] AML.T0117 Autonomous Attack-Path</text>
+<text x="1060.0" y="225.0" font-size="14" fill="#d8d8d8">Adaptation</text>
+<text x="1060.0" y="255.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="1060.0" y="275.0" font-size="14" fill="#d8d8d8">When the check fails because the host is</text>
+<text x="1060.0" y="295.0" font-size="14" fill="#d8d8d8">patched or port 445 is closed, an agent revises</text>
+<text x="1060.0" y="315.0" font-size="14" fill="#d8d8d8">its attack path instead of ending the flow, so a</text>
+<text x="1060.0" y="335.0" font-size="14" fill="#d8d8d8">defence that relies on one patched vulnerability</text>
+<text x="1060.0" y="355.0" font-size="14" fill="#d8d8d8">is weaker. ATLAS maturity: Realized.</text>
+<text x="1060.0" y="384.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="1060.0" y="404.0" font-size="14" fill="#d8d8d8">Even Odds</text>
+<rect x="2500" y="1680" width="330" height="383" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M2500,1770 V1686 a6,6 0 0 1 6,-6 H2824 a6,6 0 0 1 6,6 V1770 z" fill="#0a2a66"/>
+<text x="2520.0" y="1708.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="2520.0" y="1729.0" font-size="17" font-weight="700" fill="#e6e6e6">A8. Dynamically generated</text>
+<text x="2520.0" y="1749.0" font-size="17" font-weight="700" fill="#e6e6e6">commands</text>
+<text x="2520.0" y="1795.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="2520.0" y="1815.0" font-size="14" fill="#d8d8d8">[ATL] AML.TA0001 AI Attack Adaptation</text>
+<text x="2520.0" y="1845.0" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="2520.0" y="1865.0" font-size="14" fill="#d8d8d8">[ATL] AML.T0102 Generate Malicious</text>
+<text x="2520.0" y="1885.0" font-size="14" fill="#d8d8d8">Commands</text>
+<text x="2520.0" y="1915.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="2520.0" y="1935.0" font-size="14" fill="#d8d8d8">An LLM generates the commands for each</text>
+<text x="2520.0" y="1955.0" font-size="14" fill="#d8d8d8">host, so fixed signatures for the vssadmin and</text>
+<text x="2520.0" y="1975.0" font-size="14" fill="#d8d8d8">wmic strings match less often (AML.CS0044,</text>
+<text x="2520.0" y="1995.0" font-size="14" fill="#d8d8d8">LAMEHUG).</text>
+<text x="2520.0" y="2024.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="2520.0" y="2044.0" font-size="14" fill="#d8d8d8">Even Odds</text>
+<rect x="1020" y="3265" width="340" height="383" rx="6" fill="#1f1f1f" stroke="#3a3a3a"/>
+<path d="M1020,3355 V3271 a6,6 0 0 1 6,-6 H1354 a6,6 0 0 1 6,6 V3355 z" fill="#0a2a66"/>
+<text x="1040.0" y="3293.0" fill="#9a9a9a" font-size="11" font-weight="700">ACTION</text>
+<text x="1040.0" y="3314.0" font-size="17" font-weight="700" fill="#e6e6e6">A9. Autonomous attack</text>
+<text x="1040.0" y="3334.0" font-size="17" font-weight="700" fill="#e6e6e6">orchestration</text>
+<text x="1040.0" y="3380.0" fill="#9a9a9a" font-size="11" font-weight="700">TACTIC</text>
+<text x="1040.0" y="3400.0" font-size="13" fill="#d8d8d8">[ATL] AML.TA0001 AI Attack Adaptation</text>
+<text x="1040.0" y="3428.5" fill="#9a9a9a" font-size="11" font-weight="700">TECHNIQUE</text>
+<text x="1040.0" y="3448.5" font-size="13" fill="#d8d8d8">[ATL] AML.T0124 Autonomous Attack Orchestration</text>
+<text x="1040.0" y="3477.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="1040.0" y="3497.0" font-size="13" fill="#d8d8d8">A central agent assigns and coordinates work</text>
+<text x="1040.0" y="3515.5" font-size="13" fill="#d8d8d8">across several sub-agents, for example by choosing</text>
+<text x="1040.0" y="3534.0" font-size="13" fill="#d8d8d8">which systems to encrypt first (AML.CS0071: up to</text>
+<text x="1040.0" y="3552.5" font-size="13" fill="#d8d8d8">eight sub-agents in 12 attack waves). ATLAS</text>
+<text x="1040.0" y="3571.0" font-size="13" fill="#d8d8d8">maturity: Realized.</text>
+<text x="1040.0" y="3609.0" fill="#9a9a9a" font-size="11" font-weight="700">CONFIDENCE</text>
+<text x="1040.0" y="3629.0" font-size="14" fill="#d8d8d8">Even Odds</text>
+<rect x="41" y="521" width="168" height="72" rx="6" fill="#2f2f2f" stroke="#4a4a4a"/>
+<path d="M41,591 V527 a6,6 0 0 1 6,-6 H203 a6,6 0 0 1 6,6 V591 z" fill="#3a3a3a"/>
+
+<text x="61.0" y="549.0" fill="#9a9a9a" font-size="11" font-weight="700">FILE</text>
+<text x="61.0" y="570.0" font-size="17" font-weight="700" fill="#e6e6e6">mssecsvc.exe</text>
+<rect x="846" y="1996" width="328" height="172" rx="6" fill="#2f2f2f" stroke="#4a4a4a"/>
+<path d="M846,2066 V2002 a6,6 0 0 1 6,-6 H1168 a6,6 0 0 1 6,6 V2066 z" fill="#3a3a3a"/>
+<rect x="846.5" y="2066" width="327" height="102" fill="#1f1f1f"/>
+<text x="866.0" y="2024.0" fill="#9a9a9a" font-size="11" font-weight="700">NOTE</text>
+<text x="866.0" y="2045.0" font-size="17" font-weight="700" fill="#e6e6e6">Initial access vector unconfirmed</text>
+<text x="866.0" y="2091.0" fill="#9a9a9a" font-size="11" font-weight="700">CONTENT</text>
+<text x="866.0" y="2111.0" font-size="14" fill="#d8d8d8">Sources disagree on the entry vector:</text>
+<text x="866.0" y="2131.0" font-size="14" fill="#d8d8d8">exposed SMB (T1190) or phishing</text>
+<text x="866.0" y="2151.0" font-size="14" fill="#d8d8d8">(T1566.001).</text>
+<rect x="1231" y="2016" width="338" height="132" rx="6" fill="#2f2f2f" stroke="#4a4a4a"/>
+<path d="M1231,2086 V2022 a6,6 0 0 1 6,-6 H1563 a6,6 0 0 1 6,6 V2086 z" fill="#3a3a3a"/>
+<rect x="1231.5" y="2086" width="337" height="62" fill="#1f1f1f"/>
+<text x="1251.0" y="2065.0" font-size="17" font-weight="700" fill="#e6e6e6">URL</text>
+<text x="1251.0" y="2111.0" fill="#9a9a9a" font-size="11" font-weight="700">VALUE</text>
+<text x="1251.0" y="2131.0" font-size="14" fill="#d8d8d8">http://www.iuqerfsodp9ifjaposdfjhgosurijfaewrwe</text>
+<text x="1251.0" y="2151.0" font-size="14" fill="#d8d8d8">rgwea.com</text>
+<rect x="2421" y="1201" width="338" height="152" rx="6" fill="#2f2f2f" stroke="#4a4a4a"/>
+<path d="M2421,1271 V1207 a6,6 0 0 1 6,-6 H2753 a6,6 0 0 1 6,6 V1271 z" fill="#3a3a3a"/>
+<rect x="2421.5" y="1271" width="337" height="82" fill="#1f1f1f"/>
+<text x="2441.0" y="1229.0" fill="#9a9a9a" font-size="11" font-weight="700">VULNERABILITY</text>
+<text x="2441.0" y="1250.0" font-size="17" font-weight="700" fill="#e6e6e6">CVE-2017-0144</text>
+<text x="2441.0" y="1296.0" fill="#9a9a9a" font-size="11" font-weight="700">DESCRIPTION</text>
+<text x="2441.0" y="1316.0" font-size="14" fill="#d8d8d8">SMBv1 server remote code execution, fixed by</text>
+<text x="2441.0" y="1336.0" font-size="14" fill="#d8d8d8">Microsoft bulletin MS17-010 (EternalBlue).</text>
+<rect x="1456" y="3181" width="248" height="72" rx="6" fill="#2f2f2f" stroke="#4a4a4a"/>
+<path d="M1456,3251 V3187 a6,6 0 0 1 6,-6 H1698 a6,6 0 0 1 6,6 V3251 z" fill="#3a3a3a"/>
+
+<text x="1476.0" y="3209.0" fill="#9a9a9a" font-size="11" font-weight="700">FILE</text>
+<text x="1476.0" y="3230.0" font-size="17" font-weight="700" fill="#e6e6e6">@WanaDecryptor@.exe</text>
+<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpjOTEzMWE2NC1iNDRlLTQ5Y2YtYjQzMi1hOTBmZTVjMmQwOWEAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaBTaPNLE8vyJ3aEM8uqbMEEAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo3OWY0MGQ2NC05ZDQ4LTQ4ODgtYTRiMS05YzkzZDE2NTI2YTVscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoubGNPLD1lg4YWsSvF8EciwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggr1KG9bnCOBewfpexM9AdlaewVxSPstPDlcA/GrUMIOmkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaM8zh31FFiyfhhuNIBssUigAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIMMrN5dRd1YSBpATps4L96zcexOQOrCtChFxmugAn/KDZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GdRWZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmM5MTMxYTY0LWI0NGUtNDljZi1iNDMyLWE5MGZlNWMyZDA5YS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmEwZWMxMjA3LTI2ODEtNGRjNS05NjY0LTUwMDgwNzY3YzcxNnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCvUob1ucI4F7B+l7Ez0B2Vp7BXFI+y08OVwD8atQwg6aJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggk3wnTAHSDT5QCBn05YEmAN1iQussuP/Bn4AdawX7x5qiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggVCPk2gt26FuKTQ483sLwUb0rf9zo4mPAZK9hQ/ApW6F0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQCQBiNV7mU7j3dBmB7N5Flu1NHqYIs6jw04+ZiwbKFXYx1Laa+IKUiKQikKw934454uf8jKWhPb1pSgJedBDrso=</c2pa:manifest></metadata></svg>

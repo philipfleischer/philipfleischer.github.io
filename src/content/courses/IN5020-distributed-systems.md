@@ -1,9 +1,9 @@
 ---
 title: "IN5020: Distributed Systems"
 courseCode: "IN5020"
-subtitle: "Master's course on how distributed systems are built: middleware, replication, consensus and peer-to-peer lookup. Three group assignments: a load-balanced Java RMI statistics service with caching and Docker deployment, and a replicated bank account kept consistent with a totally ordered broadcast."
+subtitle: "Master's course on how distributed systems are built: middleware, replication, consensus and peer-to-peer lookup. Three group assignments: a load-balanced Java RMI statistics service with caching and Docker deployment, a replicated bank account kept consistent with a totally ordered broadcast, and a Chord peer-to-peer ring with finger tables and logarithmic lookups."
 image: "/img/IN5020.png"
-tags: ["Java", "Java RMI", "Docker", "Load Balancing", "Caching", "Replication", "Replicated State Machine", "Totally Ordered Broadcast", "Fault Tolerance", "Concurrency", "Chord", "Maven"]
+tags: ["Java", "Java RMI", "Docker", "Load Balancing", "Caching", "Replication", "Replicated State Machine", "Totally Ordered Broadcast", "Fault Tolerance", "Concurrency", "Chord", "Distributed Hash Tables", "Consistent Hashing", "Maven"]
 topics: ["Distributed Systems", "Systems", "Cloud"]
 year: 2026
 order: 2
@@ -23,7 +23,7 @@ links:
 |---|---|---|---|
 | **A1** | Java RMI International Statistics Service | Middleware, load balancing, caching | [Completed](https://github.com/philipfleischer/IN5020-A1-G1-RMI) |
 | **A2** | Replicated Bank Account | Replication, totally ordered broadcast | [Completed](https://github.com/philipfleischer/IN5020-A2-G1-RBA) |
-| **A3** | Chord Peer-to-Peer Lookup | Distributed hash tables, routing | Upcoming |
+| **A3** | Chord Peer-to-Peer Lookup | Distributed hash tables, routing | Completed (private repository) |
 
 ---
 
@@ -226,9 +226,35 @@ In the final runs all six replicas executed the transactions in the same order a
 
 ## Assignment 3: Chord Peer-to-Peer Lookup
 
-*Status: upcoming.*
+*Status: completed. Group of three. My part: the repository setup, and correcting the finger table intervals and the lookup so they follow the assignment text exactly and every lookup in the three configurations is correct.*
 
-An implementation of the core of the **Chord** protocol in a provided simulator: hashing nodes onto an *m*-bit identifier ring, building each node's finger table, and routing key lookups across the ring in a logarithmic number of hops. Results are measured as the average hop count for networks of 10, 100 and 1,000 nodes.
+An implementation of the core of the **Chord** protocol in a provided simulator: hashing nodes onto an *m*-bit identifier ring, building each node's finger table, and routing key lookups across the ring in a logarithmic number of hops. Results are measured as the average hop count for networks of 10, 100 and 1,000 nodes. Built with plain Java 11 and shipped as a runnable jar.
+
+### At a glance
+
+- **What:** a Chord ring of N nodes where every key is stored at its successor, the first node at or after the key's position on the ring.
+- **Core idea:** each node knows only *m* other nodes through its finger table, but each hop roughly halves the remaining distance to the key, so a lookup takes about log N hops instead of N.
+- **Our three parts:** build the overlay network, build the finger tables, and look up a key.
+- **Results:** average hop counts of 2.8 (10 nodes, *m* = 10), 3.95 (100 nodes, *m* = 20) and 5.89 (1,000 nodes, *m* = 20), with no wrong lookups in any run.
+
+### One run of the simulator
+
+The diagram was drawn by our group as part of a longer explanation document, so its labels are in Norwegian. The list below the diagram walks through it in English. **Click the diagram to see it in full size.**
+
+<figure class="diagram">
+  <a href="/img/in5020-a3/01-system-overview.png"><img src="/img/in5020-a3/01-system-overview.png" alt="One run of the Chord simulator: Simulator.java starts ChordProtocolSimulator, which calls our ChordProtocol to build the ring and the finger tables and to look up every key, and writes the results to the output folder" width="2216" height="1210" loading="lazy" /></a>
+  <figcaption><strong>One run: the simulator creates the keys, our ChordProtocol builds the ring and the tables and does the lookups.</strong> The numbers 1 to 7 are the order of the calls. Green is the code we wrote ("vår kode" = our code, "Del" = part).</figcaption>
+</figure>
+
+1. **Simulator.java** reads the node count and *m*, creates Node 1 … Node N, picks the number of keys and starts the run.
+2. **assignKeys()** hashes every "key i" and stores its index at the successor node.
+3. **buildProtocol()** hands the network to our protocol and calls steps 3 and 4.
+4. **buildOverlayNetwork()** (part 1) places every node on the ring at ch.hash(name), in a sorted TreeMap, with its successor as its single neighbour. A hash collision stops the run with an error.
+5. **buildFingerTable()** (part 2) gives each node *m* rows. Row *i* has start = (n + 2^(i-1)) mod 2^m, an interval up to the next start, and as successor the first node at or after start. The intervals cover the whole ring exactly once, including intervals that wrap around 0.
+6. **printNetworkToFile()** writes the ring and every node's finger table to `network_N_m_.txt`.
+7. **doLookUpAndGenerateOutputFiles()** calls **lookUp(keyIndex)** (part 3) for every key. The lookup always starts at the node with the lowest index and follows the finger table row whose interval contains the key, adding each visited node to the route, until it reaches the node that stores the key. Every answer is checked, and one line per key plus the average hop count is written to `configuration_N_m_.txt`.
+
+Underneath, **ConsistentHashing** maps any text to a position on the ring with MD5 mod 2^m, and **Network/Node** hold each node's name, index, neighbour, finger table and stored keys.
 
 ---
 

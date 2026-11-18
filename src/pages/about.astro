@@ -3,40 +3,65 @@ import Layout from '../layouts/Layout.astro';
 
 const skills = [
   {
-    category: 'Security & Architecture',
+    category: 'Security Architecture',
     icon: 'fa-shield-halved',
     items: [
-      { name: 'Zero Trust', tip: 'NIST SP 800-207, applied in the Zero-Trust Continuum project' },
-      { name: 'IAM & Access Control', tip: 'Identity, policy decision and enforcement points, credential models' },
-      { name: 'System Design', tip: 'Layered architecture and trade-offs between security, performance and robustness' },
-      { name: 'Threat Modelling', tip: 'Cyber Kill Chain and risk analysis, e.g. the WannaCry report' },
-      { name: 'Defence in Depth', tip: 'Layered controls, segmentation and industrial DMZs' },
-      { name: 'IEC 62443', tip: 'Zones, conduits and the Purdue model for industrial systems (TEK5520)' },
+      { name: 'Zero Trust', tip: 'NIST SP 800-207, the core of the Zero-Trust Continuum project' },
+      { name: 'IAM & Access Control', tip: 'Policy decision and enforcement points, ABAC and trust scores (ZTC)' },
+      { name: 'mTLS & PKI', tip: 'X.509 certificates and SPIFFE workload identities for services and devices (ZTC)' },
+      { name: 'Threat Modelling', tip: 'STRIDE, Cyber Kill Chain and risk analysis (ZTC, TEK5520, IN2120)' },
+      { name: 'MITRE ATT&CK & ATLAS', tip: 'Attack Flow of WannaCry with an ATLAS extension (TEK5520), ATT&CK for ICS in ZTC' },
+      { name: 'Defence in Depth', tip: 'Layered controls, segmentation, DMZs and default deny' },
+      { name: 'Cryptography & TLS', tip: 'Authentication, security protocols and network security (IN2120)' },
+      { name: 'Security Trade-offs', tip: 'Weighing security against latency, availability and robustness in system design' },
     ],
   },
   {
-    category: 'Cloud, Fog & Distributed Systems',
+    category: 'OT & Critical Infrastructure',
+    icon: 'fa-industry',
+    items: [
+      { name: 'IEC 62443', tip: 'Zones, conduits and target security levels (TEK5520 and ZTC)' },
+      { name: 'Purdue Model', tip: 'Levels from enterprise IT down to the process bus' },
+      { name: 'ICS / SCADA Security', tip: 'How ransomware like WannaCry reaches industrial environments (TEK5520)' },
+      { name: 'IEC 61850', tip: 'Substation automation, station and process bus (ZTC)' },
+      { name: 'Network Segmentation', tip: 'Firewalls, VLANs and access lists between zones, OT-DMZ and jump hosts' },
+    ],
+  },
+  {
+    category: 'Cloud & Infrastructure',
     icon: 'fa-cloud',
     items: [
-      { name: 'Azure', tip: 'Microsoft cloud, basic, used in a Terraform lab' },
-      { name: 'Terraform', tip: 'Infrastructure as code, basic, used with Azure' },
-      { name: 'Docker', tip: 'Multi-stage images and Compose deployments with health checks' },
-      { name: 'Fog & Edge Computing', tip: 'Offloading, placement and the edge-fog-cloud continuum (IN5700)' },
-      { name: 'Replication & Consensus', tip: 'Replicated state machines, ordered broadcast, Raft and Chord' },
-      { name: 'Load Balancing & Caching', tip: 'Zone-based load balancer with FIFO and LRU caching (IN5020)' },
-      { name: 'Java RMI', tip: 'Distributed middleware, used for the IN5020 assignments' },
-      { name: 'OMNeT++ / INET', tip: 'Network and fog simulation, used for the IN5700 group project' },
+      { name: 'Azure', tip: 'Microsoft cloud, used with Terraform, remote state in Blob Storage' },
+      { name: 'Terraform / IaC', tip: 'Providers, state, variables, modules, plan, apply and destroy' },
+      { name: 'Docker & Compose', tip: 'Multi-stage images, networks, volumes, registries and health checks' },
+      { name: 'Container Orchestration', tip: 'Docker Swarm labs, Kubernetes in the ZTC design' },
+      { name: 'CI/CD', tip: 'GitHub Actions pipelines for this site and the ZTC project' },
+      { name: 'Linux', tip: 'Daily use, shell scripting, system internals and servers' },
+      { name: 'Cloud Deployment', tip: 'Apps deployed on Render, Vercel and Neon serverless Postgres' },
     ],
   },
   {
-    category: 'Systems & Networking',
+    category: 'Distributed, Fog & Edge Systems',
+    icon: 'fa-diagram-project',
+    items: [
+      { name: 'Edge-Fog-Cloud Continuum', tip: 'Offloading, placement and cloud vs fog trade-offs (IN5700, ZTC)' },
+      { name: 'Replication & Consensus', tip: 'Replicated state machines, totally ordered broadcast and Raft' },
+      { name: 'Fault Tolerance', tip: 'Failure detection, resends and SWIM membership (IN5020, ZTC)' },
+      { name: 'Peer-to-Peer & DHTs', tip: 'Chord ring with finger tables and consistent hashing (IN5020)' },
+      { name: 'Load Balancing & Caching', tip: 'Zone-based load balancer with FIFO and LRU caching (IN5020)' },
+      { name: 'Simulation & Emulation', tip: 'OMNeT++ / INET simulations and the Fogify emulator (IN5700)' },
+      { name: 'Java RMI', tip: 'Distributed middleware, used for the IN5020 assignments' },
+    ],
+  },
+  {
+    category: 'Networking & Systems',
     icon: 'fa-network-wired',
     items: [
       { name: 'TCP/IP & Routing', tip: 'Designed a custom network stack with distance-vector routing (IN3230)' },
-      { name: 'Linux', tip: 'Daily use, shell scripting and system internals' },
-      { name: 'Bash', tip: 'Shell scripting and command-line tooling' },
+      { name: 'Network Protocols', tip: 'Sockets, HTTP, SMTP, IMAP, FTP/SFTP and TLS in Python and C' },
+      { name: 'Mininet', tip: 'Emulated network topologies for testing routing (IN3230)' },
       { name: 'Wireshark', tip: 'Packet analysis and protocol debugging' },
-      { name: 'Operating Systems', tip: 'Processes, memory and scheduling (IN3000)' },
+      { name: 'Operating Systems', tip: 'Processes, memory, scheduling and concurrency (IN2140, IN3000)' },
     ],
   },
   {
@@ -44,42 +69,25 @@ const skills = [
     icon: 'fa-code',
     items: [
       { name: 'Go', tip: 'Services in the Zero-Trust Continuum project' },
-      { name: 'Python', tip: 'Scripting, data analysis, ML and plotting' },
-      { name: 'Java', tip: 'Object-oriented programming and Java RMI' },
+      { name: 'Python', tip: 'Scripting, automation, networking tools and data analysis' },
+      { name: 'Java', tip: 'Distributed systems with Java RMI and Maven (IN5020)' },
       { name: 'C / C++', tip: 'Networking and OS coursework, OMNeT++ simulation models' },
-      { name: 'JavaScript / TypeScript', tip: 'Frontend, backend and this site' },
-      { name: 'Kotlin', tip: 'Android development and course projects' },
+      { name: 'Bash', tip: 'Shell scripting and command-line tooling' },
+      { name: 'SQL', tip: 'PostgreSQL and SQLite in several projects' },
+      { name: 'TypeScript / JavaScript', tip: 'Backend services, frontends and this site' },
+      { name: 'Kotlin', tip: 'Android apps in the IN2000 team projects' },
     ],
   },
   {
-    category: 'Tooling & Practices',
+    category: 'Also worked with',
     icon: 'fa-wrench',
     items: [
-      { name: 'GitHub Actions', tip: 'CI/CD, set up for this site and the ZTC project' },
       { name: 'Git & GitHub', tip: 'Version control, pull requests and issue tracking' },
-      { name: 'Maven', tip: 'Java builds for the IN5020 assignments' },
+      { name: 'Node.js / Express', tip: 'REST APIs with JWT auth and rate limiting' },
+      { name: 'Kafka, Spark & Airflow', tip: 'Data engineering pipeline, all in Docker Compose' },
+      { name: 'Android / Jetpack Compose', tip: 'Team apps with MVVM, both nominated among the 10 best in IN2000' },
       { name: 'pytest', tip: 'Unit testing for Python projects' },
-    ],
-  },
-  {
-    category: 'Web, Backend & Mobile',
-    icon: 'fa-globe',
-    items: [
-      { name: 'Node.js / Express', tip: 'REST API development' },
-      { name: 'PostgreSQL', tip: 'Relational database and SQL' },
-      { name: 'React', tip: 'Component-based UI, basic experience' },
-      { name: 'MongoDB', tip: 'NoSQL, used in MERN stack projects' },
-      { name: 'Android / Jetpack Compose', tip: 'Native Android apps with MVVM and Clean Architecture' },
-    ],
-  },
-  {
-    category: 'AI & APIs',
-    icon: 'fa-robot',
-    items: [
-      { name: 'Claude & Claude Code', tip: 'Daily tool for design discussions and implementation' },
-      { name: 'Anthropic API', tip: 'Claude API, personal projects' },
-      { name: 'OpenAI API', tip: 'Built projects integrating GPT models' },
-      { name: 'Prompt Engineering', tip: '2+ years of daily use of AI tools in development' },
+      { name: 'Claude Code & LLM APIs', tip: 'Daily tool for design discussions and implementation, Claude, OpenAI and Gemini APIs' },
     ],
   },
 ];
@@ -109,14 +117,11 @@ const focus = [
     items: [
       'Training every day, mostly running and strength training',
       'Personal coding projects and keeping up with new technology',
-      'Weekly part-time job in building operations and maintenance',
     ],
   },
 ];
 
-const education = [];
 
-const work = [];
 ---
 
 <Layout title="About - Philip Fleischer">
@@ -192,54 +197,6 @@ const work = [];
       </div>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- Timeline -->
-    <section aria-labelledby="timeline-heading">
-      <h2 class="section-title" id="timeline-heading">
-        <i class="fa-solid fa-timeline" aria-hidden="true"></i> Timeline
-      </h2>
-
-      <h3 class="timeline-group">Education</h3>
-      <div class="timeline">
-        {
-          education.map((item) => (
-            <div class="tl-item">
-              <div class="tl-icon">
-                <i class={`fa-solid ${item.icon}`} aria-hidden="true" />
-              </div>
-              <div class="tl-body">
-                <span class="tl-period">{item.period}</span>
-                <h4 class="tl-title">
-                  {item.title} <span class="tl-sub">- {item.sub}</span>
-                </h4>
-                <p class="tl-desc">{item.desc}</p>
-              </div>
-            </div>
-          ))
-        }
-      </div>
-
-      <h3 class="timeline-group">Work Experience</h3>
-      <div class="timeline">
-        {
-          work.map((item) => (
-            <div class="tl-item">
-              <div class="tl-icon">
-                <i class={`fa-solid ${item.icon}`} aria-hidden="true" />
-              </div>
-              <div class="tl-body">
-                <span class="tl-period">{item.period}</span>
-                <h4 class="tl-title">
-                  {item.title} <span class="tl-sub">- {item.sub}</span>
-                </h4>
-                <p class="tl-desc">{item.desc}</p>
-              </div>
-            </div>
-          ))
-        }
-      </div>
-    </section>
   </main>
 </Layout>
 
@@ -385,82 +342,4 @@ const work = [];
     }
   }
 
-  // ── Timeline ─────────────────────────────────────────────────────
-  .timeline-group {
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: $accent;
-    margin: $sp-8 0 $sp-5;
-  }
-
-  .timeline {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: $sp-5;
-    margin-bottom: $sp-8;
-
-    @media (max-width: 720px) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .tl-item {
-    display: flex;
-    gap: $sp-4;
-  }
-
-  .tl-icon {
-    flex-shrink: 0;
-    width: 38px;
-    height: 38px;
-    border-radius: $r-full;
-    background: $accent-subtle;
-    border: 1px solid $accent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    i {
-      font-size: 0.9rem;
-      color: $accent;
-    }
-  }
-
-  .tl-body {
-    flex: 1;
-  }
-
-  .tl-period {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: $text-dim;
-    background: $bg-3;
-    border-radius: $r-full;
-    padding: 0.2rem 0.6rem;
-    margin-bottom: $sp-2;
-  }
-
-  .tl-title {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: $text;
-    margin-bottom: $sp-2;
-  }
-
-  .tl-sub {
-    font-weight: 500;
-    color: $text-muted;
-    font-size: 0.88rem;
-  }
-
-  .tl-desc {
-    font-size: 0.88rem;
-    color: $text-dim;
-    line-height: 1.6;
-  }
 </style>

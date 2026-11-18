@@ -111,14 +111,6 @@ const focus = [
       'Applying it in sectors that matter for society, such as energy and critical infrastructure',
     ],
   },
-  {
-    icon: 'fa-person-running',
-    title: 'Outside of studies',
-    items: [
-      'Training every day, mostly running and strength training',
-      'Personal coding projects and keeping up with new technology',
-    ],
-  },
 ];
 
 
@@ -126,13 +118,14 @@ const focus = [
 
 <Layout title="About - Philip Fleischer">
   <main class="page-wrapper">
-    <header class="page-hero" style="padding-left:0;padding-right:0;">
+    <div class="about-top">
+    <header class="page-hero about-hero">
       <span class="section-eyebrow">Background</span>
       <h1 class="section-title">About me</h1>
       <p class="section-subtitle">
         I'm Philip, a master's student in informatics at the University of Oslo, from Oslo. I started out with a broad interest in networks and systems, and designed and built my own network protocol stack with custom routing in one of my courses. Along the way I realised that the part I enjoy most is not writing low-level code, but thinking through how systems should be built: how access and trust are structured, which trade-offs to make between security, performance and robustness, and why things are designed the way they are.
       </p>
-      <p class="section-subtitle" style="margin-top:-1.5rem">
+      <p class="section-subtitle about-hero__second">
         That is the direction I am heading: cloud, fog and edge architecture combined with security. I want to use technology, including AI, in a responsible and well-considered way, and to work on something that matters for other people and for society, like critical infrastructure.
       </p>
       <div class="about-cta">
@@ -148,7 +141,7 @@ const focus = [
     </header>
 
     <!-- Right now -->
-    <section aria-labelledby="focus-heading">
+    <section class="about-focus" aria-labelledby="focus-heading">
       <h2 class="section-title" id="focus-heading">
         <i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i> Right now
       </h2>
@@ -168,6 +161,7 @@ const focus = [
         }
       </div>
     </section>
+    </div>
 
     <div class="divider"></div>
 
@@ -203,21 +197,75 @@ const focus = [
 <style lang="scss">
   @use 'src/styles/variables' as *;
 
+  // ── About me + Right now ─────────────────────────────────────────
+  // Wide screens (laptop, iPad landscape): side by side.
+  // Narrower screens: About me centred on top, Right now underneath.
+  $about-split: 1024px;
+
+  .about-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $sp-8;
+    margin-bottom: $sp-8;
+
+    @media (min-width: $about-split) {
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: $sp-12;
+      align-items: start;
+    }
+  }
+
+  .about-hero {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 720px;
+    text-align: center;
+
+    .section-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: $about-split) {
+      margin: 0;
+      max-width: none;
+      text-align: left;
+
+      .section-subtitle {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .about-hero__second {
+    margin-top: -1.5rem;
+  }
+
   .about-cta {
     display: flex;
+    justify-content: center;
     gap: $sp-3;
     flex-wrap: wrap;
     margin-top: $sp-6;
+
+    @media (min-width: $about-split) {
+      justify-content: flex-start;
+    }
   }
 
   // ── Right now ────────────────────────────────────────────────────
   .focus-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: $sp-4;
-    margin-bottom: $sp-8;
 
-    @media (max-width: 900px) {
+    @media (max-width: 720px) {
+      grid-template-columns: 1fr;
+    }
+
+    // In the side-by-side layout the boxes stack in their column
+    @media (min-width: $about-split) {
       grid-template-columns: 1fr;
     }
   }

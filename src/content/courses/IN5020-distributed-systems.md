@@ -13,6 +13,8 @@ links:
     url: "https://github.com/philipfleischer/IN5020-A1-G1-RMI"
   - label: "GitHub: Assignment 2"
     url: "https://github.com/philipfleischer/IN5020-A2-G1-RBA"
+  - label: "GitHub: Assignment 3"
+    url: "https://github.com/philipfleischer/IN5020-A3-G1-CP"
 ---
 
 **IN5020: Distributed Systems** at the University of Oslo, autumn 2026. The course covers the principles and practice of building distributed systems: fundamental system models, distributed middleware (object-based middleware and component architectures), distributed algorithms for consensus and related problems, and newer challenges from cloud, multimedia and IoT. Each assignment is a group project in its own repository.
@@ -23,7 +25,7 @@ links:
 |---|---|---|---|
 | **A1** | Java RMI International Statistics Service | Middleware, load balancing, caching | [Completed](https://github.com/philipfleischer/IN5020-A1-G1-RMI) |
 | **A2** | Replicated Bank Account | Replication, totally ordered broadcast | [Completed](https://github.com/philipfleischer/IN5020-A2-G1-RBA) |
-| **A3** | Chord Peer-to-Peer Lookup | Distributed hash tables, routing | Completed (private repository) |
+| **A3** | Chord Peer-to-Peer Lookup | Distributed hash tables, routing | [Completed](https://github.com/philipfleischer/IN5020-A3-G1-CP) |
 
 ---
 
@@ -264,4 +266,4 @@ Underneath, **ConsistentHashing** maps any text to a position on the ring with M
 |---|---|
 | A1: Java RMI statistics service | [IN5020-A1-G1-RMI](https://github.com/philipfleischer/IN5020-A1-G1-RMI) |
 | A2: Replicated bank account | [IN5020-A2-G1-RBA](https://github.com/philipfleischer/IN5020-A2-G1-RBA) |
-| A3: Chord protocol | IN5020-A3-G1-CP (private while the course runs) |
+| A3: Chord protocol | [IN5020-A3-G1-CP](https://github.com/philipfleischer/IN5020-A3-G1-CP) |
